@@ -162,6 +162,9 @@ public class GenericKubernetesApiForCoreApiTest {
             .newBuilder()
             .readTimeout(1, TimeUnit.MILLISECONDS) // timeout everytime
             .build());
+    stubFor(
+        get(urlEqualTo("/api/v1/namespaces/default/pods/foo1"))
+            .willReturn(aResponse().withFixedDelay(99999).withStatus(200).withBody("")));
     podClient =
         new GenericKubernetesApi<>(V1Pod.class, V1PodList.class, "", "v1", "pods", apiClient);
     try {
