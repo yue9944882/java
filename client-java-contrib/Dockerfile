@@ -6,7 +6,8 @@ RUN apk add --no-cache git bash && \
     chmod +x /usr/bin/kind && \
     wget -O /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl && \
     chmod +x /usr/bin/kubectl && \
-    git clone https://github.com/kubernetes-client/gen.git
+    git clone https://github.com/yue9944882/gen.git && \
+    cd gen && git checkout origin/fix-npm-install-on-buster
 
 COPY generate.sh generate.sh
 RUN chmod +x generate.sh
