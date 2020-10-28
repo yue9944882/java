@@ -64,7 +64,6 @@ public class GenericKubernetesApi<
     ApiType extends KubernetesObject, ApiListType extends KubernetesListObject> {
 
   // TODO(yue9944882): supports status operations..
-  // TODO(yue9944882): supports generic sub-resource operations..
   // TODO(yue9944882): supports delete-collections..
 
   private Class<ApiType> apiTypeClass;
@@ -277,6 +276,16 @@ public class GenericKubernetesApi<
    */
   public Watchable<ApiType> watch(String namespace) throws ApiException {
     return watch(namespace, new ListOptions());
+  }
+
+  /**
+   * Update status subresource for kubernetes resource.
+   *
+   * @param object the object
+   * @return the kubernetes api response
+   */
+  public KubernetesApiResponse<ApiType> updateStatus(ApiType object) {
+    return updateStatus(object, new UpdateOptions());
   }
 
   // TODO(yue9944882): watch one resource?
@@ -702,6 +711,46 @@ public class GenericKubernetesApi<
         customObjectsApi.getApiClient(),
         call,
         TypeToken.getParameterized(Watch.Response.class, apiTypeClass).getType());
+  }
+
+  /**
+   * Update status subresource for a kubernetes resource.
+   *
+   * @param object the object
+   * @param updateOptions the update options
+   * @return the kubernetes api response
+   */
+  public KubernetesApiResponse<ApiType> updateStatus(
+      ApiType object, final UpdateOptions updateOptions) {
+    V1ObjectMeta objectMeta = object.getMetadata();
+    return executeCall(
+        customObjectsApi.getApiClient(),
+        apiTypeClass,
+        () -> {
+          boolean isNamespaced = !Strings.isNullOrEmpty(objectMeta.getNamespace());
+          if (isNamespaced) {
+            return customObjectsApi.replaceNamespacedCustomObjectStatusCall(
+                this.apiGroup,
+                this.apiVersion,
+                objectMeta.getNamespace(),
+                this.resourcePlural,
+                objectMeta.getName(),
+                object,
+                updateOptions.getDryRun(),
+                updateOptions.getFieldManager(),
+                null);
+          } else {
+            return customObjectsApi.replaceClusterCustomObjectStatusCall(
+                this.apiGroup,
+                this.apiVersion,
+                this.resourcePlural,
+                objectMeta.getName(),
+                object,
+                updateOptions.getDryRun(),
+                updateOptions.getFieldManager(),
+                null);
+          }
+        });
   }
 
   private static <DataType extends KubernetesType>

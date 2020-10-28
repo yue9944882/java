@@ -166,6 +166,21 @@ public class GenericKubernetesApiForCoreApiTest {
   }
 
   @Test
+  public void testUpdateNamespacedPodStatusReturningObject() {
+    V1Pod foo1 =
+        new V1Pod().kind("Pod").metadata(new V1ObjectMeta().namespace("default").name("foo1"));
+
+    stubFor(
+        put(urlEqualTo("/api/v1/namespaces/default/pods/foo1/status"))
+            .willReturn(aResponse().withStatus(200).withBody(new Gson().toJson(foo1))));
+    KubernetesApiResponse<V1Pod> podListResp = podClient.updateStatus(foo1);
+    assertTrue(podListResp.isSuccess());
+    assertEquals(foo1, podListResp.getObject());
+    assertNull(podListResp.getStatus());
+    verify(1, putRequestedFor(urlPathEqualTo("/api/v1/namespaces/default/pods/foo1/status")));
+  }
+
+  @Test
   public void testReadTimeoutShouldThrowException() {
     ApiClient apiClient = new ClientBuilder().setBasePath("http://localhost:" + 8181).build();
     apiClient.setHttpClient(

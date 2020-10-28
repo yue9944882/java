@@ -181,6 +181,22 @@ public class GenericKubernetesApiTest {
   }
 
   @Test
+  public void updateNamespacedJobStatusReturningObject() {
+    V1Job foo1 =
+        new V1Job().kind("Job").metadata(new V1ObjectMeta().namespace("default").name("foo1"));
+
+    stubFor(
+        put(urlEqualTo("/apis/batch/v1/namespaces/default/jobs/foo1/status"))
+            .willReturn(aResponse().withStatus(200).withBody(new Gson().toJson(foo1))));
+    KubernetesApiResponse<V1Job> jobListResp = jobClient.updateStatus(foo1);
+    assertTrue(jobListResp.isSuccess());
+    assertEquals(foo1, jobListResp.getObject());
+    assertNull(jobListResp.getStatus());
+    verify(
+        1, putRequestedFor(urlPathEqualTo("/apis/batch/v1/namespaces/default/jobs/foo1/status")));
+  }
+
+  @Test
   public void testReadTimeoutShouldThrowException() {
     ApiClient apiClient = new ClientBuilder().setBasePath("http://localhost:" + 8181).build();
     apiClient.setHttpClient(
