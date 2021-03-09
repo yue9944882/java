@@ -21,6 +21,8 @@ import io.kubernetes.client.util.authenticators.AzureActiveDirectoryAuthenticato
 import io.kubernetes.client.util.authenticators.GCPAuthenticator;
 import io.kubernetes.client.util.authenticators.OpenIDConnectAuthenticator;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -76,6 +78,11 @@ public class KubeConfig {
     registerAuthenticator(new GCPAuthenticator());
     registerAuthenticator(new AzureActiveDirectoryAuthenticator());
     registerAuthenticator(new OpenIDConnectAuthenticator());
+  }
+
+  /** Load a Kubernetes config from a file path on the host */
+  public static KubeConfig loadKubeConfig(String kubeconfigPath) throws FileNotFoundException {
+    return loadKubeConfig(new FileReader(kubeconfigPath));
   }
 
   /** Load a Kubernetes config from a Reader */
