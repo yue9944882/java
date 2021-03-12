@@ -20,7 +20,11 @@ import io.kubernetes.client.informer.cache.Lister;
 import io.kubernetes.client.openapi.ApiClient;
 import io.kubernetes.client.spring.extended.controller.annotation.KubernetesInformer;
 import io.kubernetes.client.spring.extended.controller.annotation.KubernetesInformers;
+import io.kubernetes.client.spring.extended.controller.factory.KubernetesControllerFactory;
 import io.kubernetes.client.util.generic.GenericKubernetesApi;
+import java.time.Duration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
@@ -44,6 +48,8 @@ public class KubernetesInformerFactoryProcessor
     implements BeanDefinitionRegistryPostProcessor, Ordered {
 
   public static final int ORDER = 0;
+
+  private static final Logger log = LoggerFactory.getLogger(KubernetesControllerFactory.class);
 
   private ConfigurableListableBeanFactory beanFactory;
 
@@ -122,6 +128,14 @@ public class KubernetesInformerFactoryProcessor
   private <T extends KubernetesObject> SharedInformer<T> informer(
       Class<T> type, KubernetesInformer kubernetesInformer) {
     ApiClient apiClient = this.beanFactory.getBean(ApiClient.class);
+
+    if (apiClient.getHttpClient().readTimeoutMillis() > 0) {
+      log.warn(
+          "Enforcing read-timeout of the ApiClient to zero so that the watch connection won't abort from client-side");
+      apiClient.setHttpClient(
+          apiClient.getHttpClient().newBuilder().readTimeout(Duration.ZERO).build());
+    }
+
     SharedInformerFactory sharedInformerFactory =
         this.beanFactory.getBean(SharedInformerFactory.class);
     final GenericKubernetesApi api =
