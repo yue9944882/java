@@ -42,10 +42,10 @@ public class KubernetesReconcilerProcessorTest {
   @SpringBootApplication
   static class App {
 
-    @Bean
-    KubernetesReconcilerProcessor reconcilerProcessorUnderTesting() {
-      return new KubernetesReconcilerProcessor();
-    }
+    //    @Bean
+    //    KubernetesReconcilerProcessor reconcilerProcessorUnderTesting() {
+    //      return new KubernetesReconcilerProcessor();
+    //    }
 
     @Bean
     TestSharedInformerFactory testSharedInformerFactory() {
