@@ -1,0 +1,56 @@
+name: Maven Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      releaseVersion:
+        type: string
+        required: true
+        description: The POM release version of this release.
+      nextDevelopmentVersion:
+        type: string
+        required: true
+        description: The next POM development version with suffix "-SNAPSHOT", will be the next development version after the release is done.
+      dry-run:
+        type: boolean
+        required: true
+        description: Will not push branches or upload the artifacts.
+
+jobs:
+  release:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Validate Input
+        run: |
+          echo "${{ github.ref_type }}" | perl -ne 'die unless m/^branch$/'
+          echo "${{ github.ref }}" | perl -ne 'die unless m/^release-\d+$/'
+          echo "${{ github.event.inputs.releaseVersion }}" | perl -ne 'die unless m/^\d+\.\d+\.\d+$/'
+          echo "${{ github.event.inputs.nextDevelopmentVersion }}" | perl -ne 'die unless m/^\d+\.\d+\.\d+-SNAPSHOT$/'
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: 8.0.x
+          server-id: ossrh
+          server-username: OSSRH_USERNAME
+          server-password: OSSRH_TOKEN
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg-passphrase: GPG_PASSPHRASE
+      - name: Check Current Version
+        run: |
+          ./mvnw -q \
+            -Dexec.executable=echo \
+            -Dexec.args='${project.version}' \
+            --non-recursive \
+            exec:exec | perl -ne 'die unless m/^${{ github.event.inputs.releaseTag }}-SNAPSHOT$/'
+      - name: Release
+        run: |
+          ./mvnw --batch-mode \
+            release:prepare \
+            -Dtag=v${{ github.event.inputs.releaseTag }} \
+            -DreleaseVersion=${{ github.event.inputs.releaseTag }} \
+            -DdevelopmentVersion=${{ github.event.inputs.nextDevelopmentVersion }} \
+            -DpushChanges=false
