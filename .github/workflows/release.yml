@@ -77,9 +77,6 @@ jobs:
           mvn -DlocalCheckout=true -Darguments=-DskipTests release:perform
           git push https://${{ github.token }}@github.com/${{ github.repository }}.git ${{ github.ref_name }}:${{ github.ref_name }}
           git push https://${{ github.token }}@github.com/${{ github.repository }}.git v${{ github.event.inputs.releaseVersion }}
-      - name: Hack
-        run: |
-          git push https://${{ github.token }}@github.com/${{ github.repository }}.git v${{ github.event.inputs.releaseVersion }}
       - name: Publish Release
         uses: ncipollo/release-action@v1
         with:
