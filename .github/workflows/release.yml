@@ -38,8 +38,6 @@ jobs:
         run: |
           (echo 5; echo y; echo save) | gpg --command-fd 0 --no-tty --no-greeting -q --edit-key "${{ steps.import_gpg.outputs.keyid }}" trust
           (echo 0; echo y; echo save) | gpg --command-fd 0 --no-tty --no-greeting -q --edit-key "${{ steps.import_gpg.outputs.keyid }}" expire
-          gpg --list-keys
-          gpg --list-secret-keys
           git config user.email "k8s.ci.robot@gmail.com"
           git config user.name "Kubernetes Prow Robot"
       - name: Setup Java
@@ -75,12 +73,15 @@ jobs:
           OSSRH_TOKEN: ${{ secrets.SNAPSHOT_UPLOAD_PASSWORD }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSWORD }}
         run: |
-          mvn -DlocalCheckout=true release:perform
+          # The tests are already executed in the prepare, skipping
+          mvn -DlocalCheckout=true -Darguments=-DskipTests release:perform
           git push https://${{ github.token }}@github.com/${{ github.repository }}.git ${{ github.ref_name }}:${{ github.ref_name }}
           git push https://${{ github.token }}@github.com/${{ github.repository }}.git v${{ github.event.inputs.releaseVersion }}
+      - name: Hack
+        run: |
+          git push https://${{ github.token }}@github.com/${{ github.repository }}.git v${{ github.event.inputs.releaseVersion }}
       - name: Publish Release
-        uses: softprops/action-gh-release@v0.1.5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: ncipollo/release-action@v1
         with:
-          tag_name: v${{ github.event.inputs.releaseVersion }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: v${{ github.event.inputs.releaseVersion }}
