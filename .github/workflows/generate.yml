@@ -15,6 +15,11 @@ jobs:
     steps:
       - name: Checkout Java
         uses: actions/checkout@v3
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: 8.0.x
       - name: Checkout Gen
         uses: actions/checkout@v3
         with:
@@ -25,26 +30,36 @@ jobs:
         run: |
           SUFFIX=$(openssl rand -hex 4)
           echo "BRANCH=automated-generate-$SUFFIX" >> $GITHUB_ENV
-      - name: Generate
+      - name: Get Project Version
         run: |
-          cd gen/openapi
+          echo "PROJECT_VERSION=$(mvn -q \
+                      -Dexec.executable="echo" \
+                      -Dexec.args='${project.version}' \
+                      --non-recursive \
+                      org.codehaus.mojo:exec-maven-plugin:1.6.0:exec)" >> $GITHUB_ENV
+      - name: Generate Openapi
+        run: |
+          pushd gen/openapi
           cat <<"EOF"> settings
           # Kubernetes branch to get the OpenAPI spec from.
           export KUBERNETES_BRANCH="${{ github.event.inputs.kubernetesBranch }}"
 
           # client version for packaging and releasing. It can
           # be different than SPEC_VERSION.
-          export CLIENT_VERSION=$(mvn -q \
-            -Dexec.executable="echo" \
-            -Dexec.args='${project.version}' \
-            --non-recursive \
-            org.codehaus.mojo:exec-maven-plugin:1.6.0:exec)
-
-          export PACKAGE_NAME="io.kubernetes.client.openapi"
-          EOF
+          export CLIENT_VERSION=${{ env.PROJECT_VERSION }}
 
           bash java.sh ../../kubernetes/ settings
-          cd ../../
+          popd
+          rm -rf gen
+      - name: Generate Fluent
+        run: |
+          mvn -Pfluent-gen clean install
+          pushd fluent-gen
+          bash -x generate.sh
+          popd
+      - name: Commit and push
+        run: |
+          # Commit and push
           git config user.email "k8s.ci.robot@gmail.com"
           git config user.name "Kubernetes Prow Robot"
           git checkout -b "$BRANCH"
