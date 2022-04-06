@@ -12,21 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1CSINodeListBuilder
-    extends io.kubernetes.client.openapi.models.V1CSINodeListFluentImpl<
-        io.kubernetes.client.openapi.models.V1CSINodeListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1CSINodeListBuilder extends V1CSINodeListFluentImpl<V1CSINodeListBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1CSINodeList,
         io.kubernetes.client.openapi.models.V1CSINodeListBuilder> {
   public V1CSINodeListBuilder() {
     this(false);
   }
 
-  public V1CSINodeListBuilder(java.lang.Boolean validationEnabled) {
+  public V1CSINodeListBuilder(Boolean validationEnabled) {
     this(new V1CSINodeList(), validationEnabled);
   }
 
-  public V1CSINodeListBuilder(io.kubernetes.client.openapi.models.V1CSINodeListFluent<?> fluent) {
+  public V1CSINodeListBuilder(V1CSINodeListFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -89,7 +89,7 @@ public class V1CSINodeListBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

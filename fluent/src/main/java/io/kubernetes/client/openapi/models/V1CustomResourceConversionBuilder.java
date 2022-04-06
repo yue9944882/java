@@ -12,17 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1CustomResourceConversionBuilder
-    extends io.kubernetes.client.openapi.models.V1CustomResourceConversionFluentImpl<
-        io.kubernetes.client.openapi.models.V1CustomResourceConversionBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1CustomResourceConversionFluentImpl<V1CustomResourceConversionBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1CustomResourceConversion,
-        io.kubernetes.client.openapi.models.V1CustomResourceConversionBuilder> {
+        V1CustomResourceConversionBuilder> {
   public V1CustomResourceConversionBuilder() {
     this(false);
   }
 
-  public V1CustomResourceConversionBuilder(java.lang.Boolean validationEnabled) {
+  public V1CustomResourceConversionBuilder(Boolean validationEnabled) {
     this(new V1CustomResourceConversion(), validationEnabled);
   }
 
@@ -81,7 +82,7 @@ public class V1CustomResourceConversionBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

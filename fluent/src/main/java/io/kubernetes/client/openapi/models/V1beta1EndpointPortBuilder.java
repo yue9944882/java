@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1EndpointPortBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1EndpointPortFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1EndpointPortBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1beta1EndpointPortFluentImpl<V1beta1EndpointPortBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1beta1EndpointPort,
         io.kubernetes.client.openapi.models.V1beta1EndpointPortBuilder> {
   public V1beta1EndpointPortBuilder() {
     this(false);
   }
 
-  public V1beta1EndpointPortBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1EndpointPortBuilder(Boolean validationEnabled) {
     this(new V1beta1EndpointPort(), validationEnabled);
   }
 
-  public V1beta1EndpointPortBuilder(
-      io.kubernetes.client.openapi.models.V1beta1EndpointPortFluent<?> fluent) {
+  public V1beta1EndpointPortBuilder(V1beta1EndpointPortFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -91,7 +91,7 @@ public class V1beta1EndpointPortBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

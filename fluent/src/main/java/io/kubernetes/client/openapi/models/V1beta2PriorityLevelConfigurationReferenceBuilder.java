@@ -12,18 +12,19 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta2PriorityLevelConfigurationReferenceBuilder
-    extends io.kubernetes.client.openapi.models
-            .V1beta2PriorityLevelConfigurationReferenceFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta2PriorityLevelConfigurationReferenceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1beta2PriorityLevelConfigurationReference,
+    extends V1beta2PriorityLevelConfigurationReferenceFluentImpl<
+        V1beta2PriorityLevelConfigurationReferenceBuilder>
+    implements VisitableBuilder<
+        V1beta2PriorityLevelConfigurationReference,
         io.kubernetes.client.openapi.models.V1beta2PriorityLevelConfigurationReferenceBuilder> {
   public V1beta2PriorityLevelConfigurationReferenceBuilder() {
     this(false);
   }
 
-  public V1beta2PriorityLevelConfigurationReferenceBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta2PriorityLevelConfigurationReferenceBuilder(Boolean validationEnabled) {
     this(new V1beta2PriorityLevelConfigurationReference(), validationEnabled);
   }
 
@@ -82,7 +83,7 @@ public class V1beta2PriorityLevelConfigurationReferenceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

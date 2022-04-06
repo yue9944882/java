@@ -12,17 +12,19 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1PriorityLevelConfigurationSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1PriorityLevelConfigurationSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1PriorityLevelConfigurationSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1beta1PriorityLevelConfigurationSpecFluentImpl<
+        V1beta1PriorityLevelConfigurationSpecBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1beta1PriorityLevelConfigurationSpec,
-        io.kubernetes.client.openapi.models.V1beta1PriorityLevelConfigurationSpecBuilder> {
+        V1beta1PriorityLevelConfigurationSpecBuilder> {
   public V1beta1PriorityLevelConfigurationSpecBuilder() {
     this(false);
   }
 
-  public V1beta1PriorityLevelConfigurationSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1PriorityLevelConfigurationSpecBuilder(Boolean validationEnabled) {
     this(new V1beta1PriorityLevelConfigurationSpec(), validationEnabled);
   }
 
@@ -81,7 +83,7 @@ public class V1beta1PriorityLevelConfigurationSpecBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

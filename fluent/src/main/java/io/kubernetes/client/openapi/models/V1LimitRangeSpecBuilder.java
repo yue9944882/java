@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1LimitRangeSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1LimitRangeSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1LimitRangeSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1LimitRangeSpec,
-        io.kubernetes.client.openapi.models.V1LimitRangeSpecBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1LimitRangeSpecBuilder extends V1LimitRangeSpecFluentImpl<V1LimitRangeSpecBuilder>
+    implements VisitableBuilder<
+        V1LimitRangeSpec, io.kubernetes.client.openapi.models.V1LimitRangeSpecBuilder> {
   public V1LimitRangeSpecBuilder() {
     this(false);
   }
 
-  public V1LimitRangeSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1LimitRangeSpecBuilder(Boolean validationEnabled) {
     this(new V1LimitRangeSpec(), validationEnabled);
   }
 
@@ -75,7 +74,7 @@ public class V1LimitRangeSpecBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

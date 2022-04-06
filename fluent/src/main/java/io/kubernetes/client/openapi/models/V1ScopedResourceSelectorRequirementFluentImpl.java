@@ -12,11 +12,17 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
+@SuppressWarnings(value = "unchecked")
 public class V1ScopedResourceSelectorRequirementFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirementFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirementFluent<A> {
+        A extends V1ScopedResourceSelectorRequirementFluent<A>>
+    extends BaseFluent<A> implements V1ScopedResourceSelectorRequirementFluent<A> {
   public V1ScopedResourceSelectorRequirementFluentImpl() {}
 
   public V1ScopedResourceSelectorRequirementFluentImpl(
@@ -28,11 +34,9 @@ public class V1ScopedResourceSelectorRequirementFluentImpl<
     this.withValues(instance.getValues());
   }
 
-  private io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirement.OperatorEnum
-      operator;
-  private io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirement.ScopeNameEnum
-      scopeName;
-  private java.util.List<java.lang.String> values;
+  private V1ScopedResourceSelectorRequirement.OperatorEnum operator;
+  private V1ScopedResourceSelectorRequirement.ScopeNameEnum scopeName;
+  private List<String> values;
 
   public io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirement.OperatorEnum
       getOperator() {
@@ -46,7 +50,7 @@ public class V1ScopedResourceSelectorRequirementFluentImpl<
     return (A) this;
   }
 
-  public java.lang.Boolean hasOperator() {
+  public Boolean hasOperator() {
     return this.operator != null;
   }
 
@@ -66,9 +70,9 @@ public class V1ScopedResourceSelectorRequirementFluentImpl<
     return this.scopeName != null;
   }
 
-  public A addToValues(java.lang.Integer index, java.lang.String item) {
+  public A addToValues(Integer index, java.lang.String item) {
     if (this.values == null) {
-      this.values = new java.util.ArrayList<java.lang.String>();
+      this.values = new ArrayList<java.lang.String>();
     }
     this.values.add(index, item);
     return (A) this;
@@ -92,7 +96,7 @@ public class V1ScopedResourceSelectorRequirementFluentImpl<
     return (A) this;
   }
 
-  public A addAllToValues(java.util.Collection<java.lang.String> items) {
+  public A addAllToValues(Collection<java.lang.String> items) {
     if (this.values == null) {
       this.values = new java.util.ArrayList<java.lang.String>();
     }
@@ -136,8 +140,7 @@ public class V1ScopedResourceSelectorRequirementFluentImpl<
     return this.values.get(values.size() - 1);
   }
 
-  public java.lang.String getMatchingValue(
-      java.util.function.Predicate<java.lang.String> predicate) {
+  public java.lang.String getMatchingValue(Predicate<java.lang.String> predicate) {
     for (java.lang.String item : values) {
       if (predicate.test(item)) {
         return item;
@@ -184,11 +187,7 @@ public class V1ScopedResourceSelectorRequirementFluentImpl<
     return values != null && !values.isEmpty();
   }
 
-  public A addNewValue(java.lang.String original) {
-    return (A) addToValues(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1ScopedResourceSelectorRequirementFluentImpl that =
@@ -202,5 +201,24 @@ public class V1ScopedResourceSelectorRequirementFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(operator, scopeName, values, super.hashCode());
+  }
+
+  public java.lang.String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (operator != null) {
+      sb.append("operator:");
+      sb.append(operator + ",");
+    }
+    if (scopeName != null) {
+      sb.append("scopeName:");
+      sb.append(scopeName + ",");
+    }
+    if (values != null && !values.isEmpty()) {
+      sb.append("values:");
+      sb.append(values);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

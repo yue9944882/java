@@ -12,22 +12,23 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V2beta1HorizontalPodAutoscalerListBuilder
-    extends io.kubernetes.client.openapi.models.V2beta1HorizontalPodAutoscalerListFluentImpl<
-        io.kubernetes.client.openapi.models.V2beta1HorizontalPodAutoscalerListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V2beta1HorizontalPodAutoscalerListFluentImpl<V2beta1HorizontalPodAutoscalerListBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V2beta1HorizontalPodAutoscalerList,
         io.kubernetes.client.openapi.models.V2beta1HorizontalPodAutoscalerListBuilder> {
   public V2beta1HorizontalPodAutoscalerListBuilder() {
     this(false);
   }
 
-  public V2beta1HorizontalPodAutoscalerListBuilder(java.lang.Boolean validationEnabled) {
+  public V2beta1HorizontalPodAutoscalerListBuilder(Boolean validationEnabled) {
     this(new V2beta1HorizontalPodAutoscalerList(), validationEnabled);
   }
 
   public V2beta1HorizontalPodAutoscalerListBuilder(
-      io.kubernetes.client.openapi.models.V2beta1HorizontalPodAutoscalerListFluent<?> fluent) {
+      V2beta1HorizontalPodAutoscalerListFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -91,7 +92,7 @@ public class V2beta1HorizontalPodAutoscalerListBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1AllowedHostPathBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1AllowedHostPathFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1AllowedHostPathBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1beta1AllowedHostPath,
-        io.kubernetes.client.openapi.models.V1beta1AllowedHostPathBuilder> {
+    extends V1beta1AllowedHostPathFluentImpl<V1beta1AllowedHostPathBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1beta1AllowedHostPath, V1beta1AllowedHostPathBuilder> {
   public V1beta1AllowedHostPathBuilder() {
     this(false);
   }
 
-  public V1beta1AllowedHostPathBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1AllowedHostPathBuilder(Boolean validationEnabled) {
     this(new V1beta1AllowedHostPath(), validationEnabled);
   }
 
-  public V1beta1AllowedHostPathBuilder(
-      io.kubernetes.client.openapi.models.V1beta1AllowedHostPathFluent<?> fluent) {
+  public V1beta1AllowedHostPathBuilder(V1beta1AllowedHostPathFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +80,7 @@ public class V1beta1AllowedHostPathBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,21 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1PersistentVolumeStatusFluent<
-        A extends io.kubernetes.client.openapi.models.V1PersistentVolumeStatusFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getMessage();
+public interface V1PersistentVolumeStatusFluent<A extends V1PersistentVolumeStatusFluent<A>>
+    extends Fluent<A> {
+  public String getMessage();
 
   public A withMessage(java.lang.String message);
 
-  public java.lang.Boolean hasMessage();
+  public Boolean hasMessage();
 
-  /** Method is deprecated. use withMessage instead. */
-  @java.lang.Deprecated
-  public A withNewMessage(java.lang.String original);
-
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeStatus.PhaseEnum getPhase();
+  public V1PersistentVolumeStatus.PhaseEnum getPhase();
 
   public A withPhase(io.kubernetes.client.openapi.models.V1PersistentVolumeStatus.PhaseEnum phase);
 
@@ -37,8 +34,4 @@ public interface V1PersistentVolumeStatusFluent<
   public A withReason(java.lang.String reason);
 
   public java.lang.Boolean hasReason();
-
-  /** Method is deprecated. use withReason instead. */
-  @java.lang.Deprecated
-  public A withNewReason(java.lang.String original);
 }

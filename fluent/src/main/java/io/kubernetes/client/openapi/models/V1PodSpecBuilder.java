@@ -12,17 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1PodSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1PodSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1PodSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1PodSpec,
-        io.kubernetes.client.openapi.models.V1PodSpecBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1PodSpecBuilder extends V1PodSpecFluentImpl<V1PodSpecBuilder>
+    implements VisitableBuilder<V1PodSpec, io.kubernetes.client.openapi.models.V1PodSpecBuilder> {
   public V1PodSpecBuilder() {
     this(false);
   }
 
-  public V1PodSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1PodSpecBuilder(Boolean validationEnabled) {
     this(new V1PodSpec(), validationEnabled);
   }
 
@@ -248,7 +246,7 @@ public class V1PodSpecBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

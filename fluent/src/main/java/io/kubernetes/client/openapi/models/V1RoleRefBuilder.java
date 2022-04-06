@@ -12,21 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1RoleRefBuilder
-    extends io.kubernetes.client.openapi.models.V1RoleRefFluentImpl<
-        io.kubernetes.client.openapi.models.V1RoleRefBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1RoleRefBuilder extends V1RoleRefFluentImpl<V1RoleRefBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1RoleRef,
         io.kubernetes.client.openapi.models.V1RoleRefBuilder> {
   public V1RoleRefBuilder() {
     this(false);
   }
 
-  public V1RoleRefBuilder(java.lang.Boolean validationEnabled) {
+  public V1RoleRefBuilder(Boolean validationEnabled) {
     this(new V1RoleRef(), validationEnabled);
   }
 
-  public V1RoleRefBuilder(io.kubernetes.client.openapi.models.V1RoleRefFluent<?> fluent) {
+  public V1RoleRefBuilder(V1RoleRefFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -83,7 +83,7 @@ public class V1RoleRefBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

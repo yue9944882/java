@@ -12,17 +12,17 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V2ObjectMetricSourceBuilder
-    extends io.kubernetes.client.openapi.models.V2ObjectMetricSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V2ObjectMetricSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V2ObjectMetricSource,
-        io.kubernetes.client.openapi.models.V2ObjectMetricSourceBuilder> {
+    extends V2ObjectMetricSourceFluentImpl<V2ObjectMetricSourceBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V2ObjectMetricSource, V2ObjectMetricSourceBuilder> {
   public V2ObjectMetricSourceBuilder() {
     this(false);
   }
 
-  public V2ObjectMetricSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V2ObjectMetricSourceBuilder(Boolean validationEnabled) {
     this(new V2ObjectMetricSource(), validationEnabled);
   }
 
@@ -86,7 +86,7 @@ public class V2ObjectMetricSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

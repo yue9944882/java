@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ContainerStateWaitingBuilder
-    extends io.kubernetes.client.openapi.models.V1ContainerStateWaitingFluentImpl<
-        io.kubernetes.client.openapi.models.V1ContainerStateWaitingBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1ContainerStateWaitingFluentImpl<V1ContainerStateWaitingBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1ContainerStateWaiting,
         io.kubernetes.client.openapi.models.V1ContainerStateWaitingBuilder> {
   public V1ContainerStateWaitingBuilder() {
     this(false);
   }
 
-  public V1ContainerStateWaitingBuilder(java.lang.Boolean validationEnabled) {
+  public V1ContainerStateWaitingBuilder(Boolean validationEnabled) {
     this(new V1ContainerStateWaiting(), validationEnabled);
   }
 
-  public V1ContainerStateWaitingBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerStateWaitingFluent<?> fluent) {
+  public V1ContainerStateWaitingBuilder(V1ContainerStateWaitingFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +81,7 @@ public class V1ContainerStateWaitingBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

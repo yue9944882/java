@@ -12,18 +12,19 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class AdmissionregistrationV1WebhookClientConfigBuilder
-    extends io.kubernetes.client.openapi.models
-            .AdmissionregistrationV1WebhookClientConfigFluentImpl<
-        io.kubernetes.client.openapi.models.AdmissionregistrationV1WebhookClientConfigBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends AdmissionregistrationV1WebhookClientConfigFluentImpl<
+        AdmissionregistrationV1WebhookClientConfigBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.AdmissionregistrationV1WebhookClientConfig,
-        io.kubernetes.client.openapi.models.AdmissionregistrationV1WebhookClientConfigBuilder> {
+        AdmissionregistrationV1WebhookClientConfigBuilder> {
   public AdmissionregistrationV1WebhookClientConfigBuilder() {
     this(false);
   }
 
-  public AdmissionregistrationV1WebhookClientConfigBuilder(java.lang.Boolean validationEnabled) {
+  public AdmissionregistrationV1WebhookClientConfigBuilder(Boolean validationEnabled) {
     this(new AdmissionregistrationV1WebhookClientConfig(), validationEnabled);
   }
 
@@ -92,7 +93,7 @@ public class AdmissionregistrationV1WebhookClientConfigBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,22 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1RoleBindingListBuilder
-    extends io.kubernetes.client.openapi.models.V1RoleBindingListFluentImpl<
-        io.kubernetes.client.openapi.models.V1RoleBindingListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1RoleBindingList,
-        io.kubernetes.client.openapi.models.V1RoleBindingListBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1RoleBindingListBuilder extends V1RoleBindingListFluentImpl<V1RoleBindingListBuilder>
+    implements VisitableBuilder<
+        V1RoleBindingList, io.kubernetes.client.openapi.models.V1RoleBindingListBuilder> {
   public V1RoleBindingListBuilder() {
     this(false);
   }
 
-  public V1RoleBindingListBuilder(java.lang.Boolean validationEnabled) {
+  public V1RoleBindingListBuilder(Boolean validationEnabled) {
     this(new V1RoleBindingList(), validationEnabled);
   }
 
-  public V1RoleBindingListBuilder(
-      io.kubernetes.client.openapi.models.V1RoleBindingListFluent<?> fluent) {
+  public V1RoleBindingListBuilder(V1RoleBindingListFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -90,7 +88,7 @@ public class V1RoleBindingListBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

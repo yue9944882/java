@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V2beta2MetricStatusBuilder
-    extends io.kubernetes.client.openapi.models.V2beta2MetricStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V2beta2MetricStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V2beta2MetricStatusFluentImpl<V2beta2MetricStatusBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V2beta2MetricStatus,
         io.kubernetes.client.openapi.models.V2beta2MetricStatusBuilder> {
   public V2beta2MetricStatusBuilder() {
     this(false);
   }
 
-  public V2beta2MetricStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V2beta2MetricStatusBuilder(Boolean validationEnabled) {
     this(new V2beta2MetricStatus(), validationEnabled);
   }
 
-  public V2beta2MetricStatusBuilder(
-      io.kubernetes.client.openapi.models.V2beta2MetricStatusFluent<?> fluent) {
+  public V2beta2MetricStatusBuilder(V2beta2MetricStatusFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -101,7 +101,7 @@ public class V2beta2MetricStatusBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

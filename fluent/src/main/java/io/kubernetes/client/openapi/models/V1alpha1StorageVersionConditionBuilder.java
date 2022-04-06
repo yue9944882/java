@@ -12,17 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1alpha1StorageVersionConditionBuilder
-    extends io.kubernetes.client.openapi.models.V1alpha1StorageVersionConditionFluentImpl<
-        io.kubernetes.client.openapi.models.V1alpha1StorageVersionConditionBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1alpha1StorageVersionConditionFluentImpl<V1alpha1StorageVersionConditionBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1alpha1StorageVersionCondition,
-        io.kubernetes.client.openapi.models.V1alpha1StorageVersionConditionBuilder> {
+        V1alpha1StorageVersionConditionBuilder> {
   public V1alpha1StorageVersionConditionBuilder() {
     this(false);
   }
 
-  public V1alpha1StorageVersionConditionBuilder(java.lang.Boolean validationEnabled) {
+  public V1alpha1StorageVersionConditionBuilder(Boolean validationEnabled) {
     this(new V1alpha1StorageVersionCondition(), validationEnabled);
   }
 
@@ -101,7 +102,7 @@ public class V1alpha1StorageVersionConditionBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

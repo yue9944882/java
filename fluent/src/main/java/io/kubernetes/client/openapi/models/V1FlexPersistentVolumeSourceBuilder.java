@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1FlexPersistentVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1FlexPersistentVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1FlexPersistentVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1FlexPersistentVolumeSourceFluentImpl<V1FlexPersistentVolumeSourceBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1FlexPersistentVolumeSource,
-        io.kubernetes.client.openapi.models.V1FlexPersistentVolumeSourceBuilder> {
+        V1FlexPersistentVolumeSourceBuilder> {
   public V1FlexPersistentVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1FlexPersistentVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1FlexPersistentVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1FlexPersistentVolumeSource(), validationEnabled);
   }
 
-  public V1FlexPersistentVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1FlexPersistentVolumeSourceFluent<?> fluent) {
+  public V1FlexPersistentVolumeSourceBuilder(V1FlexPersistentVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -96,7 +96,7 @@ public class V1FlexPersistentVolumeSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,12 +12,12 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1StatefulSetPersistentVolumeClaimRetentionPolicyBuilder
-    extends io.kubernetes.client.openapi.models
-            .V1StatefulSetPersistentVolumeClaimRetentionPolicyFluentImpl<
-        io.kubernetes.client.openapi.models
-            .V1StatefulSetPersistentVolumeClaimRetentionPolicyBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1StatefulSetPersistentVolumeClaimRetentionPolicyFluentImpl<
+        V1StatefulSetPersistentVolumeClaimRetentionPolicyBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1StatefulSetPersistentVolumeClaimRetentionPolicy,
         io.kubernetes.client.openapi.models
             .V1StatefulSetPersistentVolumeClaimRetentionPolicyBuilder> {
@@ -25,14 +25,12 @@ public class V1StatefulSetPersistentVolumeClaimRetentionPolicyBuilder
     this(false);
   }
 
-  public V1StatefulSetPersistentVolumeClaimRetentionPolicyBuilder(
-      java.lang.Boolean validationEnabled) {
+  public V1StatefulSetPersistentVolumeClaimRetentionPolicyBuilder(Boolean validationEnabled) {
     this(new V1StatefulSetPersistentVolumeClaimRetentionPolicy(), validationEnabled);
   }
 
   public V1StatefulSetPersistentVolumeClaimRetentionPolicyBuilder(
-      io.kubernetes.client.openapi.models.V1StatefulSetPersistentVolumeClaimRetentionPolicyFluent<?>
-          fluent) {
+      V1StatefulSetPersistentVolumeClaimRetentionPolicyFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -96,7 +94,7 @@ public class V1StatefulSetPersistentVolumeClaimRetentionPolicyBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

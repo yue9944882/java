@@ -12,17 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1EndpointSliceListBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1EndpointSliceListFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1EndpointSliceListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1beta1EndpointSliceList,
+    extends V1beta1EndpointSliceListFluentImpl<V1beta1EndpointSliceListBuilder>
+    implements VisitableBuilder<
+        V1beta1EndpointSliceList,
         io.kubernetes.client.openapi.models.V1beta1EndpointSliceListBuilder> {
   public V1beta1EndpointSliceListBuilder() {
     this(false);
   }
 
-  public V1beta1EndpointSliceListBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1EndpointSliceListBuilder(Boolean validationEnabled) {
     this(new V1beta1EndpointSliceList(), validationEnabled);
   }
 
@@ -91,7 +92,7 @@ public class V1beta1EndpointSliceListBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

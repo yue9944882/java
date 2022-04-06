@@ -12,23 +12,27 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
-public interface V1ContainerFluent<
-        A extends io.kubernetes.client.openapi.models.V1ContainerFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public A addToArgs(java.lang.Integer index, java.lang.String item);
+public interface V1ContainerFluent<A extends V1ContainerFluent<A>> extends Fluent<A> {
+  public A addToArgs(Integer index, String item);
 
   public A setToArgs(java.lang.Integer index, java.lang.String item);
 
   public A addToArgs(java.lang.String... items);
 
-  public A addAllToArgs(java.util.Collection<java.lang.String> items);
+  public A addAllToArgs(Collection<java.lang.String> items);
 
   public A removeFromArgs(java.lang.String... items);
 
   public A removeAllFromArgs(java.util.Collection<java.lang.String> items);
 
-  public java.util.List<java.lang.String> getArgs();
+  public List<java.lang.String> getArgs();
 
   public java.lang.String getArg(java.lang.Integer index);
 
@@ -36,17 +40,15 @@ public interface V1ContainerFluent<
 
   public java.lang.String getLastArg();
 
-  public java.lang.String getMatchingArg(java.util.function.Predicate<java.lang.String> predicate);
+  public java.lang.String getMatchingArg(Predicate<java.lang.String> predicate);
 
-  public java.lang.Boolean hasMatchingArg(java.util.function.Predicate<java.lang.String> predicate);
+  public Boolean hasMatchingArg(java.util.function.Predicate<java.lang.String> predicate);
 
   public A withArgs(java.util.List<java.lang.String> args);
 
   public A withArgs(java.lang.String... args);
 
   public java.lang.Boolean hasArgs();
-
-  public A addNewArg(java.lang.String original);
 
   public A addToCommand(java.lang.Integer index, java.lang.String item);
 
@@ -80,9 +82,7 @@ public interface V1ContainerFluent<
 
   public java.lang.Boolean hasCommand();
 
-  public A addNewCommand(java.lang.String original);
-
-  public A addToEnv(java.lang.Integer index, io.kubernetes.client.openapi.models.V1EnvVar item);
+  public A addToEnv(java.lang.Integer index, V1EnvVar item);
 
   public A setToEnv(java.lang.Integer index, io.kubernetes.client.openapi.models.V1EnvVar item);
 
@@ -95,15 +95,14 @@ public interface V1ContainerFluent<
   public A removeAllFromEnv(
       java.util.Collection<io.kubernetes.client.openapi.models.V1EnvVar> items);
 
-  public A removeMatchingFromEnv(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1EnvVarBuilder> predicate);
+  public A removeMatchingFromEnv(java.util.function.Predicate<V1EnvVarBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildEnv instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
+  @Deprecated
   public java.util.List<io.kubernetes.client.openapi.models.V1EnvVar> getEnv();
 
   public java.util.List<io.kubernetes.client.openapi.models.V1EnvVar> buildEnv();
@@ -126,7 +125,7 @@ public interface V1ContainerFluent<
 
   public java.lang.Boolean hasEnv();
 
-  public io.kubernetes.client.openapi.models.V1ContainerFluent.EnvNested<A> addNewEnv();
+  public V1ContainerFluent.EnvNested<A> addNewEnv();
 
   public io.kubernetes.client.openapi.models.V1ContainerFluent.EnvNested<A> addNewEnvLike(
       io.kubernetes.client.openapi.models.V1EnvVar item);
@@ -144,8 +143,7 @@ public interface V1ContainerFluent<
   public io.kubernetes.client.openapi.models.V1ContainerFluent.EnvNested<A> editMatchingEnv(
       java.util.function.Predicate<io.kubernetes.client.openapi.models.V1EnvVarBuilder> predicate);
 
-  public A addToEnvFrom(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1EnvFromSource item);
+  public A addToEnvFrom(java.lang.Integer index, V1EnvFromSource item);
 
   public A setToEnvFrom(
       java.lang.Integer index, io.kubernetes.client.openapi.models.V1EnvFromSource item);
@@ -161,8 +159,7 @@ public interface V1ContainerFluent<
       java.util.Collection<io.kubernetes.client.openapi.models.V1EnvFromSource> items);
 
   public A removeMatchingFromEnvFrom(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1EnvFromSourceBuilder>
-          predicate);
+      java.util.function.Predicate<V1EnvFromSourceBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildEnvFrom instead.
@@ -194,7 +191,7 @@ public interface V1ContainerFluent<
 
   public java.lang.Boolean hasEnvFrom();
 
-  public io.kubernetes.client.openapi.models.V1ContainerFluent.EnvFromNested<A> addNewEnvFrom();
+  public V1ContainerFluent.EnvFromNested<A> addNewEnvFrom();
 
   public io.kubernetes.client.openapi.models.V1ContainerFluent.EnvFromNested<A> addNewEnvFromLike(
       io.kubernetes.client.openapi.models.V1EnvFromSource item);
@@ -219,11 +216,7 @@ public interface V1ContainerFluent<
 
   public java.lang.Boolean hasImage();
 
-  /** Method is deprecated. use withImage instead. */
-  @java.lang.Deprecated
-  public A withNewImage(java.lang.String original);
-
-  public io.kubernetes.client.openapi.models.V1Container.ImagePullPolicyEnum getImagePullPolicy();
+  public V1Container.ImagePullPolicyEnum getImagePullPolicy();
 
   public A withImagePullPolicy(
       io.kubernetes.client.openapi.models.V1Container.ImagePullPolicyEnum imagePullPolicy);
@@ -236,7 +229,7 @@ public interface V1ContainerFluent<
    * @return The buildable object.
    */
   @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1Lifecycle getLifecycle();
+  public V1Lifecycle getLifecycle();
 
   public io.kubernetes.client.openapi.models.V1Lifecycle buildLifecycle();
 
@@ -244,8 +237,7 @@ public interface V1ContainerFluent<
 
   public java.lang.Boolean hasLifecycle();
 
-  public io.kubernetes.client.openapi.models.V1ContainerFluent.LifecycleNested<A>
-      withNewLifecycle();
+  public V1ContainerFluent.LifecycleNested<A> withNewLifecycle();
 
   public io.kubernetes.client.openapi.models.V1ContainerFluent.LifecycleNested<A>
       withNewLifecycleLike(io.kubernetes.client.openapi.models.V1Lifecycle item);
@@ -264,7 +256,7 @@ public interface V1ContainerFluent<
    * @return The buildable object.
    */
   @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1Probe getLivenessProbe();
+  public V1Probe getLivenessProbe();
 
   public io.kubernetes.client.openapi.models.V1Probe buildLivenessProbe();
 
@@ -272,8 +264,7 @@ public interface V1ContainerFluent<
 
   public java.lang.Boolean hasLivenessProbe();
 
-  public io.kubernetes.client.openapi.models.V1ContainerFluent.LivenessProbeNested<A>
-      withNewLivenessProbe();
+  public V1ContainerFluent.LivenessProbeNested<A> withNewLivenessProbe();
 
   public io.kubernetes.client.openapi.models.V1ContainerFluent.LivenessProbeNested<A>
       withNewLivenessProbeLike(io.kubernetes.client.openapi.models.V1Probe item);
@@ -293,12 +284,7 @@ public interface V1ContainerFluent<
 
   public java.lang.Boolean hasName();
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original);
-
-  public A addToPorts(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1ContainerPort item);
+  public A addToPorts(java.lang.Integer index, V1ContainerPort item);
 
   public A setToPorts(
       java.lang.Integer index, io.kubernetes.client.openapi.models.V1ContainerPort item);
@@ -313,9 +299,7 @@ public interface V1ContainerFluent<
   public A removeAllFromPorts(
       java.util.Collection<io.kubernetes.client.openapi.models.V1ContainerPort> items);
 
-  public A removeMatchingFromPorts(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ContainerPortBuilder>
-          predicate);
+  public A removeMatchingFromPorts(java.util.function.Predicate<V1ContainerPortBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildPorts instead.
@@ -347,7 +331,7 @@ public interface V1ContainerFluent<
 
   public java.lang.Boolean hasPorts();
 
-  public io.kubernetes.client.openapi.models.V1ContainerFluent.PortsNested<A> addNewPort();
+  public V1ContainerFluent.PortsNested<A> addNewPort();
 
   public io.kubernetes.client.openapi.models.V1ContainerFluent.PortsNested<A> addNewPortLike(
       io.kubernetes.client.openapi.models.V1ContainerPort item);
@@ -380,8 +364,7 @@ public interface V1ContainerFluent<
 
   public java.lang.Boolean hasReadinessProbe();
 
-  public io.kubernetes.client.openapi.models.V1ContainerFluent.ReadinessProbeNested<A>
-      withNewReadinessProbe();
+  public V1ContainerFluent.ReadinessProbeNested<A> withNewReadinessProbe();
 
   public io.kubernetes.client.openapi.models.V1ContainerFluent.ReadinessProbeNested<A>
       withNewReadinessProbeLike(io.kubernetes.client.openapi.models.V1Probe item);
@@ -401,7 +384,7 @@ public interface V1ContainerFluent<
    * @return The buildable object.
    */
   @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ResourceRequirements getResources();
+  public V1ResourceRequirements getResources();
 
   public io.kubernetes.client.openapi.models.V1ResourceRequirements buildResources();
 
@@ -409,8 +392,7 @@ public interface V1ContainerFluent<
 
   public java.lang.Boolean hasResources();
 
-  public io.kubernetes.client.openapi.models.V1ContainerFluent.ResourcesNested<A>
-      withNewResources();
+  public V1ContainerFluent.ResourcesNested<A> withNewResources();
 
   public io.kubernetes.client.openapi.models.V1ContainerFluent.ResourcesNested<A>
       withNewResourcesLike(io.kubernetes.client.openapi.models.V1ResourceRequirements item);
@@ -429,7 +411,7 @@ public interface V1ContainerFluent<
    * @return The buildable object.
    */
   @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1SecurityContext getSecurityContext();
+  public V1SecurityContext getSecurityContext();
 
   public io.kubernetes.client.openapi.models.V1SecurityContext buildSecurityContext();
 
@@ -438,8 +420,7 @@ public interface V1ContainerFluent<
 
   public java.lang.Boolean hasSecurityContext();
 
-  public io.kubernetes.client.openapi.models.V1ContainerFluent.SecurityContextNested<A>
-      withNewSecurityContext();
+  public V1ContainerFluent.SecurityContextNested<A> withNewSecurityContext();
 
   public io.kubernetes.client.openapi.models.V1ContainerFluent.SecurityContextNested<A>
       withNewSecurityContextLike(io.kubernetes.client.openapi.models.V1SecurityContext item);
@@ -467,8 +448,7 @@ public interface V1ContainerFluent<
 
   public java.lang.Boolean hasStartupProbe();
 
-  public io.kubernetes.client.openapi.models.V1ContainerFluent.StartupProbeNested<A>
-      withNewStartupProbe();
+  public V1ContainerFluent.StartupProbeNested<A> withNewStartupProbe();
 
   public io.kubernetes.client.openapi.models.V1ContainerFluent.StartupProbeNested<A>
       withNewStartupProbeLike(io.kubernetes.client.openapi.models.V1Probe item);
@@ -500,12 +480,7 @@ public interface V1ContainerFluent<
 
   public java.lang.Boolean hasTerminationMessagePath();
 
-  /** Method is deprecated. use withTerminationMessagePath instead. */
-  @java.lang.Deprecated
-  public A withNewTerminationMessagePath(java.lang.String original);
-
-  public io.kubernetes.client.openapi.models.V1Container.TerminationMessagePolicyEnum
-      getTerminationMessagePolicy();
+  public V1Container.TerminationMessagePolicyEnum getTerminationMessagePolicy();
 
   public A withTerminationMessagePolicy(
       io.kubernetes.client.openapi.models.V1Container.TerminationMessagePolicyEnum
@@ -519,8 +494,7 @@ public interface V1ContainerFluent<
 
   public java.lang.Boolean hasTty();
 
-  public A addToVolumeDevices(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1VolumeDevice item);
+  public A addToVolumeDevices(java.lang.Integer index, V1VolumeDevice item);
 
   public A setToVolumeDevices(
       java.lang.Integer index, io.kubernetes.client.openapi.models.V1VolumeDevice item);
@@ -536,8 +510,7 @@ public interface V1ContainerFluent<
       java.util.Collection<io.kubernetes.client.openapi.models.V1VolumeDevice> items);
 
   public A removeMatchingFromVolumeDevices(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1VolumeDeviceBuilder>
-          predicate);
+      java.util.function.Predicate<V1VolumeDeviceBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildVolumeDevices instead.
@@ -571,8 +544,7 @@ public interface V1ContainerFluent<
 
   public java.lang.Boolean hasVolumeDevices();
 
-  public io.kubernetes.client.openapi.models.V1ContainerFluent.VolumeDevicesNested<A>
-      addNewVolumeDevice();
+  public V1ContainerFluent.VolumeDevicesNested<A> addNewVolumeDevice();
 
   public io.kubernetes.client.openapi.models.V1ContainerFluent.VolumeDevicesNested<A>
       addNewVolumeDeviceLike(io.kubernetes.client.openapi.models.V1VolumeDevice item);
@@ -595,8 +567,7 @@ public interface V1ContainerFluent<
           java.util.function.Predicate<io.kubernetes.client.openapi.models.V1VolumeDeviceBuilder>
               predicate);
 
-  public A addToVolumeMounts(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1VolumeMount item);
+  public A addToVolumeMounts(java.lang.Integer index, V1VolumeMount item);
 
   public A setToVolumeMounts(
       java.lang.Integer index, io.kubernetes.client.openapi.models.V1VolumeMount item);
@@ -612,8 +583,7 @@ public interface V1ContainerFluent<
       java.util.Collection<io.kubernetes.client.openapi.models.V1VolumeMount> items);
 
   public A removeMatchingFromVolumeMounts(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1VolumeMountBuilder>
-          predicate);
+      java.util.function.Predicate<V1VolumeMountBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildVolumeMounts instead.
@@ -647,8 +617,7 @@ public interface V1ContainerFluent<
 
   public java.lang.Boolean hasVolumeMounts();
 
-  public io.kubernetes.client.openapi.models.V1ContainerFluent.VolumeMountsNested<A>
-      addNewVolumeMount();
+  public V1ContainerFluent.VolumeMountsNested<A> addNewVolumeMount();
 
   public io.kubernetes.client.openapi.models.V1ContainerFluent.VolumeMountsNested<A>
       addNewVolumeMountLike(io.kubernetes.client.openapi.models.V1VolumeMount item);
@@ -677,14 +646,13 @@ public interface V1ContainerFluent<
 
   public java.lang.Boolean hasWorkingDir();
 
-  /** Method is deprecated. use withWorkingDir instead. */
-  @java.lang.Deprecated
-  public A withNewWorkingDir(java.lang.String original);
+  public A withStdin();
 
-  public interface EnvNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1EnvVarFluent<
-              io.kubernetes.client.openapi.models.V1ContainerFluent.EnvNested<N>> {
+  public A withStdinOnce();
+
+  public A withTty();
+
+  public interface EnvNested<N> extends Nested<N>, V1EnvVarFluent<V1ContainerFluent.EnvNested<N>> {
     public N and();
 
     public N endEnv();
@@ -692,8 +660,7 @@ public interface V1ContainerFluent<
 
   public interface EnvFromNested<N>
       extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1EnvFromSourceFluent<
-              io.kubernetes.client.openapi.models.V1ContainerFluent.EnvFromNested<N>> {
+          V1EnvFromSourceFluent<V1ContainerFluent.EnvFromNested<N>> {
     public N and();
 
     public N endEnvFrom();
@@ -701,8 +668,7 @@ public interface V1ContainerFluent<
 
   public interface LifecycleNested<N>
       extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1LifecycleFluent<
-              io.kubernetes.client.openapi.models.V1ContainerFluent.LifecycleNested<N>> {
+          V1LifecycleFluent<V1ContainerFluent.LifecycleNested<N>> {
     public N and();
 
     public N endLifecycle();
@@ -710,8 +676,7 @@ public interface V1ContainerFluent<
 
   public interface LivenessProbeNested<N>
       extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ProbeFluent<
-              io.kubernetes.client.openapi.models.V1ContainerFluent.LivenessProbeNested<N>> {
+          V1ProbeFluent<V1ContainerFluent.LivenessProbeNested<N>> {
     public N and();
 
     public N endLivenessProbe();
@@ -719,8 +684,7 @@ public interface V1ContainerFluent<
 
   public interface PortsNested<N>
       extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ContainerPortFluent<
-              io.kubernetes.client.openapi.models.V1ContainerFluent.PortsNested<N>> {
+          V1ContainerPortFluent<V1ContainerFluent.PortsNested<N>> {
     public N and();
 
     public N endPort();
@@ -728,8 +692,7 @@ public interface V1ContainerFluent<
 
   public interface ReadinessProbeNested<N>
       extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ProbeFluent<
-              io.kubernetes.client.openapi.models.V1ContainerFluent.ReadinessProbeNested<N>> {
+          V1ProbeFluent<V1ContainerFluent.ReadinessProbeNested<N>> {
     public N and();
 
     public N endReadinessProbe();
@@ -737,8 +700,7 @@ public interface V1ContainerFluent<
 
   public interface ResourcesNested<N>
       extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ResourceRequirementsFluent<
-              io.kubernetes.client.openapi.models.V1ContainerFluent.ResourcesNested<N>> {
+          V1ResourceRequirementsFluent<V1ContainerFluent.ResourcesNested<N>> {
     public N and();
 
     public N endResources();
@@ -746,8 +708,7 @@ public interface V1ContainerFluent<
 
   public interface SecurityContextNested<N>
       extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1SecurityContextFluent<
-              io.kubernetes.client.openapi.models.V1ContainerFluent.SecurityContextNested<N>> {
+          V1SecurityContextFluent<V1ContainerFluent.SecurityContextNested<N>> {
     public N and();
 
     public N endSecurityContext();
@@ -755,8 +716,7 @@ public interface V1ContainerFluent<
 
   public interface StartupProbeNested<N>
       extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ProbeFluent<
-              io.kubernetes.client.openapi.models.V1ContainerFluent.StartupProbeNested<N>> {
+          V1ProbeFluent<V1ContainerFluent.StartupProbeNested<N>> {
     public N and();
 
     public N endStartupProbe();
@@ -764,8 +724,7 @@ public interface V1ContainerFluent<
 
   public interface VolumeDevicesNested<N>
       extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1VolumeDeviceFluent<
-              io.kubernetes.client.openapi.models.V1ContainerFluent.VolumeDevicesNested<N>> {
+          V1VolumeDeviceFluent<V1ContainerFluent.VolumeDevicesNested<N>> {
     public N and();
 
     public N endVolumeDevice();
@@ -773,8 +732,7 @@ public interface V1ContainerFluent<
 
   public interface VolumeMountsNested<N>
       extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1VolumeMountFluent<
-              io.kubernetes.client.openapi.models.V1ContainerFluent.VolumeMountsNested<N>> {
+          V1VolumeMountFluent<V1ContainerFluent.VolumeMountsNested<N>> {
     public N and();
 
     public N endVolumeMount();

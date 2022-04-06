@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1HTTPGetActionBuilder
-    extends io.kubernetes.client.openapi.models.V1HTTPGetActionFluentImpl<
-        io.kubernetes.client.openapi.models.V1HTTPGetActionBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1HTTPGetAction,
-        io.kubernetes.client.openapi.models.V1HTTPGetActionBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1HTTPGetActionBuilder extends V1HTTPGetActionFluentImpl<V1HTTPGetActionBuilder>
+    implements VisitableBuilder<
+        V1HTTPGetAction, io.kubernetes.client.openapi.models.V1HTTPGetActionBuilder> {
   public V1HTTPGetActionBuilder() {
     this(false);
   }
 
-  public V1HTTPGetActionBuilder(java.lang.Boolean validationEnabled) {
+  public V1HTTPGetActionBuilder(Boolean validationEnabled) {
     this(new V1HTTPGetAction(), validationEnabled);
   }
 
@@ -95,7 +94,7 @@ public class V1HTTPGetActionBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

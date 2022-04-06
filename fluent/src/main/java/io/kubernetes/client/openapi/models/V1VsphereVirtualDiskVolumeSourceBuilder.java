@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1VsphereVirtualDiskVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1VsphereVirtualDiskVolumeSourceFluentImpl<V1VsphereVirtualDiskVolumeSourceBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSource,
         io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSourceBuilder> {
   public V1VsphereVirtualDiskVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1VsphereVirtualDiskVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1VsphereVirtualDiskVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1VsphereVirtualDiskVolumeSource(), validationEnabled);
   }
 
-  public V1VsphereVirtualDiskVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSourceFluent<?> fluent) {
+  public V1VsphereVirtualDiskVolumeSourceBuilder(V1VsphereVirtualDiskVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -91,7 +91,7 @@ public class V1VsphereVirtualDiskVolumeSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

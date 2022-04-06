@@ -12,17 +12,19 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1CertificateSigningRequestConditionBuilder
-    extends io.kubernetes.client.openapi.models.V1CertificateSigningRequestConditionFluentImpl<
-        io.kubernetes.client.openapi.models.V1CertificateSigningRequestConditionBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1CertificateSigningRequestCondition,
+    extends V1CertificateSigningRequestConditionFluentImpl<
+        V1CertificateSigningRequestConditionBuilder>
+    implements VisitableBuilder<
+        V1CertificateSigningRequestCondition,
         io.kubernetes.client.openapi.models.V1CertificateSigningRequestConditionBuilder> {
   public V1CertificateSigningRequestConditionBuilder() {
     this(false);
   }
 
-  public V1CertificateSigningRequestConditionBuilder(java.lang.Boolean validationEnabled) {
+  public V1CertificateSigningRequestConditionBuilder(Boolean validationEnabled) {
     this(new V1CertificateSigningRequestCondition(), validationEnabled);
   }
 
@@ -101,7 +103,7 @@ public class V1CertificateSigningRequestConditionBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

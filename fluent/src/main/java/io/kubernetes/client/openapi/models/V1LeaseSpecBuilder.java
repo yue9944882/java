@@ -12,21 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1LeaseSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1LeaseSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1LeaseSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1LeaseSpecBuilder extends V1LeaseSpecFluentImpl<V1LeaseSpecBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1LeaseSpec,
         io.kubernetes.client.openapi.models.V1LeaseSpecBuilder> {
   public V1LeaseSpecBuilder() {
     this(false);
   }
 
-  public V1LeaseSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1LeaseSpecBuilder(Boolean validationEnabled) {
     this(new V1LeaseSpec(), validationEnabled);
   }
 
-  public V1LeaseSpecBuilder(io.kubernetes.client.openapi.models.V1LeaseSpecFluent<?> fluent) {
+  public V1LeaseSpecBuilder(V1LeaseSpecFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -94,7 +94,7 @@ public class V1LeaseSpecBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

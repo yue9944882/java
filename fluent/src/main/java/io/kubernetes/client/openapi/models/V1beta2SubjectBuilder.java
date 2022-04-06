@@ -12,21 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1beta2SubjectBuilder
-    extends io.kubernetes.client.openapi.models.V1beta2SubjectFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta2SubjectBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1beta2SubjectBuilder extends V1beta2SubjectFluentImpl<V1beta2SubjectBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1beta2Subject,
         io.kubernetes.client.openapi.models.V1beta2SubjectBuilder> {
   public V1beta2SubjectBuilder() {
     this(false);
   }
 
-  public V1beta2SubjectBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta2SubjectBuilder(Boolean validationEnabled) {
     this(new V1beta2Subject(), validationEnabled);
   }
 
-  public V1beta2SubjectBuilder(io.kubernetes.client.openapi.models.V1beta2SubjectFluent<?> fluent) {
+  public V1beta2SubjectBuilder(V1beta2SubjectFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -89,7 +89,7 @@ public class V1beta2SubjectBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

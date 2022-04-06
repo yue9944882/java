@@ -12,22 +12,23 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1TopologySelectorLabelRequirementBuilder
-    extends io.kubernetes.client.openapi.models.V1TopologySelectorLabelRequirementFluentImpl<
-        io.kubernetes.client.openapi.models.V1TopologySelectorLabelRequirementBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1TopologySelectorLabelRequirementFluentImpl<V1TopologySelectorLabelRequirementBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1TopologySelectorLabelRequirement,
         io.kubernetes.client.openapi.models.V1TopologySelectorLabelRequirementBuilder> {
   public V1TopologySelectorLabelRequirementBuilder() {
     this(false);
   }
 
-  public V1TopologySelectorLabelRequirementBuilder(java.lang.Boolean validationEnabled) {
+  public V1TopologySelectorLabelRequirementBuilder(Boolean validationEnabled) {
     this(new V1TopologySelectorLabelRequirement(), validationEnabled);
   }
 
   public V1TopologySelectorLabelRequirementBuilder(
-      io.kubernetes.client.openapi.models.V1TopologySelectorLabelRequirementFluent<?> fluent) {
+      V1TopologySelectorLabelRequirementFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +82,7 @@ public class V1TopologySelectorLabelRequirementBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

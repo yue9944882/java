@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1PodDNSConfigBuilder
-    extends io.kubernetes.client.openapi.models.V1PodDNSConfigFluentImpl<
-        io.kubernetes.client.openapi.models.V1PodDNSConfigBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1PodDNSConfig,
-        io.kubernetes.client.openapi.models.V1PodDNSConfigBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1PodDNSConfigBuilder extends V1PodDNSConfigFluentImpl<V1PodDNSConfigBuilder>
+    implements VisitableBuilder<
+        V1PodDNSConfig, io.kubernetes.client.openapi.models.V1PodDNSConfigBuilder> {
   public V1PodDNSConfigBuilder() {
     this(false);
   }
 
-  public V1PodDNSConfigBuilder(java.lang.Boolean validationEnabled) {
+  public V1PodDNSConfigBuilder(Boolean validationEnabled) {
     this(new V1PodDNSConfig(), validationEnabled);
   }
 
@@ -84,7 +83,7 @@ public class V1PodDNSConfigBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,22 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1beta1SchedulingBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1SchedulingFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1SchedulingBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1beta1Scheduling,
-        io.kubernetes.client.openapi.models.V1beta1SchedulingBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1beta1SchedulingBuilder extends V1beta1SchedulingFluentImpl<V1beta1SchedulingBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1beta1Scheduling, V1beta1SchedulingBuilder> {
   public V1beta1SchedulingBuilder() {
     this(false);
   }
 
-  public V1beta1SchedulingBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1SchedulingBuilder(Boolean validationEnabled) {
     this(new V1beta1Scheduling(), validationEnabled);
   }
 
-  public V1beta1SchedulingBuilder(
-      io.kubernetes.client.openapi.models.V1beta1SchedulingFluent<?> fluent) {
+  public V1beta1SchedulingBuilder(V1beta1SchedulingFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -80,7 +78,7 @@ public class V1beta1SchedulingBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

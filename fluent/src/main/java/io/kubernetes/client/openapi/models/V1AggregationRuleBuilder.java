@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1AggregationRuleBuilder
-    extends io.kubernetes.client.openapi.models.V1AggregationRuleFluentImpl<
-        io.kubernetes.client.openapi.models.V1AggregationRuleBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1AggregationRule,
-        io.kubernetes.client.openapi.models.V1AggregationRuleBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1AggregationRuleBuilder extends V1AggregationRuleFluentImpl<V1AggregationRuleBuilder>
+    implements VisitableBuilder<
+        V1AggregationRule, io.kubernetes.client.openapi.models.V1AggregationRuleBuilder> {
   public V1AggregationRuleBuilder() {
     this(false);
   }
 
-  public V1AggregationRuleBuilder(java.lang.Boolean validationEnabled) {
+  public V1AggregationRuleBuilder(Boolean validationEnabled) {
     this(new V1AggregationRule(), validationEnabled);
   }
 
@@ -75,7 +74,7 @@ public class V1AggregationRuleBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

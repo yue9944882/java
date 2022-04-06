@@ -12,17 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V2beta1HorizontalPodAutoscalerSpecBuilder
-    extends io.kubernetes.client.openapi.models.V2beta1HorizontalPodAutoscalerSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V2beta1HorizontalPodAutoscalerSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V2beta1HorizontalPodAutoscalerSpec,
+    extends V2beta1HorizontalPodAutoscalerSpecFluentImpl<V2beta1HorizontalPodAutoscalerSpecBuilder>
+    implements VisitableBuilder<
+        V2beta1HorizontalPodAutoscalerSpec,
         io.kubernetes.client.openapi.models.V2beta1HorizontalPodAutoscalerSpecBuilder> {
   public V2beta1HorizontalPodAutoscalerSpecBuilder() {
     this(false);
   }
 
-  public V2beta1HorizontalPodAutoscalerSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V2beta1HorizontalPodAutoscalerSpecBuilder(Boolean validationEnabled) {
     this(new V2beta1HorizontalPodAutoscalerSpec(), validationEnabled);
   }
 
@@ -91,7 +92,7 @@ public class V2beta1HorizontalPodAutoscalerSpecBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

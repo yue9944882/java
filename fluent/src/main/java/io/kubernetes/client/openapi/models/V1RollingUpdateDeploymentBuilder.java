@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1RollingUpdateDeploymentBuilder
-    extends io.kubernetes.client.openapi.models.V1RollingUpdateDeploymentFluentImpl<
-        io.kubernetes.client.openapi.models.V1RollingUpdateDeploymentBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1RollingUpdateDeploymentFluentImpl<V1RollingUpdateDeploymentBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1RollingUpdateDeployment,
         io.kubernetes.client.openapi.models.V1RollingUpdateDeploymentBuilder> {
   public V1RollingUpdateDeploymentBuilder() {
     this(false);
   }
 
-  public V1RollingUpdateDeploymentBuilder(java.lang.Boolean validationEnabled) {
+  public V1RollingUpdateDeploymentBuilder(Boolean validationEnabled) {
     this(new V1RollingUpdateDeployment(), validationEnabled);
   }
 
-  public V1RollingUpdateDeploymentBuilder(
-      io.kubernetes.client.openapi.models.V1RollingUpdateDeploymentFluent<?> fluent) {
+  public V1RollingUpdateDeploymentBuilder(V1RollingUpdateDeploymentFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +81,7 @@ public class V1RollingUpdateDeploymentBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

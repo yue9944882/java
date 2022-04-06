@@ -12,22 +12,23 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1StorageOSPersistentVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1StorageOSPersistentVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1StorageOSPersistentVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1StorageOSPersistentVolumeSourceFluentImpl<V1StorageOSPersistentVolumeSourceBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1StorageOSPersistentVolumeSource,
         io.kubernetes.client.openapi.models.V1StorageOSPersistentVolumeSourceBuilder> {
   public V1StorageOSPersistentVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1StorageOSPersistentVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1StorageOSPersistentVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1StorageOSPersistentVolumeSource(), validationEnabled);
   }
 
   public V1StorageOSPersistentVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1StorageOSPersistentVolumeSourceFluent<?> fluent) {
+      V1StorageOSPersistentVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -96,7 +97,7 @@ public class V1StorageOSPersistentVolumeSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

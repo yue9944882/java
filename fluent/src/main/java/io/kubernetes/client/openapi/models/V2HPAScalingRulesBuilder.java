@@ -12,22 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V2HPAScalingRulesBuilder
-    extends io.kubernetes.client.openapi.models.V2HPAScalingRulesFluentImpl<
-        io.kubernetes.client.openapi.models.V2HPAScalingRulesBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V2HPAScalingRules,
-        io.kubernetes.client.openapi.models.V2HPAScalingRulesBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V2HPAScalingRulesBuilder extends V2HPAScalingRulesFluentImpl<V2HPAScalingRulesBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V2HPAScalingRules, V2HPAScalingRulesBuilder> {
   public V2HPAScalingRulesBuilder() {
     this(false);
   }
 
-  public V2HPAScalingRulesBuilder(java.lang.Boolean validationEnabled) {
+  public V2HPAScalingRulesBuilder(Boolean validationEnabled) {
     this(new V2HPAScalingRules(), validationEnabled);
   }
 
-  public V2HPAScalingRulesBuilder(
-      io.kubernetes.client.openapi.models.V2HPAScalingRulesFluent<?> fluent) {
+  public V2HPAScalingRulesBuilder(V2HPAScalingRulesFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -85,7 +83,7 @@ public class V2HPAScalingRulesBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

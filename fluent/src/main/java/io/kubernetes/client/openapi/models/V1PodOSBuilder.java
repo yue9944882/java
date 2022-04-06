@@ -12,21 +12,19 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1PodOSBuilder
-    extends io.kubernetes.client.openapi.models.V1PodOSFluentImpl<
-        io.kubernetes.client.openapi.models.V1PodOSBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1PodOS,
-        io.kubernetes.client.openapi.models.V1PodOSBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1PodOSBuilder extends V1PodOSFluentImpl<V1PodOSBuilder>
+    implements VisitableBuilder<V1PodOS, io.kubernetes.client.openapi.models.V1PodOSBuilder> {
   public V1PodOSBuilder() {
     this(false);
   }
 
-  public V1PodOSBuilder(java.lang.Boolean validationEnabled) {
+  public V1PodOSBuilder(Boolean validationEnabled) {
     this(new V1PodOS(), validationEnabled);
   }
 
-  public V1PodOSBuilder(io.kubernetes.client.openapi.models.V1PodOSFluent<?> fluent) {
+  public V1PodOSBuilder(V1PodOSFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -73,7 +71,7 @@ public class V1PodOSBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,22 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1ResourceQuotaBuilder
-    extends io.kubernetes.client.openapi.models.V1ResourceQuotaFluentImpl<
-        io.kubernetes.client.openapi.models.V1ResourceQuotaBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ResourceQuota,
-        io.kubernetes.client.openapi.models.V1ResourceQuotaBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1ResourceQuotaBuilder extends V1ResourceQuotaFluentImpl<V1ResourceQuotaBuilder>
+    implements VisitableBuilder<
+        V1ResourceQuota, io.kubernetes.client.openapi.models.V1ResourceQuotaBuilder> {
   public V1ResourceQuotaBuilder() {
     this(false);
   }
 
-  public V1ResourceQuotaBuilder(java.lang.Boolean validationEnabled) {
+  public V1ResourceQuotaBuilder(Boolean validationEnabled) {
     this(new V1ResourceQuota(), validationEnabled);
   }
 
-  public V1ResourceQuotaBuilder(
-      io.kubernetes.client.openapi.models.V1ResourceQuotaFluent<?> fluent) {
+  public V1ResourceQuotaBuilder(V1ResourceQuotaFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -95,7 +93,7 @@ public class V1ResourceQuotaBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

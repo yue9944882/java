@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1TopologySpreadConstraintBuilder
-    extends io.kubernetes.client.openapi.models.V1TopologySpreadConstraintFluentImpl<
-        io.kubernetes.client.openapi.models.V1TopologySpreadConstraintBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1TopologySpreadConstraintFluentImpl<V1TopologySpreadConstraintBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1TopologySpreadConstraint,
         io.kubernetes.client.openapi.models.V1TopologySpreadConstraintBuilder> {
   public V1TopologySpreadConstraintBuilder() {
     this(false);
   }
 
-  public V1TopologySpreadConstraintBuilder(java.lang.Boolean validationEnabled) {
+  public V1TopologySpreadConstraintBuilder(Boolean validationEnabled) {
     this(new V1TopologySpreadConstraint(), validationEnabled);
   }
 
-  public V1TopologySpreadConstraintBuilder(
-      io.kubernetes.client.openapi.models.V1TopologySpreadConstraintFluent<?> fluent) {
+  public V1TopologySpreadConstraintBuilder(V1TopologySpreadConstraintFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -91,7 +91,7 @@ public class V1TopologySpreadConstraintBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

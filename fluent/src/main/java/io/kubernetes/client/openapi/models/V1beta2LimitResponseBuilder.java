@@ -12,17 +12,17 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta2LimitResponseBuilder
-    extends io.kubernetes.client.openapi.models.V1beta2LimitResponseFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta2LimitResponseBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1beta2LimitResponse,
-        io.kubernetes.client.openapi.models.V1beta2LimitResponseBuilder> {
+    extends V1beta2LimitResponseFluentImpl<V1beta2LimitResponseBuilder>
+    implements VisitableBuilder<
+        V1beta2LimitResponse, io.kubernetes.client.openapi.models.V1beta2LimitResponseBuilder> {
   public V1beta2LimitResponseBuilder() {
     this(false);
   }
 
-  public V1beta2LimitResponseBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta2LimitResponseBuilder(Boolean validationEnabled) {
     this(new V1beta2LimitResponse(), validationEnabled);
   }
 
@@ -81,7 +81,7 @@ public class V1beta2LimitResponseBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

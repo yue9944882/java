@@ -12,21 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1TokenReviewBuilder
-    extends io.kubernetes.client.openapi.models.V1TokenReviewFluentImpl<
-        io.kubernetes.client.openapi.models.V1TokenReviewBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1TokenReview,
-        io.kubernetes.client.openapi.models.V1TokenReviewBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1TokenReviewBuilder extends V1TokenReviewFluentImpl<V1TokenReviewBuilder>
+    implements VisitableBuilder<
+        V1TokenReview, io.kubernetes.client.openapi.models.V1TokenReviewBuilder> {
   public V1TokenReviewBuilder() {
     this(false);
   }
 
-  public V1TokenReviewBuilder(java.lang.Boolean validationEnabled) {
+  public V1TokenReviewBuilder(Boolean validationEnabled) {
     this(new V1TokenReview(), validationEnabled);
   }
 
-  public V1TokenReviewBuilder(io.kubernetes.client.openapi.models.V1TokenReviewFluent<?> fluent) {
+  public V1TokenReviewBuilder(V1TokenReviewFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -94,7 +93,7 @@ public class V1TokenReviewBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

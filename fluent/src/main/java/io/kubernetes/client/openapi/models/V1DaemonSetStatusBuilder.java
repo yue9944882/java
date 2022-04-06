@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1DaemonSetStatusBuilder
-    extends io.kubernetes.client.openapi.models.V1DaemonSetStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V1DaemonSetStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1DaemonSetStatusBuilder extends V1DaemonSetStatusFluentImpl<V1DaemonSetStatusBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1DaemonSetStatus,
         io.kubernetes.client.openapi.models.V1DaemonSetStatusBuilder> {
   public V1DaemonSetStatusBuilder() {
     this(false);
   }
 
-  public V1DaemonSetStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V1DaemonSetStatusBuilder(Boolean validationEnabled) {
     this(new V1DaemonSetStatus(), validationEnabled);
   }
 
-  public V1DaemonSetStatusBuilder(
-      io.kubernetes.client.openapi.models.V1DaemonSetStatusFluent<?> fluent) {
+  public V1DaemonSetStatusBuilder(V1DaemonSetStatusFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -120,7 +119,7 @@ public class V1DaemonSetStatusBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,17 +12,17 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1EmptyDirVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1EmptyDirVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1EmptyDirVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1EmptyDirVolumeSource,
-        io.kubernetes.client.openapi.models.V1EmptyDirVolumeSourceBuilder> {
+    extends V1EmptyDirVolumeSourceFluentImpl<V1EmptyDirVolumeSourceBuilder>
+    implements VisitableBuilder<
+        V1EmptyDirVolumeSource, io.kubernetes.client.openapi.models.V1EmptyDirVolumeSourceBuilder> {
   public V1EmptyDirVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1EmptyDirVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1EmptyDirVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1EmptyDirVolumeSource(), validationEnabled);
   }
 
@@ -81,7 +81,7 @@ public class V1EmptyDirVolumeSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

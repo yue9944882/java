@@ -12,21 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1DaemonSetBuilder
-    extends io.kubernetes.client.openapi.models.V1DaemonSetFluentImpl<
-        io.kubernetes.client.openapi.models.V1DaemonSetBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1DaemonSetBuilder extends V1DaemonSetFluentImpl<V1DaemonSetBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1DaemonSet,
         io.kubernetes.client.openapi.models.V1DaemonSetBuilder> {
   public V1DaemonSetBuilder() {
     this(false);
   }
 
-  public V1DaemonSetBuilder(java.lang.Boolean validationEnabled) {
+  public V1DaemonSetBuilder(Boolean validationEnabled) {
     this(new V1DaemonSet(), validationEnabled);
   }
 
-  public V1DaemonSetBuilder(io.kubernetes.client.openapi.models.V1DaemonSetFluent<?> fluent) {
+  public V1DaemonSetBuilder(V1DaemonSetFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -94,7 +94,7 @@ public class V1DaemonSetBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

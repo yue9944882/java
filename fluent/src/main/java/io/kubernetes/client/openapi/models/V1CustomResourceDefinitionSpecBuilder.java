@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1CustomResourceDefinitionSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpec,
+    extends V1CustomResourceDefinitionSpecFluentImpl<V1CustomResourceDefinitionSpecBuilder>
+    implements VisitableBuilder<
+        V1CustomResourceDefinitionSpec,
         io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpecBuilder> {
   public V1CustomResourceDefinitionSpecBuilder() {
     this(false);
   }
 
-  public V1CustomResourceDefinitionSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1CustomResourceDefinitionSpecBuilder(Boolean validationEnabled) {
     this(new V1CustomResourceDefinitionSpec(), validationEnabled);
   }
 
-  public V1CustomResourceDefinitionSpecBuilder(
-      io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpecFluent<?> fluent) {
+  public V1CustomResourceDefinitionSpecBuilder(V1CustomResourceDefinitionSpecFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -101,7 +101,7 @@ public class V1CustomResourceDefinitionSpecBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

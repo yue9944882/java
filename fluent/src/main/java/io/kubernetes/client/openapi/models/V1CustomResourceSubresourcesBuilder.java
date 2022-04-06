@@ -12,17 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1CustomResourceSubresourcesBuilder
-    extends io.kubernetes.client.openapi.models.V1CustomResourceSubresourcesFluentImpl<
-        io.kubernetes.client.openapi.models.V1CustomResourceSubresourcesBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1CustomResourceSubresourcesFluentImpl<V1CustomResourceSubresourcesBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1CustomResourceSubresources,
-        io.kubernetes.client.openapi.models.V1CustomResourceSubresourcesBuilder> {
+        V1CustomResourceSubresourcesBuilder> {
   public V1CustomResourceSubresourcesBuilder() {
     this(false);
   }
 
-  public V1CustomResourceSubresourcesBuilder(java.lang.Boolean validationEnabled) {
+  public V1CustomResourceSubresourcesBuilder(Boolean validationEnabled) {
     this(new V1CustomResourceSubresources(), validationEnabled);
   }
 
@@ -81,7 +82,7 @@ public class V1CustomResourceSubresourcesBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

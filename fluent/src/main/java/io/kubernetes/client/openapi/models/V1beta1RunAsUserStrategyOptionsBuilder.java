@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1RunAsUserStrategyOptionsBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1RunAsUserStrategyOptionsFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1RunAsUserStrategyOptionsBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1beta1RunAsUserStrategyOptionsFluentImpl<V1beta1RunAsUserStrategyOptionsBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1beta1RunAsUserStrategyOptions,
         io.kubernetes.client.openapi.models.V1beta1RunAsUserStrategyOptionsBuilder> {
   public V1beta1RunAsUserStrategyOptionsBuilder() {
     this(false);
   }
 
-  public V1beta1RunAsUserStrategyOptionsBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1RunAsUserStrategyOptionsBuilder(Boolean validationEnabled) {
     this(new V1beta1RunAsUserStrategyOptions(), validationEnabled);
   }
 
-  public V1beta1RunAsUserStrategyOptionsBuilder(
-      io.kubernetes.client.openapi.models.V1beta1RunAsUserStrategyOptionsFluent<?> fluent) {
+  public V1beta1RunAsUserStrategyOptionsBuilder(V1beta1RunAsUserStrategyOptionsFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +81,7 @@ public class V1beta1RunAsUserStrategyOptionsBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

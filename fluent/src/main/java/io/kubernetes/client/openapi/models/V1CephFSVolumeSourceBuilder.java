@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1CephFSVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1CephFSVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1CephFSVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1CephFSVolumeSourceFluentImpl<V1CephFSVolumeSourceBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1CephFSVolumeSource,
         io.kubernetes.client.openapi.models.V1CephFSVolumeSourceBuilder> {
   public V1CephFSVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1CephFSVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1CephFSVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1CephFSVolumeSource(), validationEnabled);
   }
 
-  public V1CephFSVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1CephFSVolumeSourceFluent<?> fluent) {
+  public V1CephFSVolumeSourceBuilder(V1CephFSVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -101,7 +101,7 @@ public class V1CephFSVolumeSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

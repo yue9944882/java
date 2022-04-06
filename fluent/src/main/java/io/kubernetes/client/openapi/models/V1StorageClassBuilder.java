@@ -12,21 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1StorageClassBuilder
-    extends io.kubernetes.client.openapi.models.V1StorageClassFluentImpl<
-        io.kubernetes.client.openapi.models.V1StorageClassBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1StorageClass,
-        io.kubernetes.client.openapi.models.V1StorageClassBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1StorageClassBuilder extends V1StorageClassFluentImpl<V1StorageClassBuilder>
+    implements VisitableBuilder<
+        V1StorageClass, io.kubernetes.client.openapi.models.V1StorageClassBuilder> {
   public V1StorageClassBuilder() {
     this(false);
   }
 
-  public V1StorageClassBuilder(java.lang.Boolean validationEnabled) {
+  public V1StorageClassBuilder(Boolean validationEnabled) {
     this(new V1StorageClass(), validationEnabled);
   }
 
-  public V1StorageClassBuilder(io.kubernetes.client.openapi.models.V1StorageClassFluent<?> fluent) {
+  public V1StorageClassBuilder(V1StorageClassFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -119,7 +118,7 @@ public class V1StorageClassBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

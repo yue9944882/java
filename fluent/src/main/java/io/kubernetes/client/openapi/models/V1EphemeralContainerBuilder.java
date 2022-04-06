@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1EphemeralContainerBuilder
-    extends io.kubernetes.client.openapi.models.V1EphemeralContainerFluentImpl<
-        io.kubernetes.client.openapi.models.V1EphemeralContainerBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1EphemeralContainer,
-        io.kubernetes.client.openapi.models.V1EphemeralContainerBuilder> {
+    extends V1EphemeralContainerFluentImpl<V1EphemeralContainerBuilder>
+    implements VisitableBuilder<
+        V1EphemeralContainer, io.kubernetes.client.openapi.models.V1EphemeralContainerBuilder> {
   public V1EphemeralContainerBuilder() {
     this(false);
   }
 
-  public V1EphemeralContainerBuilder(java.lang.Boolean validationEnabled) {
+  public V1EphemeralContainerBuilder(Boolean validationEnabled) {
     this(new V1EphemeralContainer(), validationEnabled);
   }
 
-  public V1EphemeralContainerBuilder(
-      io.kubernetes.client.openapi.models.V1EphemeralContainerFluent<?> fluent) {
+  public V1EphemeralContainerBuilder(V1EphemeralContainerFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -186,7 +185,7 @@ public class V1EphemeralContainerBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

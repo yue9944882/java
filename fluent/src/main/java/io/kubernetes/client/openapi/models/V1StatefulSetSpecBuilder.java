@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1StatefulSetSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1StatefulSetSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1StatefulSetSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1StatefulSetSpec,
-        io.kubernetes.client.openapi.models.V1StatefulSetSpecBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1StatefulSetSpecBuilder extends V1StatefulSetSpecFluentImpl<V1StatefulSetSpecBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1StatefulSetSpec, V1StatefulSetSpecBuilder> {
   public V1StatefulSetSpecBuilder() {
     this(false);
   }
 
-  public V1StatefulSetSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1StatefulSetSpecBuilder(Boolean validationEnabled) {
     this(new V1StatefulSetSpec(), validationEnabled);
   }
 
@@ -123,7 +122,7 @@ public class V1StatefulSetSpecBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

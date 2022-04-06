@@ -12,22 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1EndpointAddressBuilder
-    extends io.kubernetes.client.openapi.models.V1EndpointAddressFluentImpl<
-        io.kubernetes.client.openapi.models.V1EndpointAddressBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1EndpointAddress,
-        io.kubernetes.client.openapi.models.V1EndpointAddressBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1EndpointAddressBuilder extends V1EndpointAddressFluentImpl<V1EndpointAddressBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1EndpointAddress, V1EndpointAddressBuilder> {
   public V1EndpointAddressBuilder() {
     this(false);
   }
 
-  public V1EndpointAddressBuilder(java.lang.Boolean validationEnabled) {
+  public V1EndpointAddressBuilder(Boolean validationEnabled) {
     this(new V1EndpointAddress(), validationEnabled);
   }
 
-  public V1EndpointAddressBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointAddressFluent<?> fluent) {
+  public V1EndpointAddressBuilder(V1EndpointAddressFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -90,7 +88,7 @@ public class V1EndpointAddressBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

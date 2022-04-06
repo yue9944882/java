@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1NodeDaemonEndpointsBuilder
-    extends io.kubernetes.client.openapi.models.V1NodeDaemonEndpointsFluentImpl<
-        io.kubernetes.client.openapi.models.V1NodeDaemonEndpointsBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1NodeDaemonEndpointsFluentImpl<V1NodeDaemonEndpointsBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1NodeDaemonEndpoints,
         io.kubernetes.client.openapi.models.V1NodeDaemonEndpointsBuilder> {
   public V1NodeDaemonEndpointsBuilder() {
     this(false);
   }
 
-  public V1NodeDaemonEndpointsBuilder(java.lang.Boolean validationEnabled) {
+  public V1NodeDaemonEndpointsBuilder(Boolean validationEnabled) {
     this(new V1NodeDaemonEndpoints(), validationEnabled);
   }
 
-  public V1NodeDaemonEndpointsBuilder(
-      io.kubernetes.client.openapi.models.V1NodeDaemonEndpointsFluent<?> fluent) {
+  public V1NodeDaemonEndpointsBuilder(V1NodeDaemonEndpointsFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -76,7 +76,7 @@ public class V1NodeDaemonEndpointsBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

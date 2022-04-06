@@ -12,22 +12,23 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V2beta1CrossVersionObjectReferenceBuilder
-    extends io.kubernetes.client.openapi.models.V2beta1CrossVersionObjectReferenceFluentImpl<
-        io.kubernetes.client.openapi.models.V2beta1CrossVersionObjectReferenceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V2beta1CrossVersionObjectReference,
+    extends V2beta1CrossVersionObjectReferenceFluentImpl<V2beta1CrossVersionObjectReferenceBuilder>
+    implements VisitableBuilder<
+        V2beta1CrossVersionObjectReference,
         io.kubernetes.client.openapi.models.V2beta1CrossVersionObjectReferenceBuilder> {
   public V2beta1CrossVersionObjectReferenceBuilder() {
     this(false);
   }
 
-  public V2beta1CrossVersionObjectReferenceBuilder(java.lang.Boolean validationEnabled) {
+  public V2beta1CrossVersionObjectReferenceBuilder(Boolean validationEnabled) {
     this(new V2beta1CrossVersionObjectReference(), validationEnabled);
   }
 
   public V2beta1CrossVersionObjectReferenceBuilder(
-      io.kubernetes.client.openapi.models.V2beta1CrossVersionObjectReferenceFluent<?> fluent) {
+      V2beta1CrossVersionObjectReferenceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -86,7 +87,7 @@ public class V2beta1CrossVersionObjectReferenceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

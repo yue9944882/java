@@ -12,17 +12,17 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1NodeSelectorTermBuilder
-    extends io.kubernetes.client.openapi.models.V1NodeSelectorTermFluentImpl<
-        io.kubernetes.client.openapi.models.V1NodeSelectorTermBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1NodeSelectorTerm,
-        io.kubernetes.client.openapi.models.V1NodeSelectorTermBuilder> {
+    extends V1NodeSelectorTermFluentImpl<V1NodeSelectorTermBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1NodeSelectorTerm, V1NodeSelectorTermBuilder> {
   public V1NodeSelectorTermBuilder() {
     this(false);
   }
 
-  public V1NodeSelectorTermBuilder(java.lang.Boolean validationEnabled) {
+  public V1NodeSelectorTermBuilder(Boolean validationEnabled) {
     this(new V1NodeSelectorTerm(), validationEnabled);
   }
 
@@ -81,7 +81,7 @@ public class V1NodeSelectorTermBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

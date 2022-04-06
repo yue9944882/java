@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1QueuingConfigurationBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1QueuingConfigurationFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1QueuingConfigurationBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1beta1QueuingConfigurationFluentImpl<V1beta1QueuingConfigurationBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1beta1QueuingConfiguration,
         io.kubernetes.client.openapi.models.V1beta1QueuingConfigurationBuilder> {
   public V1beta1QueuingConfigurationBuilder() {
     this(false);
   }
 
-  public V1beta1QueuingConfigurationBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1QueuingConfigurationBuilder(Boolean validationEnabled) {
     this(new V1beta1QueuingConfiguration(), validationEnabled);
   }
 
-  public V1beta1QueuingConfigurationBuilder(
-      io.kubernetes.client.openapi.models.V1beta1QueuingConfigurationFluent<?> fluent) {
+  public V1beta1QueuingConfigurationBuilder(V1beta1QueuingConfigurationFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -86,7 +86,7 @@ public class V1beta1QueuingConfigurationBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

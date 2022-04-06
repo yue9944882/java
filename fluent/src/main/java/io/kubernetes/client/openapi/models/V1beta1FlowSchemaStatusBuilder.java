@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1FlowSchemaStatusBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatus,
+    extends V1beta1FlowSchemaStatusFluentImpl<V1beta1FlowSchemaStatusBuilder>
+    implements VisitableBuilder<
+        V1beta1FlowSchemaStatus,
         io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusBuilder> {
   public V1beta1FlowSchemaStatusBuilder() {
     this(false);
   }
 
-  public V1beta1FlowSchemaStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1FlowSchemaStatusBuilder(Boolean validationEnabled) {
     this(new V1beta1FlowSchemaStatus(), validationEnabled);
   }
 
-  public V1beta1FlowSchemaStatusBuilder(
-      io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusFluent<?> fluent) {
+  public V1beta1FlowSchemaStatusBuilder(V1beta1FlowSchemaStatusFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -76,7 +76,7 @@ public class V1beta1FlowSchemaStatusBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

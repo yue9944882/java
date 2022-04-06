@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1ServiceAccountSubjectBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1ServiceAccountSubjectFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1ServiceAccountSubjectBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1beta1ServiceAccountSubjectFluentImpl<V1beta1ServiceAccountSubjectBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1beta1ServiceAccountSubject,
-        io.kubernetes.client.openapi.models.V1beta1ServiceAccountSubjectBuilder> {
+        V1beta1ServiceAccountSubjectBuilder> {
   public V1beta1ServiceAccountSubjectBuilder() {
     this(false);
   }
 
-  public V1beta1ServiceAccountSubjectBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1ServiceAccountSubjectBuilder(Boolean validationEnabled) {
     this(new V1beta1ServiceAccountSubject(), validationEnabled);
   }
 
-  public V1beta1ServiceAccountSubjectBuilder(
-      io.kubernetes.client.openapi.models.V1beta1ServiceAccountSubjectFluent<?> fluent) {
+  public V1beta1ServiceAccountSubjectBuilder(V1beta1ServiceAccountSubjectFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +81,7 @@ public class V1beta1ServiceAccountSubjectBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

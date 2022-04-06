@@ -12,23 +12,24 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta2LimitedPriorityLevelConfigurationBuilder
-    extends io.kubernetes.client.openapi.models.V1beta2LimitedPriorityLevelConfigurationFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta2LimitedPriorityLevelConfigurationBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1beta2LimitedPriorityLevelConfiguration,
+    extends V1beta2LimitedPriorityLevelConfigurationFluentImpl<
+        V1beta2LimitedPriorityLevelConfigurationBuilder>
+    implements VisitableBuilder<
+        V1beta2LimitedPriorityLevelConfiguration,
         io.kubernetes.client.openapi.models.V1beta2LimitedPriorityLevelConfigurationBuilder> {
   public V1beta2LimitedPriorityLevelConfigurationBuilder() {
     this(false);
   }
 
-  public V1beta2LimitedPriorityLevelConfigurationBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta2LimitedPriorityLevelConfigurationBuilder(Boolean validationEnabled) {
     this(new V1beta2LimitedPriorityLevelConfiguration(), validationEnabled);
   }
 
   public V1beta2LimitedPriorityLevelConfigurationBuilder(
-      io.kubernetes.client.openapi.models.V1beta2LimitedPriorityLevelConfigurationFluent<?>
-          fluent) {
+      V1beta2LimitedPriorityLevelConfigurationFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -83,7 +84,7 @@ public class V1beta2LimitedPriorityLevelConfigurationBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

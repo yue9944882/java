@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1GitRepoVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1GitRepoVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1GitRepoVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1GitRepoVolumeSource,
-        io.kubernetes.client.openapi.models.V1GitRepoVolumeSourceBuilder> {
+    extends V1GitRepoVolumeSourceFluentImpl<V1GitRepoVolumeSourceBuilder>
+    implements VisitableBuilder<
+        V1GitRepoVolumeSource, io.kubernetes.client.openapi.models.V1GitRepoVolumeSourceBuilder> {
   public V1GitRepoVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1GitRepoVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1GitRepoVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1GitRepoVolumeSource(), validationEnabled);
   }
 
-  public V1GitRepoVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1GitRepoVolumeSourceFluent<?> fluent) {
+  public V1GitRepoVolumeSourceBuilder(V1GitRepoVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -86,7 +85,7 @@ public class V1GitRepoVolumeSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

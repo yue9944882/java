@@ -12,21 +12,19 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1UserInfoBuilder
-    extends io.kubernetes.client.openapi.models.V1UserInfoFluentImpl<
-        io.kubernetes.client.openapi.models.V1UserInfoBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1UserInfo,
-        io.kubernetes.client.openapi.models.V1UserInfoBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1UserInfoBuilder extends V1UserInfoFluentImpl<V1UserInfoBuilder>
+    implements VisitableBuilder<V1UserInfo, io.kubernetes.client.openapi.models.V1UserInfoBuilder> {
   public V1UserInfoBuilder() {
     this(false);
   }
 
-  public V1UserInfoBuilder(java.lang.Boolean validationEnabled) {
+  public V1UserInfoBuilder(Boolean validationEnabled) {
     this(new V1UserInfo(), validationEnabled);
   }
 
-  public V1UserInfoBuilder(io.kubernetes.client.openapi.models.V1UserInfoFluent<?> fluent) {
+  public V1UserInfoBuilder(V1UserInfoFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -89,7 +87,7 @@ public class V1UserInfoBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1ReplicaSetSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1ReplicaSetSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1ReplicaSetSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1ReplicaSetSpecBuilder extends V1ReplicaSetSpecFluentImpl<V1ReplicaSetSpecBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1ReplicaSetSpec,
         io.kubernetes.client.openapi.models.V1ReplicaSetSpecBuilder> {
   public V1ReplicaSetSpecBuilder() {
     this(false);
   }
 
-  public V1ReplicaSetSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1ReplicaSetSpecBuilder(Boolean validationEnabled) {
     this(new V1ReplicaSetSpec(), validationEnabled);
   }
 
-  public V1ReplicaSetSpecBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicaSetSpecFluent<?> fluent) {
+  public V1ReplicaSetSpecBuilder(V1ReplicaSetSpecFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -90,7 +89,7 @@ public class V1ReplicaSetSpecBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,21 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1WatchEventBuilder
-    extends io.kubernetes.client.openapi.models.V1WatchEventFluentImpl<
-        io.kubernetes.client.openapi.models.V1WatchEventBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1WatchEvent,
-        io.kubernetes.client.openapi.models.V1WatchEventBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1WatchEventBuilder extends V1WatchEventFluentImpl<V1WatchEventBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1WatchEvent, V1WatchEventBuilder> {
   public V1WatchEventBuilder() {
     this(false);
   }
 
-  public V1WatchEventBuilder(java.lang.Boolean validationEnabled) {
+  public V1WatchEventBuilder(Boolean validationEnabled) {
     this(new V1WatchEvent(), validationEnabled);
   }
 
-  public V1WatchEventBuilder(io.kubernetes.client.openapi.models.V1WatchEventFluent<?> fluent) {
+  public V1WatchEventBuilder(V1WatchEventFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -79,7 +78,7 @@ public class V1WatchEventBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

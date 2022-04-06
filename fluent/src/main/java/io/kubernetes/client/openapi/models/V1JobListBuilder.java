@@ -12,21 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1JobListBuilder
-    extends io.kubernetes.client.openapi.models.V1JobListFluentImpl<
-        io.kubernetes.client.openapi.models.V1JobListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1JobListBuilder extends V1JobListFluentImpl<V1JobListBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1JobList,
         io.kubernetes.client.openapi.models.V1JobListBuilder> {
   public V1JobListBuilder() {
     this(false);
   }
 
-  public V1JobListBuilder(java.lang.Boolean validationEnabled) {
+  public V1JobListBuilder(Boolean validationEnabled) {
     this(new V1JobList(), validationEnabled);
   }
 
-  public V1JobListBuilder(io.kubernetes.client.openapi.models.V1JobListFluent<?> fluent) {
+  public V1JobListBuilder(V1JobListFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -88,7 +88,7 @@ public class V1JobListBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

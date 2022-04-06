@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1HostPortRangeBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1HostPortRangeFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1HostPortRangeBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1beta1HostPortRangeFluentImpl<V1beta1HostPortRangeBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1beta1HostPortRange,
         io.kubernetes.client.openapi.models.V1beta1HostPortRangeBuilder> {
   public V1beta1HostPortRangeBuilder() {
     this(false);
   }
 
-  public V1beta1HostPortRangeBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1HostPortRangeBuilder(Boolean validationEnabled) {
     this(new V1beta1HostPortRange(), validationEnabled);
   }
 
-  public V1beta1HostPortRangeBuilder(
-      io.kubernetes.client.openapi.models.V1beta1HostPortRangeFluent<?> fluent) {
+  public V1beta1HostPortRangeBuilder(V1beta1HostPortRangeFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +81,7 @@ public class V1beta1HostPortRangeBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

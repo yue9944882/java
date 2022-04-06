@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1GroupSubjectBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1GroupSubjectFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1GroupSubjectBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1beta1GroupSubject,
-        io.kubernetes.client.openapi.models.V1beta1GroupSubjectBuilder> {
+    extends V1beta1GroupSubjectFluentImpl<V1beta1GroupSubjectBuilder>
+    implements VisitableBuilder<
+        V1beta1GroupSubject, io.kubernetes.client.openapi.models.V1beta1GroupSubjectBuilder> {
   public V1beta1GroupSubjectBuilder() {
     this(false);
   }
 
-  public V1beta1GroupSubjectBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1GroupSubjectBuilder(Boolean validationEnabled) {
     this(new V1beta1GroupSubject(), validationEnabled);
   }
 
-  public V1beta1GroupSubjectBuilder(
-      io.kubernetes.client.openapi.models.V1beta1GroupSubjectFluent<?> fluent) {
+  public V1beta1GroupSubjectBuilder(V1beta1GroupSubjectFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -76,7 +75,7 @@ public class V1beta1GroupSubjectBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

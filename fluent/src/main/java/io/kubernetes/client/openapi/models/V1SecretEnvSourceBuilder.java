@@ -12,22 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1SecretEnvSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1SecretEnvSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1SecretEnvSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1SecretEnvSource,
-        io.kubernetes.client.openapi.models.V1SecretEnvSourceBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1SecretEnvSourceBuilder extends V1SecretEnvSourceFluentImpl<V1SecretEnvSourceBuilder>
+    implements VisitableBuilder<
+        V1SecretEnvSource, io.kubernetes.client.openapi.models.V1SecretEnvSourceBuilder> {
   public V1SecretEnvSourceBuilder() {
     this(false);
   }
 
-  public V1SecretEnvSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1SecretEnvSourceBuilder(Boolean validationEnabled) {
     this(new V1SecretEnvSource(), validationEnabled);
   }
 
-  public V1SecretEnvSourceBuilder(
-      io.kubernetes.client.openapi.models.V1SecretEnvSourceFluent<?> fluent) {
+  public V1SecretEnvSourceBuilder(V1SecretEnvSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -80,7 +78,7 @@ public class V1SecretEnvSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

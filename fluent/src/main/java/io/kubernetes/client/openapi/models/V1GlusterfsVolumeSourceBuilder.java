@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1GlusterfsVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1GlusterfsVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1GlusterfsVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1GlusterfsVolumeSourceFluentImpl<V1GlusterfsVolumeSourceBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1GlusterfsVolumeSource,
         io.kubernetes.client.openapi.models.V1GlusterfsVolumeSourceBuilder> {
   public V1GlusterfsVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1GlusterfsVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1GlusterfsVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1GlusterfsVolumeSource(), validationEnabled);
   }
 
-  public V1GlusterfsVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1GlusterfsVolumeSourceFluent<?> fluent) {
+  public V1GlusterfsVolumeSourceBuilder(V1GlusterfsVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -86,7 +86,7 @@ public class V1GlusterfsVolumeSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

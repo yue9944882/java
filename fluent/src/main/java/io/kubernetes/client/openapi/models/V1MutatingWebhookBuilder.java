@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1MutatingWebhookBuilder
-    extends io.kubernetes.client.openapi.models.V1MutatingWebhookFluentImpl<
-        io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1MutatingWebhookBuilder extends V1MutatingWebhookFluentImpl<V1MutatingWebhookBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1MutatingWebhook,
         io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder> {
   public V1MutatingWebhookBuilder() {
     this(false);
   }
 
-  public V1MutatingWebhookBuilder(java.lang.Boolean validationEnabled) {
+  public V1MutatingWebhookBuilder(Boolean validationEnabled) {
     this(new V1MutatingWebhook(), validationEnabled);
   }
 
-  public V1MutatingWebhookBuilder(
-      io.kubernetes.client.openapi.models.V1MutatingWebhookFluent<?> fluent) {
+  public V1MutatingWebhookBuilder(V1MutatingWebhookFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -125,7 +124,7 @@ public class V1MutatingWebhookBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

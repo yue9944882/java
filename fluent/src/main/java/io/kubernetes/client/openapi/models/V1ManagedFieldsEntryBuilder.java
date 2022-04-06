@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ManagedFieldsEntryBuilder
-    extends io.kubernetes.client.openapi.models.V1ManagedFieldsEntryFluentImpl<
-        io.kubernetes.client.openapi.models.V1ManagedFieldsEntryBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1ManagedFieldsEntryFluentImpl<V1ManagedFieldsEntryBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1ManagedFieldsEntry,
         io.kubernetes.client.openapi.models.V1ManagedFieldsEntryBuilder> {
   public V1ManagedFieldsEntryBuilder() {
     this(false);
   }
 
-  public V1ManagedFieldsEntryBuilder(java.lang.Boolean validationEnabled) {
+  public V1ManagedFieldsEntryBuilder(Boolean validationEnabled) {
     this(new V1ManagedFieldsEntry(), validationEnabled);
   }
 
-  public V1ManagedFieldsEntryBuilder(
-      io.kubernetes.client.openapi.models.V1ManagedFieldsEntryFluent<?> fluent) {
+  public V1ManagedFieldsEntryBuilder(V1ManagedFieldsEntryFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -106,7 +106,7 @@ public class V1ManagedFieldsEntryBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

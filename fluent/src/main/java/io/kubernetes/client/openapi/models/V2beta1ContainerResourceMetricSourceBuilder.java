@@ -12,22 +12,24 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V2beta1ContainerResourceMetricSourceBuilder
-    extends io.kubernetes.client.openapi.models.V2beta1ContainerResourceMetricSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V2beta1ContainerResourceMetricSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V2beta1ContainerResourceMetricSourceFluentImpl<
+        V2beta1ContainerResourceMetricSourceBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V2beta1ContainerResourceMetricSource,
-        io.kubernetes.client.openapi.models.V2beta1ContainerResourceMetricSourceBuilder> {
+        V2beta1ContainerResourceMetricSourceBuilder> {
   public V2beta1ContainerResourceMetricSourceBuilder() {
     this(false);
   }
 
-  public V2beta1ContainerResourceMetricSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V2beta1ContainerResourceMetricSourceBuilder(Boolean validationEnabled) {
     this(new V2beta1ContainerResourceMetricSource(), validationEnabled);
   }
 
   public V2beta1ContainerResourceMetricSourceBuilder(
-      io.kubernetes.client.openapi.models.V2beta1ContainerResourceMetricSourceFluent<?> fluent) {
+      V2beta1ContainerResourceMetricSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -91,7 +93,7 @@ public class V2beta1ContainerResourceMetricSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,21 +12,19 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1IPBlockBuilder
-    extends io.kubernetes.client.openapi.models.V1IPBlockFluentImpl<
-        io.kubernetes.client.openapi.models.V1IPBlockBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1IPBlock,
-        io.kubernetes.client.openapi.models.V1IPBlockBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1IPBlockBuilder extends V1IPBlockFluentImpl<V1IPBlockBuilder>
+    implements VisitableBuilder<V1IPBlock, io.kubernetes.client.openapi.models.V1IPBlockBuilder> {
   public V1IPBlockBuilder() {
     this(false);
   }
 
-  public V1IPBlockBuilder(java.lang.Boolean validationEnabled) {
+  public V1IPBlockBuilder(Boolean validationEnabled) {
     this(new V1IPBlock(), validationEnabled);
   }
 
-  public V1IPBlockBuilder(io.kubernetes.client.openapi.models.V1IPBlockFluent<?> fluent) {
+  public V1IPBlockBuilder(V1IPBlockFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -78,7 +76,7 @@ public class V1IPBlockBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

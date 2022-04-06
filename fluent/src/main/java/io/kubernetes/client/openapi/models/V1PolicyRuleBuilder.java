@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1PolicyRuleBuilder
-    extends io.kubernetes.client.openapi.models.V1PolicyRuleFluentImpl<
-        io.kubernetes.client.openapi.models.V1PolicyRuleBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1PolicyRule,
-        io.kubernetes.client.openapi.models.V1PolicyRuleBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1PolicyRuleBuilder extends V1PolicyRuleFluentImpl<V1PolicyRuleBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1PolicyRule, V1PolicyRuleBuilder> {
   public V1PolicyRuleBuilder() {
     this(false);
   }
 
-  public V1PolicyRuleBuilder(java.lang.Boolean validationEnabled) {
+  public V1PolicyRuleBuilder(Boolean validationEnabled) {
     this(new V1PolicyRule(), validationEnabled);
   }
 
@@ -94,7 +93,7 @@ public class V1PolicyRuleBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

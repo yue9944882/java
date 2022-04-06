@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1NamespaceSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1NamespaceSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1NamespaceSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1NamespaceSpec,
-        io.kubernetes.client.openapi.models.V1NamespaceSpecBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1NamespaceSpecBuilder extends V1NamespaceSpecFluentImpl<V1NamespaceSpecBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1NamespaceSpec, V1NamespaceSpecBuilder> {
   public V1NamespaceSpecBuilder() {
     this(false);
   }
 
-  public V1NamespaceSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1NamespaceSpecBuilder(Boolean validationEnabled) {
     this(new V1NamespaceSpec(), validationEnabled);
   }
 
@@ -75,7 +74,7 @@ public class V1NamespaceSpecBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

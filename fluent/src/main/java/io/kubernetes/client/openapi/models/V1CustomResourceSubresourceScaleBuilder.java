@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1CustomResourceSubresourceScaleBuilder
-    extends io.kubernetes.client.openapi.models.V1CustomResourceSubresourceScaleFluentImpl<
-        io.kubernetes.client.openapi.models.V1CustomResourceSubresourceScaleBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1CustomResourceSubresourceScale,
+    extends V1CustomResourceSubresourceScaleFluentImpl<V1CustomResourceSubresourceScaleBuilder>
+    implements VisitableBuilder<
+        V1CustomResourceSubresourceScale,
         io.kubernetes.client.openapi.models.V1CustomResourceSubresourceScaleBuilder> {
   public V1CustomResourceSubresourceScaleBuilder() {
     this(false);
   }
 
-  public V1CustomResourceSubresourceScaleBuilder(java.lang.Boolean validationEnabled) {
+  public V1CustomResourceSubresourceScaleBuilder(Boolean validationEnabled) {
     this(new V1CustomResourceSubresourceScale(), validationEnabled);
   }
 
-  public V1CustomResourceSubresourceScaleBuilder(
-      io.kubernetes.client.openapi.models.V1CustomResourceSubresourceScaleFluent<?> fluent) {
+  public V1CustomResourceSubresourceScaleBuilder(V1CustomResourceSubresourceScaleFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -86,7 +86,7 @@ public class V1CustomResourceSubresourceScaleBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

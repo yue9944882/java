@@ -12,17 +12,17 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1CronJobStatusBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1CronJobStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1CronJobStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1beta1CronJobStatus,
-        io.kubernetes.client.openapi.models.V1beta1CronJobStatusBuilder> {
+    extends V1beta1CronJobStatusFluentImpl<V1beta1CronJobStatusBuilder>
+    implements VisitableBuilder<
+        V1beta1CronJobStatus, io.kubernetes.client.openapi.models.V1beta1CronJobStatusBuilder> {
   public V1beta1CronJobStatusBuilder() {
     this(false);
   }
 
-  public V1beta1CronJobStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1CronJobStatusBuilder(Boolean validationEnabled) {
     this(new V1beta1CronJobStatus(), validationEnabled);
   }
 
@@ -86,7 +86,7 @@ public class V1beta1CronJobStatusBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

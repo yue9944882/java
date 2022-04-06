@@ -12,24 +12,24 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta2PriorityLevelConfigurationConditionBuilder
-    extends io.kubernetes.client.openapi.models
-            .V1beta2PriorityLevelConfigurationConditionFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta2PriorityLevelConfigurationConditionBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1beta2PriorityLevelConfigurationCondition,
+    extends V1beta2PriorityLevelConfigurationConditionFluentImpl<
+        V1beta2PriorityLevelConfigurationConditionBuilder>
+    implements VisitableBuilder<
+        V1beta2PriorityLevelConfigurationCondition,
         io.kubernetes.client.openapi.models.V1beta2PriorityLevelConfigurationConditionBuilder> {
   public V1beta2PriorityLevelConfigurationConditionBuilder() {
     this(false);
   }
 
-  public V1beta2PriorityLevelConfigurationConditionBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta2PriorityLevelConfigurationConditionBuilder(Boolean validationEnabled) {
     this(new V1beta2PriorityLevelConfigurationCondition(), validationEnabled);
   }
 
   public V1beta2PriorityLevelConfigurationConditionBuilder(
-      io.kubernetes.client.openapi.models.V1beta2PriorityLevelConfigurationConditionFluent<?>
-          fluent) {
+      V1beta2PriorityLevelConfigurationConditionFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -102,7 +102,7 @@ public class V1beta2PriorityLevelConfigurationConditionBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,22 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1AttachedVolumeBuilder
-    extends io.kubernetes.client.openapi.models.V1AttachedVolumeFluentImpl<
-        io.kubernetes.client.openapi.models.V1AttachedVolumeBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1AttachedVolume,
-        io.kubernetes.client.openapi.models.V1AttachedVolumeBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1AttachedVolumeBuilder extends V1AttachedVolumeFluentImpl<V1AttachedVolumeBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1AttachedVolume, V1AttachedVolumeBuilder> {
   public V1AttachedVolumeBuilder() {
     this(false);
   }
 
-  public V1AttachedVolumeBuilder(java.lang.Boolean validationEnabled) {
+  public V1AttachedVolumeBuilder(Boolean validationEnabled) {
     this(new V1AttachedVolume(), validationEnabled);
   }
 
-  public V1AttachedVolumeBuilder(
-      io.kubernetes.client.openapi.models.V1AttachedVolumeFluent<?> fluent) {
+  public V1AttachedVolumeBuilder(V1AttachedVolumeFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -80,7 +78,7 @@ public class V1AttachedVolumeBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

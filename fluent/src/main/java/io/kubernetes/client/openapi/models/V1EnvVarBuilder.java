@@ -12,21 +12,19 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1EnvVarBuilder
-    extends io.kubernetes.client.openapi.models.V1EnvVarFluentImpl<
-        io.kubernetes.client.openapi.models.V1EnvVarBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1EnvVar,
-        io.kubernetes.client.openapi.models.V1EnvVarBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1EnvVarBuilder extends V1EnvVarFluentImpl<V1EnvVarBuilder>
+    implements VisitableBuilder<V1EnvVar, io.kubernetes.client.openapi.models.V1EnvVarBuilder> {
   public V1EnvVarBuilder() {
     this(false);
   }
 
-  public V1EnvVarBuilder(java.lang.Boolean validationEnabled) {
+  public V1EnvVarBuilder(Boolean validationEnabled) {
     this(new V1EnvVar(), validationEnabled);
   }
 
-  public V1EnvVarBuilder(io.kubernetes.client.openapi.models.V1EnvVarFluent<?> fluent) {
+  public V1EnvVarBuilder(V1EnvVarFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -83,7 +81,7 @@ public class V1EnvVarBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

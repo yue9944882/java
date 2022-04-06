@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1FSGroupStrategyOptionsBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1FSGroupStrategyOptionsFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1FSGroupStrategyOptionsBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1beta1FSGroupStrategyOptions,
+    extends V1beta1FSGroupStrategyOptionsFluentImpl<V1beta1FSGroupStrategyOptionsBuilder>
+    implements VisitableBuilder<
+        V1beta1FSGroupStrategyOptions,
         io.kubernetes.client.openapi.models.V1beta1FSGroupStrategyOptionsBuilder> {
   public V1beta1FSGroupStrategyOptionsBuilder() {
     this(false);
   }
 
-  public V1beta1FSGroupStrategyOptionsBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1FSGroupStrategyOptionsBuilder(Boolean validationEnabled) {
     this(new V1beta1FSGroupStrategyOptions(), validationEnabled);
   }
 
-  public V1beta1FSGroupStrategyOptionsBuilder(
-      io.kubernetes.client.openapi.models.V1beta1FSGroupStrategyOptionsFluent<?> fluent) {
+  public V1beta1FSGroupStrategyOptionsBuilder(V1beta1FSGroupStrategyOptionsFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +81,7 @@ public class V1beta1FSGroupStrategyOptionsBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

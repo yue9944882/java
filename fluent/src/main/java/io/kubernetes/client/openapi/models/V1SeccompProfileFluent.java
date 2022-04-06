@@ -12,21 +12,17 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1SeccompProfileFluent<
-        A extends io.kubernetes.client.openapi.models.V1SeccompProfileFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getLocalhostProfile();
+public interface V1SeccompProfileFluent<A extends V1SeccompProfileFluent<A>> extends Fluent<A> {
+  public String getLocalhostProfile();
 
   public A withLocalhostProfile(java.lang.String localhostProfile);
 
-  public java.lang.Boolean hasLocalhostProfile();
+  public Boolean hasLocalhostProfile();
 
-  /** Method is deprecated. use withLocalhostProfile instead. */
-  @java.lang.Deprecated
-  public A withNewLocalhostProfile(java.lang.String original);
-
-  public io.kubernetes.client.openapi.models.V1SeccompProfile.TypeEnum getType();
+  public V1SeccompProfile.TypeEnum getType();
 
   public A withType(io.kubernetes.client.openapi.models.V1SeccompProfile.TypeEnum type);
 

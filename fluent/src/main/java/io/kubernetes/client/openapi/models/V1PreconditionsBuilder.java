@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1PreconditionsBuilder
-    extends io.kubernetes.client.openapi.models.V1PreconditionsFluentImpl<
-        io.kubernetes.client.openapi.models.V1PreconditionsBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1PreconditionsBuilder extends V1PreconditionsFluentImpl<V1PreconditionsBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1Preconditions,
         io.kubernetes.client.openapi.models.V1PreconditionsBuilder> {
   public V1PreconditionsBuilder() {
     this(false);
   }
 
-  public V1PreconditionsBuilder(java.lang.Boolean validationEnabled) {
+  public V1PreconditionsBuilder(Boolean validationEnabled) {
     this(new V1Preconditions(), validationEnabled);
   }
 
-  public V1PreconditionsBuilder(
-      io.kubernetes.client.openapi.models.V1PreconditionsFluent<?> fluent) {
+  public V1PreconditionsBuilder(V1PreconditionsFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -80,7 +79,7 @@ public class V1PreconditionsBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

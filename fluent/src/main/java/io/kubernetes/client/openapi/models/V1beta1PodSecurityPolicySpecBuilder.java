@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1PodSecurityPolicySpecBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1PodSecurityPolicySpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1PodSecurityPolicySpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1beta1PodSecurityPolicySpec,
+    extends V1beta1PodSecurityPolicySpecFluentImpl<V1beta1PodSecurityPolicySpecBuilder>
+    implements VisitableBuilder<
+        V1beta1PodSecurityPolicySpec,
         io.kubernetes.client.openapi.models.V1beta1PodSecurityPolicySpecBuilder> {
   public V1beta1PodSecurityPolicySpecBuilder() {
     this(false);
   }
 
-  public V1beta1PodSecurityPolicySpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1PodSecurityPolicySpecBuilder(Boolean validationEnabled) {
     this(new V1beta1PodSecurityPolicySpec(), validationEnabled);
   }
 
-  public V1beta1PodSecurityPolicySpecBuilder(
-      io.kubernetes.client.openapi.models.V1beta1PodSecurityPolicySpecFluent<?> fluent) {
+  public V1beta1PodSecurityPolicySpecBuilder(V1beta1PodSecurityPolicySpecFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -191,7 +191,7 @@ public class V1beta1PodSecurityPolicySpecBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

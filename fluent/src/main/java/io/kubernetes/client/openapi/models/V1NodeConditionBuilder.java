@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1NodeConditionBuilder
-    extends io.kubernetes.client.openapi.models.V1NodeConditionFluentImpl<
-        io.kubernetes.client.openapi.models.V1NodeConditionBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1NodeCondition,
-        io.kubernetes.client.openapi.models.V1NodeConditionBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1NodeConditionBuilder extends V1NodeConditionFluentImpl<V1NodeConditionBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1NodeCondition, V1NodeConditionBuilder> {
   public V1NodeConditionBuilder() {
     this(false);
   }
 
-  public V1NodeConditionBuilder(java.lang.Boolean validationEnabled) {
+  public V1NodeConditionBuilder(Boolean validationEnabled) {
     this(new V1NodeCondition(), validationEnabled);
   }
 
@@ -100,7 +99,7 @@ public class V1NodeConditionBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

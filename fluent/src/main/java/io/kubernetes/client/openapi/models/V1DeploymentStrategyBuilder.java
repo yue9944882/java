@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1DeploymentStrategyBuilder
-    extends io.kubernetes.client.openapi.models.V1DeploymentStrategyFluentImpl<
-        io.kubernetes.client.openapi.models.V1DeploymentStrategyBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1DeploymentStrategyFluentImpl<V1DeploymentStrategyBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1DeploymentStrategy,
         io.kubernetes.client.openapi.models.V1DeploymentStrategyBuilder> {
   public V1DeploymentStrategyBuilder() {
     this(false);
   }
 
-  public V1DeploymentStrategyBuilder(java.lang.Boolean validationEnabled) {
+  public V1DeploymentStrategyBuilder(Boolean validationEnabled) {
     this(new V1DeploymentStrategy(), validationEnabled);
   }
 
-  public V1DeploymentStrategyBuilder(
-      io.kubernetes.client.openapi.models.V1DeploymentStrategyFluent<?> fluent) {
+  public V1DeploymentStrategyBuilder(V1DeploymentStrategyFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +81,7 @@ public class V1DeploymentStrategyBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

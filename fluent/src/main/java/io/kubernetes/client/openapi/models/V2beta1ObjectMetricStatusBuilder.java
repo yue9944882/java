@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V2beta1ObjectMetricStatusBuilder
-    extends io.kubernetes.client.openapi.models.V2beta1ObjectMetricStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V2beta1ObjectMetricStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V2beta1ObjectMetricStatus,
+    extends V2beta1ObjectMetricStatusFluentImpl<V2beta1ObjectMetricStatusBuilder>
+    implements VisitableBuilder<
+        V2beta1ObjectMetricStatus,
         io.kubernetes.client.openapi.models.V2beta1ObjectMetricStatusBuilder> {
   public V2beta1ObjectMetricStatusBuilder() {
     this(false);
   }
 
-  public V2beta1ObjectMetricStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V2beta1ObjectMetricStatusBuilder(Boolean validationEnabled) {
     this(new V2beta1ObjectMetricStatus(), validationEnabled);
   }
 
-  public V2beta1ObjectMetricStatusBuilder(
-      io.kubernetes.client.openapi.models.V2beta1ObjectMetricStatusFluent<?> fluent) {
+  public V2beta1ObjectMetricStatusBuilder(V2beta1ObjectMetricStatusFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -96,7 +96,7 @@ public class V2beta1ObjectMetricStatusBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

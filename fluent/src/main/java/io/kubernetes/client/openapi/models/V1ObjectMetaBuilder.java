@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1ObjectMetaBuilder
-    extends io.kubernetes.client.openapi.models.V1ObjectMetaFluentImpl<
-        io.kubernetes.client.openapi.models.V1ObjectMetaBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ObjectMeta,
-        io.kubernetes.client.openapi.models.V1ObjectMetaBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1ObjectMetaBuilder extends V1ObjectMetaFluentImpl<V1ObjectMetaBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1ObjectMeta, V1ObjectMetaBuilder> {
   public V1ObjectMetaBuilder() {
     this(false);
   }
 
-  public V1ObjectMetaBuilder(java.lang.Boolean validationEnabled) {
+  public V1ObjectMetaBuilder(Boolean validationEnabled) {
     this(new V1ObjectMeta(), validationEnabled);
   }
 
@@ -149,7 +148,7 @@ public class V1ObjectMetaBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

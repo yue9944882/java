@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1CronJobSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1CronJobSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1CronJobSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1beta1CronJobSpecFluentImpl<V1beta1CronJobSpecBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1beta1CronJobSpec,
         io.kubernetes.client.openapi.models.V1beta1CronJobSpecBuilder> {
   public V1beta1CronJobSpecBuilder() {
     this(false);
   }
 
-  public V1beta1CronJobSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1CronJobSpecBuilder(Boolean validationEnabled) {
     this(new V1beta1CronJobSpec(), validationEnabled);
   }
 
-  public V1beta1CronJobSpecBuilder(
-      io.kubernetes.client.openapi.models.V1beta1CronJobSpecFluent<?> fluent) {
+  public V1beta1CronJobSpecBuilder(V1beta1CronJobSpecFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -106,7 +106,7 @@ public class V1beta1CronJobSpecBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;
