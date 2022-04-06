@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1DaemonSetConditionBuilder
-    extends io.kubernetes.client.openapi.models.V1DaemonSetConditionFluentImpl<
-        io.kubernetes.client.openapi.models.V1DaemonSetConditionBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1DaemonSetConditionFluentImpl<V1DaemonSetConditionBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1DaemonSetCondition,
         io.kubernetes.client.openapi.models.V1DaemonSetConditionBuilder> {
   public V1DaemonSetConditionBuilder() {
     this(false);
   }
 
-  public V1DaemonSetConditionBuilder(java.lang.Boolean validationEnabled) {
+  public V1DaemonSetConditionBuilder(Boolean validationEnabled) {
     this(new V1DaemonSetCondition(), validationEnabled);
   }
 
-  public V1DaemonSetConditionBuilder(
-      io.kubernetes.client.openapi.models.V1DaemonSetConditionFluent<?> fluent) {
+  public V1DaemonSetConditionBuilder(V1DaemonSetConditionFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -96,7 +96,7 @@ public class V1DaemonSetConditionBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

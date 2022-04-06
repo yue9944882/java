@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1PodConditionBuilder
-    extends io.kubernetes.client.openapi.models.V1PodConditionFluentImpl<
-        io.kubernetes.client.openapi.models.V1PodConditionBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1PodCondition,
-        io.kubernetes.client.openapi.models.V1PodConditionBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1PodConditionBuilder extends V1PodConditionFluentImpl<V1PodConditionBuilder>
+    implements VisitableBuilder<
+        V1PodCondition, io.kubernetes.client.openapi.models.V1PodConditionBuilder> {
   public V1PodConditionBuilder() {
     this(false);
   }
 
-  public V1PodConditionBuilder(java.lang.Boolean validationEnabled) {
+  public V1PodConditionBuilder(Boolean validationEnabled) {
     this(new V1PodCondition(), validationEnabled);
   }
 
@@ -99,7 +98,7 @@ public class V1PodConditionBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

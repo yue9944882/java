@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ConfigMapKeySelectorBuilder
-    extends io.kubernetes.client.openapi.models.V1ConfigMapKeySelectorFluentImpl<
-        io.kubernetes.client.openapi.models.V1ConfigMapKeySelectorBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1ConfigMapKeySelectorFluentImpl<V1ConfigMapKeySelectorBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1ConfigMapKeySelector,
         io.kubernetes.client.openapi.models.V1ConfigMapKeySelectorBuilder> {
   public V1ConfigMapKeySelectorBuilder() {
     this(false);
   }
 
-  public V1ConfigMapKeySelectorBuilder(java.lang.Boolean validationEnabled) {
+  public V1ConfigMapKeySelectorBuilder(Boolean validationEnabled) {
     this(new V1ConfigMapKeySelector(), validationEnabled);
   }
 
-  public V1ConfigMapKeySelectorBuilder(
-      io.kubernetes.client.openapi.models.V1ConfigMapKeySelectorFluent<?> fluent) {
+  public V1ConfigMapKeySelectorBuilder(V1ConfigMapKeySelectorFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -86,7 +86,7 @@ public class V1ConfigMapKeySelectorBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

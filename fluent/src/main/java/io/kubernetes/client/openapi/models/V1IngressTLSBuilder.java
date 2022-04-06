@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1IngressTLSBuilder
-    extends io.kubernetes.client.openapi.models.V1IngressTLSFluentImpl<
-        io.kubernetes.client.openapi.models.V1IngressTLSBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1IngressTLS,
-        io.kubernetes.client.openapi.models.V1IngressTLSBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1IngressTLSBuilder extends V1IngressTLSFluentImpl<V1IngressTLSBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1IngressTLS, V1IngressTLSBuilder> {
   public V1IngressTLSBuilder() {
     this(false);
   }
 
-  public V1IngressTLSBuilder(java.lang.Boolean validationEnabled) {
+  public V1IngressTLSBuilder(Boolean validationEnabled) {
     this(new V1IngressTLS(), validationEnabled);
   }
 
@@ -79,7 +78,7 @@ public class V1IngressTLSBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1DeleteOptionsBuilder
-    extends io.kubernetes.client.openapi.models.V1DeleteOptionsFluentImpl<
-        io.kubernetes.client.openapi.models.V1DeleteOptionsBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1DeleteOptionsBuilder extends V1DeleteOptionsFluentImpl<V1DeleteOptionsBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1DeleteOptions,
         io.kubernetes.client.openapi.models.V1DeleteOptionsBuilder> {
   public V1DeleteOptionsBuilder() {
     this(false);
   }
 
-  public V1DeleteOptionsBuilder(java.lang.Boolean validationEnabled) {
+  public V1DeleteOptionsBuilder(Boolean validationEnabled) {
     this(new V1DeleteOptions(), validationEnabled);
   }
 
-  public V1DeleteOptionsBuilder(
-      io.kubernetes.client.openapi.models.V1DeleteOptionsFluent<?> fluent) {
+  public V1DeleteOptionsBuilder(V1DeleteOptionsFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -105,7 +104,7 @@ public class V1DeleteOptionsBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

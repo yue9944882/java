@@ -12,22 +12,24 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V2beta2HorizontalPodAutoscalerConditionBuilder
-    extends io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerConditionFluentImpl<
-        io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerConditionBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerCondition,
+    extends V2beta2HorizontalPodAutoscalerConditionFluentImpl<
+        V2beta2HorizontalPodAutoscalerConditionBuilder>
+    implements VisitableBuilder<
+        V2beta2HorizontalPodAutoscalerCondition,
         io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerConditionBuilder> {
   public V2beta2HorizontalPodAutoscalerConditionBuilder() {
     this(false);
   }
 
-  public V2beta2HorizontalPodAutoscalerConditionBuilder(java.lang.Boolean validationEnabled) {
+  public V2beta2HorizontalPodAutoscalerConditionBuilder(Boolean validationEnabled) {
     this(new V2beta2HorizontalPodAutoscalerCondition(), validationEnabled);
   }
 
   public V2beta2HorizontalPodAutoscalerConditionBuilder(
-      io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerConditionFluent<?> fluent) {
+      V2beta2HorizontalPodAutoscalerConditionFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -97,7 +99,7 @@ public class V2beta2HorizontalPodAutoscalerConditionBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

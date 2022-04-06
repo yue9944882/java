@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1CSIStorageCapacityListBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityListFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1beta1CSIStorageCapacityListFluentImpl<V1beta1CSIStorageCapacityListBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityList,
         io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityListBuilder> {
   public V1beta1CSIStorageCapacityListBuilder() {
     this(false);
   }
 
-  public V1beta1CSIStorageCapacityListBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1CSIStorageCapacityListBuilder(Boolean validationEnabled) {
     this(new V1beta1CSIStorageCapacityList(), validationEnabled);
   }
 
-  public V1beta1CSIStorageCapacityListBuilder(
-      io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityListFluent<?> fluent) {
+  public V1beta1CSIStorageCapacityListBuilder(V1beta1CSIStorageCapacityListFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -91,7 +91,7 @@ public class V1beta1CSIStorageCapacityListBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

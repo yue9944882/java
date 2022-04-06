@@ -12,21 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1beta1ForZoneBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1ForZoneFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1ForZoneBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1beta1ForZoneBuilder extends V1beta1ForZoneFluentImpl<V1beta1ForZoneBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1beta1ForZone,
         io.kubernetes.client.openapi.models.V1beta1ForZoneBuilder> {
   public V1beta1ForZoneBuilder() {
     this(false);
   }
 
-  public V1beta1ForZoneBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1ForZoneBuilder(Boolean validationEnabled) {
     this(new V1beta1ForZone(), validationEnabled);
   }
 
-  public V1beta1ForZoneBuilder(io.kubernetes.client.openapi.models.V1beta1ForZoneFluent<?> fluent) {
+  public V1beta1ForZoneBuilder(V1beta1ForZoneFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -74,7 +74,7 @@ public class V1beta1ForZoneBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

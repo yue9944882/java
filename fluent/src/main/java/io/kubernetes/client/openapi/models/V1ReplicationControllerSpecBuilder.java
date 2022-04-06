@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ReplicationControllerSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1ReplicationControllerSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1ReplicationControllerSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1ReplicationControllerSpecFluentImpl<V1ReplicationControllerSpecBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1ReplicationControllerSpec,
         io.kubernetes.client.openapi.models.V1ReplicationControllerSpecBuilder> {
   public V1ReplicationControllerSpecBuilder() {
     this(false);
   }
 
-  public V1ReplicationControllerSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1ReplicationControllerSpecBuilder(Boolean validationEnabled) {
     this(new V1ReplicationControllerSpec(), validationEnabled);
   }
 
-  public V1ReplicationControllerSpecBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicationControllerSpecFluent<?> fluent) {
+  public V1ReplicationControllerSpecBuilder(V1ReplicationControllerSpecFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -91,7 +91,7 @@ public class V1ReplicationControllerSpecBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

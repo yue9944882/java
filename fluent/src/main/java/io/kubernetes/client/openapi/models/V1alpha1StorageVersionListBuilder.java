@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1alpha1StorageVersionListBuilder
-    extends io.kubernetes.client.openapi.models.V1alpha1StorageVersionListFluentImpl<
-        io.kubernetes.client.openapi.models.V1alpha1StorageVersionListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1alpha1StorageVersionList,
+    extends V1alpha1StorageVersionListFluentImpl<V1alpha1StorageVersionListBuilder>
+    implements VisitableBuilder<
+        V1alpha1StorageVersionList,
         io.kubernetes.client.openapi.models.V1alpha1StorageVersionListBuilder> {
   public V1alpha1StorageVersionListBuilder() {
     this(false);
   }
 
-  public V1alpha1StorageVersionListBuilder(java.lang.Boolean validationEnabled) {
+  public V1alpha1StorageVersionListBuilder(Boolean validationEnabled) {
     this(new V1alpha1StorageVersionList(), validationEnabled);
   }
 
-  public V1alpha1StorageVersionListBuilder(
-      io.kubernetes.client.openapi.models.V1alpha1StorageVersionListFluent<?> fluent) {
+  public V1alpha1StorageVersionListBuilder(V1alpha1StorageVersionListFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -91,7 +91,7 @@ public class V1alpha1StorageVersionListBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

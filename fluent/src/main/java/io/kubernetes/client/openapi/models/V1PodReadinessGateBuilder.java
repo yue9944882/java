@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1PodReadinessGateBuilder
-    extends io.kubernetes.client.openapi.models.V1PodReadinessGateFluentImpl<
-        io.kubernetes.client.openapi.models.V1PodReadinessGateBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1PodReadinessGate,
-        io.kubernetes.client.openapi.models.V1PodReadinessGateBuilder> {
+    extends V1PodReadinessGateFluentImpl<V1PodReadinessGateBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1PodReadinessGate, V1PodReadinessGateBuilder> {
   public V1PodReadinessGateBuilder() {
     this(false);
   }
 
-  public V1PodReadinessGateBuilder(java.lang.Boolean validationEnabled) {
+  public V1PodReadinessGateBuilder(Boolean validationEnabled) {
     this(new V1PodReadinessGate(), validationEnabled);
   }
 
-  public V1PodReadinessGateBuilder(
-      io.kubernetes.client.openapi.models.V1PodReadinessGateFluent<?> fluent) {
+  public V1PodReadinessGateBuilder(V1PodReadinessGateFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -76,7 +75,7 @@ public class V1PodReadinessGateBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1LabelSelectorBuilder
-    extends io.kubernetes.client.openapi.models.V1LabelSelectorFluentImpl<
-        io.kubernetes.client.openapi.models.V1LabelSelectorBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1LabelSelector,
-        io.kubernetes.client.openapi.models.V1LabelSelectorBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1LabelSelectorBuilder extends V1LabelSelectorFluentImpl<V1LabelSelectorBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1LabelSelector, V1LabelSelectorBuilder> {
   public V1LabelSelectorBuilder() {
     this(false);
   }
 
-  public V1LabelSelectorBuilder(java.lang.Boolean validationEnabled) {
+  public V1LabelSelectorBuilder(Boolean validationEnabled) {
     this(new V1LabelSelector(), validationEnabled);
   }
 
@@ -80,7 +79,7 @@ public class V1LabelSelectorBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

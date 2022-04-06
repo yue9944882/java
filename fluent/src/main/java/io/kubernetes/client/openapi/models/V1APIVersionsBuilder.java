@@ -12,21 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1APIVersionsBuilder
-    extends io.kubernetes.client.openapi.models.V1APIVersionsFluentImpl<
-        io.kubernetes.client.openapi.models.V1APIVersionsBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1APIVersions,
-        io.kubernetes.client.openapi.models.V1APIVersionsBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1APIVersionsBuilder extends V1APIVersionsFluentImpl<V1APIVersionsBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1APIVersions, V1APIVersionsBuilder> {
   public V1APIVersionsBuilder() {
     this(false);
   }
 
-  public V1APIVersionsBuilder(java.lang.Boolean validationEnabled) {
+  public V1APIVersionsBuilder(Boolean validationEnabled) {
     this(new V1APIVersions(), validationEnabled);
   }
 
-  public V1APIVersionsBuilder(io.kubernetes.client.openapi.models.V1APIVersionsFluent<?> fluent) {
+  public V1APIVersionsBuilder(V1APIVersionsFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -89,7 +88,7 @@ public class V1APIVersionsBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

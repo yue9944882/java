@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1EndpointHintsBuilder
-    extends io.kubernetes.client.openapi.models.V1EndpointHintsFluentImpl<
-        io.kubernetes.client.openapi.models.V1EndpointHintsBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1EndpointHintsBuilder extends V1EndpointHintsFluentImpl<V1EndpointHintsBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1EndpointHints,
         io.kubernetes.client.openapi.models.V1EndpointHintsBuilder> {
   public V1EndpointHintsBuilder() {
     this(false);
   }
 
-  public V1EndpointHintsBuilder(java.lang.Boolean validationEnabled) {
+  public V1EndpointHintsBuilder(Boolean validationEnabled) {
     this(new V1EndpointHints(), validationEnabled);
   }
 
-  public V1EndpointHintsBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointHintsFluent<?> fluent) {
+  public V1EndpointHintsBuilder(V1EndpointHintsFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -75,7 +74,7 @@ public class V1EndpointHintsBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

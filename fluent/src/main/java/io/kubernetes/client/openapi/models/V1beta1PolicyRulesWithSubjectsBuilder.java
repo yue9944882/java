@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1PolicyRulesWithSubjectsBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1PolicyRulesWithSubjectsFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1PolicyRulesWithSubjectsBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1beta1PolicyRulesWithSubjectsFluentImpl<V1beta1PolicyRulesWithSubjectsBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1beta1PolicyRulesWithSubjects,
         io.kubernetes.client.openapi.models.V1beta1PolicyRulesWithSubjectsBuilder> {
   public V1beta1PolicyRulesWithSubjectsBuilder() {
     this(false);
   }
 
-  public V1beta1PolicyRulesWithSubjectsBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1PolicyRulesWithSubjectsBuilder(Boolean validationEnabled) {
     this(new V1beta1PolicyRulesWithSubjects(), validationEnabled);
   }
 
-  public V1beta1PolicyRulesWithSubjectsBuilder(
-      io.kubernetes.client.openapi.models.V1beta1PolicyRulesWithSubjectsFluent<?> fluent) {
+  public V1beta1PolicyRulesWithSubjectsBuilder(V1beta1PolicyRulesWithSubjectsFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -86,7 +86,7 @@ public class V1beta1PolicyRulesWithSubjectsBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,22 +12,23 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1RollingUpdateStatefulSetStrategyBuilder
-    extends io.kubernetes.client.openapi.models.V1RollingUpdateStatefulSetStrategyFluentImpl<
-        io.kubernetes.client.openapi.models.V1RollingUpdateStatefulSetStrategyBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1RollingUpdateStatefulSetStrategyFluentImpl<V1RollingUpdateStatefulSetStrategyBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1RollingUpdateStatefulSetStrategy,
-        io.kubernetes.client.openapi.models.V1RollingUpdateStatefulSetStrategyBuilder> {
+        V1RollingUpdateStatefulSetStrategyBuilder> {
   public V1RollingUpdateStatefulSetStrategyBuilder() {
     this(false);
   }
 
-  public V1RollingUpdateStatefulSetStrategyBuilder(java.lang.Boolean validationEnabled) {
+  public V1RollingUpdateStatefulSetStrategyBuilder(Boolean validationEnabled) {
     this(new V1RollingUpdateStatefulSetStrategy(), validationEnabled);
   }
 
   public V1RollingUpdateStatefulSetStrategyBuilder(
-      io.kubernetes.client.openapi.models.V1RollingUpdateStatefulSetStrategyFluent<?> fluent) {
+      V1RollingUpdateStatefulSetStrategyFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -76,7 +77,7 @@ public class V1RollingUpdateStatefulSetStrategyBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,17 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V2beta2HPAScalingPolicyBuilder
-    extends io.kubernetes.client.openapi.models.V2beta2HPAScalingPolicyFluentImpl<
-        io.kubernetes.client.openapi.models.V2beta2HPAScalingPolicyBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V2beta2HPAScalingPolicy,
+    extends V2beta2HPAScalingPolicyFluentImpl<V2beta2HPAScalingPolicyBuilder>
+    implements VisitableBuilder<
+        V2beta2HPAScalingPolicy,
         io.kubernetes.client.openapi.models.V2beta2HPAScalingPolicyBuilder> {
   public V2beta2HPAScalingPolicyBuilder() {
     this(false);
   }
 
-  public V2beta2HPAScalingPolicyBuilder(java.lang.Boolean validationEnabled) {
+  public V2beta2HPAScalingPolicyBuilder(Boolean validationEnabled) {
     this(new V2beta2HPAScalingPolicy(), validationEnabled);
   }
 
@@ -86,7 +87,7 @@ public class V2beta2HPAScalingPolicyBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,17 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1WeightedPodAffinityTermBuilder
-    extends io.kubernetes.client.openapi.models.V1WeightedPodAffinityTermFluentImpl<
-        io.kubernetes.client.openapi.models.V1WeightedPodAffinityTermBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1WeightedPodAffinityTerm,
+    extends V1WeightedPodAffinityTermFluentImpl<V1WeightedPodAffinityTermBuilder>
+    implements VisitableBuilder<
+        V1WeightedPodAffinityTerm,
         io.kubernetes.client.openapi.models.V1WeightedPodAffinityTermBuilder> {
   public V1WeightedPodAffinityTermBuilder() {
     this(false);
   }
 
-  public V1WeightedPodAffinityTermBuilder(java.lang.Boolean validationEnabled) {
+  public V1WeightedPodAffinityTermBuilder(Boolean validationEnabled) {
     this(new V1WeightedPodAffinityTerm(), validationEnabled);
   }
 
@@ -81,7 +82,7 @@ public class V1WeightedPodAffinityTermBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

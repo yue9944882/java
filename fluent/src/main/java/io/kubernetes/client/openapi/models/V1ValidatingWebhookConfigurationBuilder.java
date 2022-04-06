@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ValidatingWebhookConfigurationBuilder
-    extends io.kubernetes.client.openapi.models.V1ValidatingWebhookConfigurationFluentImpl<
-        io.kubernetes.client.openapi.models.V1ValidatingWebhookConfigurationBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1ValidatingWebhookConfigurationFluentImpl<V1ValidatingWebhookConfigurationBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1ValidatingWebhookConfiguration,
         io.kubernetes.client.openapi.models.V1ValidatingWebhookConfigurationBuilder> {
   public V1ValidatingWebhookConfigurationBuilder() {
     this(false);
   }
 
-  public V1ValidatingWebhookConfigurationBuilder(java.lang.Boolean validationEnabled) {
+  public V1ValidatingWebhookConfigurationBuilder(Boolean validationEnabled) {
     this(new V1ValidatingWebhookConfiguration(), validationEnabled);
   }
 
-  public V1ValidatingWebhookConfigurationBuilder(
-      io.kubernetes.client.openapi.models.V1ValidatingWebhookConfigurationFluent<?> fluent) {
+  public V1ValidatingWebhookConfigurationBuilder(V1ValidatingWebhookConfigurationFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -91,7 +91,7 @@ public class V1ValidatingWebhookConfigurationBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

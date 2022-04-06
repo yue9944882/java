@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1NonResourceAttributesBuilder
-    extends io.kubernetes.client.openapi.models.V1NonResourceAttributesFluentImpl<
-        io.kubernetes.client.openapi.models.V1NonResourceAttributesBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1NonResourceAttributesFluentImpl<V1NonResourceAttributesBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1NonResourceAttributes,
         io.kubernetes.client.openapi.models.V1NonResourceAttributesBuilder> {
   public V1NonResourceAttributesBuilder() {
     this(false);
   }
 
-  public V1NonResourceAttributesBuilder(java.lang.Boolean validationEnabled) {
+  public V1NonResourceAttributesBuilder(Boolean validationEnabled) {
     this(new V1NonResourceAttributes(), validationEnabled);
   }
 
-  public V1NonResourceAttributesBuilder(
-      io.kubernetes.client.openapi.models.V1NonResourceAttributesFluent<?> fluent) {
+  public V1NonResourceAttributesBuilder(V1NonResourceAttributesFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +81,7 @@ public class V1NonResourceAttributesBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

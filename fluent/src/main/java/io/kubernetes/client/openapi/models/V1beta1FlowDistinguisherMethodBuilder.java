@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1FlowDistinguisherMethodBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1FlowDistinguisherMethodFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1FlowDistinguisherMethodBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1beta1FlowDistinguisherMethodFluentImpl<V1beta1FlowDistinguisherMethodBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1beta1FlowDistinguisherMethod,
         io.kubernetes.client.openapi.models.V1beta1FlowDistinguisherMethodBuilder> {
   public V1beta1FlowDistinguisherMethodBuilder() {
     this(false);
   }
 
-  public V1beta1FlowDistinguisherMethodBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1FlowDistinguisherMethodBuilder(Boolean validationEnabled) {
     this(new V1beta1FlowDistinguisherMethod(), validationEnabled);
   }
 
-  public V1beta1FlowDistinguisherMethodBuilder(
-      io.kubernetes.client.openapi.models.V1beta1FlowDistinguisherMethodFluent<?> fluent) {
+  public V1beta1FlowDistinguisherMethodBuilder(V1beta1FlowDistinguisherMethodFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -76,7 +76,7 @@ public class V1beta1FlowDistinguisherMethodBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

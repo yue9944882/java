@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1DownwardAPIVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1DownwardAPIVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1DownwardAPIVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1DownwardAPIVolumeSourceFluentImpl<V1DownwardAPIVolumeSourceBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1DownwardAPIVolumeSource,
         io.kubernetes.client.openapi.models.V1DownwardAPIVolumeSourceBuilder> {
   public V1DownwardAPIVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1DownwardAPIVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1DownwardAPIVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1DownwardAPIVolumeSource(), validationEnabled);
   }
 
-  public V1DownwardAPIVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1DownwardAPIVolumeSourceFluent<?> fluent) {
+  public V1DownwardAPIVolumeSourceBuilder(V1DownwardAPIVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +81,7 @@ public class V1DownwardAPIVolumeSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

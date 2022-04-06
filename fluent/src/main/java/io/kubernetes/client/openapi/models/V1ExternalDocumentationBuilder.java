@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ExternalDocumentationBuilder
-    extends io.kubernetes.client.openapi.models.V1ExternalDocumentationFluentImpl<
-        io.kubernetes.client.openapi.models.V1ExternalDocumentationBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1ExternalDocumentationFluentImpl<V1ExternalDocumentationBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1ExternalDocumentation,
         io.kubernetes.client.openapi.models.V1ExternalDocumentationBuilder> {
   public V1ExternalDocumentationBuilder() {
     this(false);
   }
 
-  public V1ExternalDocumentationBuilder(java.lang.Boolean validationEnabled) {
+  public V1ExternalDocumentationBuilder(Boolean validationEnabled) {
     this(new V1ExternalDocumentation(), validationEnabled);
   }
 
-  public V1ExternalDocumentationBuilder(
-      io.kubernetes.client.openapi.models.V1ExternalDocumentationFluent<?> fluent) {
+  public V1ExternalDocumentationBuilder(V1ExternalDocumentationFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +81,7 @@ public class V1ExternalDocumentationBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

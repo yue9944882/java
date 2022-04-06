@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V2beta2PodsMetricSourceBuilder
-    extends io.kubernetes.client.openapi.models.V2beta2PodsMetricSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V2beta2PodsMetricSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V2beta2PodsMetricSource,
+    extends V2beta2PodsMetricSourceFluentImpl<V2beta2PodsMetricSourceBuilder>
+    implements VisitableBuilder<
+        V2beta2PodsMetricSource,
         io.kubernetes.client.openapi.models.V2beta2PodsMetricSourceBuilder> {
   public V2beta2PodsMetricSourceBuilder() {
     this(false);
   }
 
-  public V2beta2PodsMetricSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V2beta2PodsMetricSourceBuilder(Boolean validationEnabled) {
     this(new V2beta2PodsMetricSource(), validationEnabled);
   }
 
-  public V2beta2PodsMetricSourceBuilder(
-      io.kubernetes.client.openapi.models.V2beta2PodsMetricSourceFluent<?> fluent) {
+  public V2beta2PodsMetricSourceBuilder(V2beta2PodsMetricSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +81,7 @@ public class V2beta2PodsMetricSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

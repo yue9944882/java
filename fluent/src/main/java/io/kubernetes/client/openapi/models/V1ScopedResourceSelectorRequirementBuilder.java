@@ -12,17 +12,19 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ScopedResourceSelectorRequirementBuilder
-    extends io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirementFluentImpl<
-        io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirementBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirement,
+    extends V1ScopedResourceSelectorRequirementFluentImpl<
+        V1ScopedResourceSelectorRequirementBuilder>
+    implements VisitableBuilder<
+        V1ScopedResourceSelectorRequirement,
         io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirementBuilder> {
   public V1ScopedResourceSelectorRequirementBuilder() {
     this(false);
   }
 
-  public V1ScopedResourceSelectorRequirementBuilder(java.lang.Boolean validationEnabled) {
+  public V1ScopedResourceSelectorRequirementBuilder(Boolean validationEnabled) {
     this(new V1ScopedResourceSelectorRequirement(), validationEnabled);
   }
 
@@ -86,7 +88,7 @@ public class V1ScopedResourceSelectorRequirementBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class CoreV1EventListBuilder
-    extends io.kubernetes.client.openapi.models.CoreV1EventListFluentImpl<
-        io.kubernetes.client.openapi.models.CoreV1EventListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.CoreV1EventList,
-        io.kubernetes.client.openapi.models.CoreV1EventListBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class CoreV1EventListBuilder extends CoreV1EventListFluentImpl<CoreV1EventListBuilder>
+    implements VisitableBuilder<
+        CoreV1EventList, io.kubernetes.client.openapi.models.CoreV1EventListBuilder> {
   public CoreV1EventListBuilder() {
     this(false);
   }
 
-  public CoreV1EventListBuilder(java.lang.Boolean validationEnabled) {
+  public CoreV1EventListBuilder(Boolean validationEnabled) {
     this(new CoreV1EventList(), validationEnabled);
   }
 
@@ -90,7 +89,7 @@ public class CoreV1EventListBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

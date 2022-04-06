@@ -12,17 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ISCSIPersistentVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1ISCSIPersistentVolumeSourceFluentImpl<V1ISCSIPersistentVolumeSourceBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSource,
-        io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceBuilder> {
+        V1ISCSIPersistentVolumeSourceBuilder> {
   public V1ISCSIPersistentVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1ISCSIPersistentVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1ISCSIPersistentVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1ISCSIPersistentVolumeSource(), validationEnabled);
   }
 
@@ -126,7 +127,7 @@ public class V1ISCSIPersistentVolumeSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

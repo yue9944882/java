@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1CSIVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1CSIVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1CSIVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1CSIVolumeSourceBuilder extends V1CSIVolumeSourceFluentImpl<V1CSIVolumeSourceBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1CSIVolumeSource,
         io.kubernetes.client.openapi.models.V1CSIVolumeSourceBuilder> {
   public V1CSIVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1CSIVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1CSIVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1CSIVolumeSource(), validationEnabled);
   }
 
-  public V1CSIVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1CSIVolumeSourceFluent<?> fluent) {
+  public V1CSIVolumeSourceBuilder(V1CSIVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -95,7 +94,7 @@ public class V1CSIVolumeSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

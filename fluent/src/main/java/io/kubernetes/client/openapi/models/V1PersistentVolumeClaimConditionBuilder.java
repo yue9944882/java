@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1PersistentVolumeClaimConditionBuilder
-    extends io.kubernetes.client.openapi.models.V1PersistentVolumeClaimConditionFluentImpl<
-        io.kubernetes.client.openapi.models.V1PersistentVolumeClaimConditionBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1PersistentVolumeClaimConditionFluentImpl<V1PersistentVolumeClaimConditionBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1PersistentVolumeClaimCondition,
         io.kubernetes.client.openapi.models.V1PersistentVolumeClaimConditionBuilder> {
   public V1PersistentVolumeClaimConditionBuilder() {
     this(false);
   }
 
-  public V1PersistentVolumeClaimConditionBuilder(java.lang.Boolean validationEnabled) {
+  public V1PersistentVolumeClaimConditionBuilder(Boolean validationEnabled) {
     this(new V1PersistentVolumeClaimCondition(), validationEnabled);
   }
 
-  public V1PersistentVolumeClaimConditionBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeClaimConditionFluent<?> fluent) {
+  public V1PersistentVolumeClaimConditionBuilder(V1PersistentVolumeClaimConditionFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -101,7 +101,7 @@ public class V1PersistentVolumeClaimConditionBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

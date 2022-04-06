@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1EndpointConditionsBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1EndpointConditionsFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1EndpointConditionsBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1beta1EndpointConditionsFluentImpl<V1beta1EndpointConditionsBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1beta1EndpointConditions,
-        io.kubernetes.client.openapi.models.V1beta1EndpointConditionsBuilder> {
+        V1beta1EndpointConditionsBuilder> {
   public V1beta1EndpointConditionsBuilder() {
     this(false);
   }
 
-  public V1beta1EndpointConditionsBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1EndpointConditionsBuilder(Boolean validationEnabled) {
     this(new V1beta1EndpointConditions(), validationEnabled);
   }
 
-  public V1beta1EndpointConditionsBuilder(
-      io.kubernetes.client.openapi.models.V1beta1EndpointConditionsFluent<?> fluent) {
+  public V1beta1EndpointConditionsBuilder(V1beta1EndpointConditionsFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -86,7 +86,7 @@ public class V1beta1EndpointConditionsBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

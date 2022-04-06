@@ -12,17 +12,17 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1NodeConfigSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1NodeConfigSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1NodeConfigSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1NodeConfigSource,
-        io.kubernetes.client.openapi.models.V1NodeConfigSourceBuilder> {
+    extends V1NodeConfigSourceFluentImpl<V1NodeConfigSourceBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1NodeConfigSource, V1NodeConfigSourceBuilder> {
   public V1NodeConfigSourceBuilder() {
     this(false);
   }
 
-  public V1NodeConfigSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1NodeConfigSourceBuilder(Boolean validationEnabled) {
     this(new V1NodeConfigSource(), validationEnabled);
   }
 
@@ -76,7 +76,7 @@ public class V1NodeConfigSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

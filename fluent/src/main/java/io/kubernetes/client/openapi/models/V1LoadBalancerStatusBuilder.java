@@ -12,17 +12,17 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1LoadBalancerStatusBuilder
-    extends io.kubernetes.client.openapi.models.V1LoadBalancerStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V1LoadBalancerStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1LoadBalancerStatus,
-        io.kubernetes.client.openapi.models.V1LoadBalancerStatusBuilder> {
+    extends V1LoadBalancerStatusFluentImpl<V1LoadBalancerStatusBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1LoadBalancerStatus, V1LoadBalancerStatusBuilder> {
   public V1LoadBalancerStatusBuilder() {
     this(false);
   }
 
-  public V1LoadBalancerStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V1LoadBalancerStatusBuilder(Boolean validationEnabled) {
     this(new V1LoadBalancerStatus(), validationEnabled);
   }
 
@@ -76,7 +76,7 @@ public class V1LoadBalancerStatusBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

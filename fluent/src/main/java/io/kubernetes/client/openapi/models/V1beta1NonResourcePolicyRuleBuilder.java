@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1NonResourcePolicyRuleBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRuleFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRuleBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1beta1NonResourcePolicyRuleFluentImpl<V1beta1NonResourcePolicyRuleBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRule,
         io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRuleBuilder> {
   public V1beta1NonResourcePolicyRuleBuilder() {
     this(false);
   }
 
-  public V1beta1NonResourcePolicyRuleBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1NonResourcePolicyRuleBuilder(Boolean validationEnabled) {
     this(new V1beta1NonResourcePolicyRule(), validationEnabled);
   }
 
-  public V1beta1NonResourcePolicyRuleBuilder(
-      io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRuleFluent<?> fluent) {
+  public V1beta1NonResourcePolicyRuleBuilder(V1beta1NonResourcePolicyRuleFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +81,7 @@ public class V1beta1NonResourcePolicyRuleBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,17 +12,17 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V2ExternalMetricStatusBuilder
-    extends io.kubernetes.client.openapi.models.V2ExternalMetricStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V2ExternalMetricStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V2ExternalMetricStatus,
-        io.kubernetes.client.openapi.models.V2ExternalMetricStatusBuilder> {
+    extends V2ExternalMetricStatusFluentImpl<V2ExternalMetricStatusBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V2ExternalMetricStatus, V2ExternalMetricStatusBuilder> {
   public V2ExternalMetricStatusBuilder() {
     this(false);
   }
 
-  public V2ExternalMetricStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V2ExternalMetricStatusBuilder(Boolean validationEnabled) {
     this(new V2ExternalMetricStatus(), validationEnabled);
   }
 
@@ -81,7 +81,7 @@ public class V2ExternalMetricStatusBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,22 +12,24 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta2PriorityLevelConfigurationStatusBuilder
-    extends io.kubernetes.client.openapi.models.V1beta2PriorityLevelConfigurationStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta2PriorityLevelConfigurationStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1beta2PriorityLevelConfigurationStatusFluentImpl<
+        V1beta2PriorityLevelConfigurationStatusBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1beta2PriorityLevelConfigurationStatus,
-        io.kubernetes.client.openapi.models.V1beta2PriorityLevelConfigurationStatusBuilder> {
+        V1beta2PriorityLevelConfigurationStatusBuilder> {
   public V1beta2PriorityLevelConfigurationStatusBuilder() {
     this(false);
   }
 
-  public V1beta2PriorityLevelConfigurationStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta2PriorityLevelConfigurationStatusBuilder(Boolean validationEnabled) {
     this(new V1beta2PriorityLevelConfigurationStatus(), validationEnabled);
   }
 
   public V1beta2PriorityLevelConfigurationStatusBuilder(
-      io.kubernetes.client.openapi.models.V1beta2PriorityLevelConfigurationStatusFluent<?> fluent) {
+      V1beta2PriorityLevelConfigurationStatusFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -77,7 +79,7 @@ public class V1beta2PriorityLevelConfigurationStatusBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

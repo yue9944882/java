@@ -12,22 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1ConfigMapListBuilder
-    extends io.kubernetes.client.openapi.models.V1ConfigMapListFluentImpl<
-        io.kubernetes.client.openapi.models.V1ConfigMapListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ConfigMapList,
-        io.kubernetes.client.openapi.models.V1ConfigMapListBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1ConfigMapListBuilder extends V1ConfigMapListFluentImpl<V1ConfigMapListBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1ConfigMapList, V1ConfigMapListBuilder> {
   public V1ConfigMapListBuilder() {
     this(false);
   }
 
-  public V1ConfigMapListBuilder(java.lang.Boolean validationEnabled) {
+  public V1ConfigMapListBuilder(Boolean validationEnabled) {
     this(new V1ConfigMapList(), validationEnabled);
   }
 
-  public V1ConfigMapListBuilder(
-      io.kubernetes.client.openapi.models.V1ConfigMapListFluent<?> fluent) {
+  public V1ConfigMapListBuilder(V1ConfigMapListFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -90,7 +88,7 @@ public class V1ConfigMapListBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

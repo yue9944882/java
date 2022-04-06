@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1IngressServiceBackendBuilder
-    extends io.kubernetes.client.openapi.models.V1IngressServiceBackendFluentImpl<
-        io.kubernetes.client.openapi.models.V1IngressServiceBackendBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1IngressServiceBackendFluentImpl<V1IngressServiceBackendBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1IngressServiceBackend,
         io.kubernetes.client.openapi.models.V1IngressServiceBackendBuilder> {
   public V1IngressServiceBackendBuilder() {
     this(false);
   }
 
-  public V1IngressServiceBackendBuilder(java.lang.Boolean validationEnabled) {
+  public V1IngressServiceBackendBuilder(Boolean validationEnabled) {
     this(new V1IngressServiceBackend(), validationEnabled);
   }
 
-  public V1IngressServiceBackendBuilder(
-      io.kubernetes.client.openapi.models.V1IngressServiceBackendFluent<?> fluent) {
+  public V1IngressServiceBackendBuilder(V1IngressServiceBackendFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +81,7 @@ public class V1IngressServiceBackendBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,17 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ServerAddressByClientCIDRBuilder
-    extends io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRFluentImpl<
-        io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR,
+    extends V1ServerAddressByClientCIDRFluentImpl<V1ServerAddressByClientCIDRBuilder>
+    implements VisitableBuilder<
+        V1ServerAddressByClientCIDR,
         io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder> {
   public V1ServerAddressByClientCIDRBuilder() {
     this(false);
   }
 
-  public V1ServerAddressByClientCIDRBuilder(java.lang.Boolean validationEnabled) {
+  public V1ServerAddressByClientCIDRBuilder(Boolean validationEnabled) {
     this(new V1ServerAddressByClientCIDR(), validationEnabled);
   }
 
@@ -81,7 +82,7 @@ public class V1ServerAddressByClientCIDRBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

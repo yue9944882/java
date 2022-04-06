@@ -12,22 +12,23 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1AzureFilePersistentVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1AzureFilePersistentVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1AzureFilePersistentVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1AzureFilePersistentVolumeSource,
+    extends V1AzureFilePersistentVolumeSourceFluentImpl<V1AzureFilePersistentVolumeSourceBuilder>
+    implements VisitableBuilder<
+        V1AzureFilePersistentVolumeSource,
         io.kubernetes.client.openapi.models.V1AzureFilePersistentVolumeSourceBuilder> {
   public V1AzureFilePersistentVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1AzureFilePersistentVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1AzureFilePersistentVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1AzureFilePersistentVolumeSource(), validationEnabled);
   }
 
   public V1AzureFilePersistentVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1AzureFilePersistentVolumeSourceFluent<?> fluent) {
+      V1AzureFilePersistentVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -91,7 +92,7 @@ public class V1AzureFilePersistentVolumeSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

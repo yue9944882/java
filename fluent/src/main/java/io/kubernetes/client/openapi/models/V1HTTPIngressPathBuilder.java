@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1HTTPIngressPathBuilder
-    extends io.kubernetes.client.openapi.models.V1HTTPIngressPathFluentImpl<
-        io.kubernetes.client.openapi.models.V1HTTPIngressPathBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1HTTPIngressPath,
-        io.kubernetes.client.openapi.models.V1HTTPIngressPathBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1HTTPIngressPathBuilder extends V1HTTPIngressPathFluentImpl<V1HTTPIngressPathBuilder>
+    implements VisitableBuilder<
+        V1HTTPIngressPath, io.kubernetes.client.openapi.models.V1HTTPIngressPathBuilder> {
   public V1HTTPIngressPathBuilder() {
     this(false);
   }
 
-  public V1HTTPIngressPathBuilder(java.lang.Boolean validationEnabled) {
+  public V1HTTPIngressPathBuilder(Boolean validationEnabled) {
     this(new V1HTTPIngressPath(), validationEnabled);
   }
 
@@ -85,7 +84,7 @@ public class V1HTTPIngressPathBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

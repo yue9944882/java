@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1beta1FlowSchemaBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1FlowSchemaFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1FlowSchemaBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1beta1FlowSchemaBuilder extends V1beta1FlowSchemaFluentImpl<V1beta1FlowSchemaBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1beta1FlowSchema,
         io.kubernetes.client.openapi.models.V1beta1FlowSchemaBuilder> {
   public V1beta1FlowSchemaBuilder() {
     this(false);
   }
 
-  public V1beta1FlowSchemaBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1FlowSchemaBuilder(Boolean validationEnabled) {
     this(new V1beta1FlowSchema(), validationEnabled);
   }
 
-  public V1beta1FlowSchemaBuilder(
-      io.kubernetes.client.openapi.models.V1beta1FlowSchemaFluent<?> fluent) {
+  public V1beta1FlowSchemaBuilder(V1beta1FlowSchemaFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -95,7 +94,7 @@ public class V1beta1FlowSchemaBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

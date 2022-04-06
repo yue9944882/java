@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1NamespaceConditionBuilder
-    extends io.kubernetes.client.openapi.models.V1NamespaceConditionFluentImpl<
-        io.kubernetes.client.openapi.models.V1NamespaceConditionBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1NamespaceCondition,
-        io.kubernetes.client.openapi.models.V1NamespaceConditionBuilder> {
+    extends V1NamespaceConditionFluentImpl<V1NamespaceConditionBuilder>
+    implements VisitableBuilder<
+        V1NamespaceCondition, io.kubernetes.client.openapi.models.V1NamespaceConditionBuilder> {
   public V1NamespaceConditionBuilder() {
     this(false);
   }
 
-  public V1NamespaceConditionBuilder(java.lang.Boolean validationEnabled) {
+  public V1NamespaceConditionBuilder(Boolean validationEnabled) {
     this(new V1NamespaceCondition(), validationEnabled);
   }
 
-  public V1NamespaceConditionBuilder(
-      io.kubernetes.client.openapi.models.V1NamespaceConditionFluent<?> fluent) {
+  public V1NamespaceConditionBuilder(V1NamespaceConditionFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -96,7 +95,7 @@ public class V1NamespaceConditionBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

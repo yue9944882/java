@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1NetworkPolicyPortBuilder
-    extends io.kubernetes.client.openapi.models.V1NetworkPolicyPortFluentImpl<
-        io.kubernetes.client.openapi.models.V1NetworkPolicyPortBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1NetworkPolicyPort,
-        io.kubernetes.client.openapi.models.V1NetworkPolicyPortBuilder> {
+    extends V1NetworkPolicyPortFluentImpl<V1NetworkPolicyPortBuilder>
+    implements VisitableBuilder<
+        V1NetworkPolicyPort, io.kubernetes.client.openapi.models.V1NetworkPolicyPortBuilder> {
   public V1NetworkPolicyPortBuilder() {
     this(false);
   }
 
-  public V1NetworkPolicyPortBuilder(java.lang.Boolean validationEnabled) {
+  public V1NetworkPolicyPortBuilder(Boolean validationEnabled) {
     this(new V1NetworkPolicyPort(), validationEnabled);
   }
 
-  public V1NetworkPolicyPortBuilder(
-      io.kubernetes.client.openapi.models.V1NetworkPolicyPortFluent<?> fluent) {
+  public V1NetworkPolicyPortBuilder(V1NetworkPolicyPortFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -86,7 +85,7 @@ public class V1NetworkPolicyPortBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

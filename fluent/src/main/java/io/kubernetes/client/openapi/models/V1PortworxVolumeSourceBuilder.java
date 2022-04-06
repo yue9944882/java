@@ -12,17 +12,17 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1PortworxVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1PortworxVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1PortworxVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1PortworxVolumeSource,
-        io.kubernetes.client.openapi.models.V1PortworxVolumeSourceBuilder> {
+    extends V1PortworxVolumeSourceFluentImpl<V1PortworxVolumeSourceBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1PortworxVolumeSource, V1PortworxVolumeSourceBuilder> {
   public V1PortworxVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1PortworxVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1PortworxVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1PortworxVolumeSource(), validationEnabled);
   }
 
@@ -86,7 +86,7 @@ public class V1PortworxVolumeSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

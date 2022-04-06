@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1TypedLocalObjectReferenceBuilder
-    extends io.kubernetes.client.openapi.models.V1TypedLocalObjectReferenceFluentImpl<
-        io.kubernetes.client.openapi.models.V1TypedLocalObjectReferenceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1TypedLocalObjectReferenceFluentImpl<V1TypedLocalObjectReferenceBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1TypedLocalObjectReference,
-        io.kubernetes.client.openapi.models.V1TypedLocalObjectReferenceBuilder> {
+        V1TypedLocalObjectReferenceBuilder> {
   public V1TypedLocalObjectReferenceBuilder() {
     this(false);
   }
 
-  public V1TypedLocalObjectReferenceBuilder(java.lang.Boolean validationEnabled) {
+  public V1TypedLocalObjectReferenceBuilder(Boolean validationEnabled) {
     this(new V1TypedLocalObjectReference(), validationEnabled);
   }
 
-  public V1TypedLocalObjectReferenceBuilder(
-      io.kubernetes.client.openapi.models.V1TypedLocalObjectReferenceFluent<?> fluent) {
+  public V1TypedLocalObjectReferenceBuilder(V1TypedLocalObjectReferenceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -86,7 +86,7 @@ public class V1TypedLocalObjectReferenceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

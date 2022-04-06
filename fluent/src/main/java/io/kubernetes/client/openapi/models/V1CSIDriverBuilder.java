@@ -12,21 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1CSIDriverBuilder
-    extends io.kubernetes.client.openapi.models.V1CSIDriverFluentImpl<
-        io.kubernetes.client.openapi.models.V1CSIDriverBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1CSIDriverBuilder extends V1CSIDriverFluentImpl<V1CSIDriverBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1CSIDriver,
         io.kubernetes.client.openapi.models.V1CSIDriverBuilder> {
   public V1CSIDriverBuilder() {
     this(false);
   }
 
-  public V1CSIDriverBuilder(java.lang.Boolean validationEnabled) {
+  public V1CSIDriverBuilder(Boolean validationEnabled) {
     this(new V1CSIDriver(), validationEnabled);
   }
 
-  public V1CSIDriverBuilder(io.kubernetes.client.openapi.models.V1CSIDriverFluent<?> fluent) {
+  public V1CSIDriverBuilder(V1CSIDriverFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -89,7 +89,7 @@ public class V1CSIDriverBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

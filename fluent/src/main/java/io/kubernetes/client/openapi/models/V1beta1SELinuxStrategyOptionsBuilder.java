@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1SELinuxStrategyOptionsBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1SELinuxStrategyOptionsFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1SELinuxStrategyOptionsBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1beta1SELinuxStrategyOptions,
+    extends V1beta1SELinuxStrategyOptionsFluentImpl<V1beta1SELinuxStrategyOptionsBuilder>
+    implements VisitableBuilder<
+        V1beta1SELinuxStrategyOptions,
         io.kubernetes.client.openapi.models.V1beta1SELinuxStrategyOptionsBuilder> {
   public V1beta1SELinuxStrategyOptionsBuilder() {
     this(false);
   }
 
-  public V1beta1SELinuxStrategyOptionsBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1SELinuxStrategyOptionsBuilder(Boolean validationEnabled) {
     this(new V1beta1SELinuxStrategyOptions(), validationEnabled);
   }
 
-  public V1beta1SELinuxStrategyOptionsBuilder(
-      io.kubernetes.client.openapi.models.V1beta1SELinuxStrategyOptionsFluent<?> fluent) {
+  public V1beta1SELinuxStrategyOptionsBuilder(V1beta1SELinuxStrategyOptionsFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +81,7 @@ public class V1beta1SELinuxStrategyOptionsBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1AzureFileVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1AzureFileVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1AzureFileVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1AzureFileVolumeSource,
+    extends V1AzureFileVolumeSourceFluentImpl<V1AzureFileVolumeSourceBuilder>
+    implements VisitableBuilder<
+        V1AzureFileVolumeSource,
         io.kubernetes.client.openapi.models.V1AzureFileVolumeSourceBuilder> {
   public V1AzureFileVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1AzureFileVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1AzureFileVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1AzureFileVolumeSource(), validationEnabled);
   }
 
-  public V1AzureFileVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1AzureFileVolumeSourceFluent<?> fluent) {
+  public V1AzureFileVolumeSourceBuilder(V1AzureFileVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -86,7 +86,7 @@ public class V1AzureFileVolumeSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

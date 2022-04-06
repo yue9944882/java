@@ -12,17 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1PodDisruptionBudgetStatusBuilder
-    extends io.kubernetes.client.openapi.models.V1PodDisruptionBudgetStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V1PodDisruptionBudgetStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1PodDisruptionBudgetStatusFluentImpl<V1PodDisruptionBudgetStatusBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1PodDisruptionBudgetStatus,
-        io.kubernetes.client.openapi.models.V1PodDisruptionBudgetStatusBuilder> {
+        V1PodDisruptionBudgetStatusBuilder> {
   public V1PodDisruptionBudgetStatusBuilder() {
     this(false);
   }
 
-  public V1PodDisruptionBudgetStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V1PodDisruptionBudgetStatusBuilder(Boolean validationEnabled) {
     this(new V1PodDisruptionBudgetStatus(), validationEnabled);
   }
 
@@ -106,7 +107,7 @@ public class V1PodDisruptionBudgetStatusBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

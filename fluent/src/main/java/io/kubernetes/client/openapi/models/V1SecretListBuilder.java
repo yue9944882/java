@@ -12,21 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1SecretListBuilder
-    extends io.kubernetes.client.openapi.models.V1SecretListFluentImpl<
-        io.kubernetes.client.openapi.models.V1SecretListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1SecretListBuilder extends V1SecretListFluentImpl<V1SecretListBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1SecretList,
         io.kubernetes.client.openapi.models.V1SecretListBuilder> {
   public V1SecretListBuilder() {
     this(false);
   }
 
-  public V1SecretListBuilder(java.lang.Boolean validationEnabled) {
+  public V1SecretListBuilder(Boolean validationEnabled) {
     this(new V1SecretList(), validationEnabled);
   }
 
-  public V1SecretListBuilder(io.kubernetes.client.openapi.models.V1SecretListFluent<?> fluent) {
+  public V1SecretListBuilder(V1SecretListFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -89,7 +89,7 @@ public class V1SecretListBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

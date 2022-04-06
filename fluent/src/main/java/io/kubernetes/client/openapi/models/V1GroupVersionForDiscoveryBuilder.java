@@ -12,17 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1GroupVersionForDiscoveryBuilder
-    extends io.kubernetes.client.openapi.models.V1GroupVersionForDiscoveryFluentImpl<
-        io.kubernetes.client.openapi.models.V1GroupVersionForDiscoveryBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1GroupVersionForDiscovery,
+    extends V1GroupVersionForDiscoveryFluentImpl<V1GroupVersionForDiscoveryBuilder>
+    implements VisitableBuilder<
+        V1GroupVersionForDiscovery,
         io.kubernetes.client.openapi.models.V1GroupVersionForDiscoveryBuilder> {
   public V1GroupVersionForDiscoveryBuilder() {
     this(false);
   }
 
-  public V1GroupVersionForDiscoveryBuilder(java.lang.Boolean validationEnabled) {
+  public V1GroupVersionForDiscoveryBuilder(Boolean validationEnabled) {
     this(new V1GroupVersionForDiscovery(), validationEnabled);
   }
 
@@ -81,7 +82,7 @@ public class V1GroupVersionForDiscoveryBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

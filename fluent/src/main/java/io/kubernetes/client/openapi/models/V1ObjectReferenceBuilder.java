@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1ObjectReferenceBuilder
-    extends io.kubernetes.client.openapi.models.V1ObjectReferenceFluentImpl<
-        io.kubernetes.client.openapi.models.V1ObjectReferenceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1ObjectReferenceBuilder extends V1ObjectReferenceFluentImpl<V1ObjectReferenceBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1ObjectReference,
         io.kubernetes.client.openapi.models.V1ObjectReferenceBuilder> {
   public V1ObjectReferenceBuilder() {
     this(false);
   }
 
-  public V1ObjectReferenceBuilder(java.lang.Boolean validationEnabled) {
+  public V1ObjectReferenceBuilder(Boolean validationEnabled) {
     this(new V1ObjectReference(), validationEnabled);
   }
 
-  public V1ObjectReferenceBuilder(
-      io.kubernetes.client.openapi.models.V1ObjectReferenceFluent<?> fluent) {
+  public V1ObjectReferenceBuilder(V1ObjectReferenceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -105,7 +104,7 @@ public class V1ObjectReferenceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1EndpointConditionsBuilder
-    extends io.kubernetes.client.openapi.models.V1EndpointConditionsFluentImpl<
-        io.kubernetes.client.openapi.models.V1EndpointConditionsBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1EndpointConditions,
-        io.kubernetes.client.openapi.models.V1EndpointConditionsBuilder> {
+    extends V1EndpointConditionsFluentImpl<V1EndpointConditionsBuilder>
+    implements VisitableBuilder<
+        V1EndpointConditions, io.kubernetes.client.openapi.models.V1EndpointConditionsBuilder> {
   public V1EndpointConditionsBuilder() {
     this(false);
   }
 
-  public V1EndpointConditionsBuilder(java.lang.Boolean validationEnabled) {
+  public V1EndpointConditionsBuilder(Boolean validationEnabled) {
     this(new V1EndpointConditions(), validationEnabled);
   }
 
-  public V1EndpointConditionsBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointConditionsFluent<?> fluent) {
+  public V1EndpointConditionsBuilder(V1EndpointConditionsFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -86,7 +85,7 @@ public class V1EndpointConditionsBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

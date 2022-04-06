@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1ValidationRuleBuilder
-    extends io.kubernetes.client.openapi.models.V1ValidationRuleFluentImpl<
-        io.kubernetes.client.openapi.models.V1ValidationRuleBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ValidationRule,
-        io.kubernetes.client.openapi.models.V1ValidationRuleBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1ValidationRuleBuilder extends V1ValidationRuleFluentImpl<V1ValidationRuleBuilder>
+    implements VisitableBuilder<
+        V1ValidationRule, io.kubernetes.client.openapi.models.V1ValidationRuleBuilder> {
   public V1ValidationRuleBuilder() {
     this(false);
   }
 
-  public V1ValidationRuleBuilder(java.lang.Boolean validationEnabled) {
+  public V1ValidationRuleBuilder(Boolean validationEnabled) {
     this(new V1ValidationRule(), validationEnabled);
   }
 
@@ -80,7 +79,7 @@ public class V1ValidationRuleBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

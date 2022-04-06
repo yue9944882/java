@@ -12,17 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1SysctlBuilder
-    extends io.kubernetes.client.openapi.models.V1SysctlFluentImpl<
-        io.kubernetes.client.openapi.models.V1SysctlBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1Sysctl,
-        io.kubernetes.client.openapi.models.V1SysctlBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1SysctlBuilder extends V1SysctlFluentImpl<V1SysctlBuilder>
+    implements VisitableBuilder<io.kubernetes.client.openapi.models.V1Sysctl, V1SysctlBuilder> {
   public V1SysctlBuilder() {
     this(false);
   }
 
-  public V1SysctlBuilder(java.lang.Boolean validationEnabled) {
+  public V1SysctlBuilder(Boolean validationEnabled) {
     this(new V1Sysctl(), validationEnabled);
   }
 
@@ -78,7 +76,7 @@ public class V1SysctlBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

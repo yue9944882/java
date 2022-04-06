@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1SubjectRulesReviewStatusBuilder
-    extends io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1SubjectRulesReviewStatusFluentImpl<V1SubjectRulesReviewStatusBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatus,
-        io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusBuilder> {
+        V1SubjectRulesReviewStatusBuilder> {
   public V1SubjectRulesReviewStatusBuilder() {
     this(false);
   }
 
-  public V1SubjectRulesReviewStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V1SubjectRulesReviewStatusBuilder(Boolean validationEnabled) {
     this(new V1SubjectRulesReviewStatus(), validationEnabled);
   }
 
-  public V1SubjectRulesReviewStatusBuilder(
-      io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent<?> fluent) {
+  public V1SubjectRulesReviewStatusBuilder(V1SubjectRulesReviewStatusFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -91,7 +91,7 @@ public class V1SubjectRulesReviewStatusBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

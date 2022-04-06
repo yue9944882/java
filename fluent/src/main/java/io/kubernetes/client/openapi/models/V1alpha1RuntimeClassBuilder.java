@@ -12,17 +12,17 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1alpha1RuntimeClassBuilder
-    extends io.kubernetes.client.openapi.models.V1alpha1RuntimeClassFluentImpl<
-        io.kubernetes.client.openapi.models.V1alpha1RuntimeClassBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1alpha1RuntimeClass,
-        io.kubernetes.client.openapi.models.V1alpha1RuntimeClassBuilder> {
+    extends V1alpha1RuntimeClassFluentImpl<V1alpha1RuntimeClassBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1alpha1RuntimeClass, V1alpha1RuntimeClassBuilder> {
   public V1alpha1RuntimeClassBuilder() {
     this(false);
   }
 
-  public V1alpha1RuntimeClassBuilder(java.lang.Boolean validationEnabled) {
+  public V1alpha1RuntimeClassBuilder(Boolean validationEnabled) {
     this(new V1alpha1RuntimeClass(), validationEnabled);
   }
 
@@ -91,7 +91,7 @@ public class V1alpha1RuntimeClassBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

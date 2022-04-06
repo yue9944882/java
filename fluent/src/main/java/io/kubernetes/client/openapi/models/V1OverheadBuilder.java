@@ -12,21 +12,19 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1OverheadBuilder
-    extends io.kubernetes.client.openapi.models.V1OverheadFluentImpl<
-        io.kubernetes.client.openapi.models.V1OverheadBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1Overhead,
-        io.kubernetes.client.openapi.models.V1OverheadBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1OverheadBuilder extends V1OverheadFluentImpl<V1OverheadBuilder>
+    implements VisitableBuilder<V1Overhead, io.kubernetes.client.openapi.models.V1OverheadBuilder> {
   public V1OverheadBuilder() {
     this(false);
   }
 
-  public V1OverheadBuilder(java.lang.Boolean validationEnabled) {
+  public V1OverheadBuilder(Boolean validationEnabled) {
     this(new V1Overhead(), validationEnabled);
   }
 
-  public V1OverheadBuilder(io.kubernetes.client.openapi.models.V1OverheadFluent<?> fluent) {
+  public V1OverheadBuilder(V1OverheadFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -74,7 +72,7 @@ public class V1OverheadBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

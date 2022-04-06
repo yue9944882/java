@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class ApiextensionsV1ServiceReferenceBuilder
-    extends io.kubernetes.client.openapi.models.ApiextensionsV1ServiceReferenceFluentImpl<
-        io.kubernetes.client.openapi.models.ApiextensionsV1ServiceReferenceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends ApiextensionsV1ServiceReferenceFluentImpl<ApiextensionsV1ServiceReferenceBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.ApiextensionsV1ServiceReference,
         io.kubernetes.client.openapi.models.ApiextensionsV1ServiceReferenceBuilder> {
   public ApiextensionsV1ServiceReferenceBuilder() {
     this(false);
   }
 
-  public ApiextensionsV1ServiceReferenceBuilder(java.lang.Boolean validationEnabled) {
+  public ApiextensionsV1ServiceReferenceBuilder(Boolean validationEnabled) {
     this(new ApiextensionsV1ServiceReference(), validationEnabled);
   }
 
-  public ApiextensionsV1ServiceReferenceBuilder(
-      io.kubernetes.client.openapi.models.ApiextensionsV1ServiceReferenceFluent<?> fluent) {
+  public ApiextensionsV1ServiceReferenceBuilder(ApiextensionsV1ServiceReferenceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -91,7 +91,7 @@ public class ApiextensionsV1ServiceReferenceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

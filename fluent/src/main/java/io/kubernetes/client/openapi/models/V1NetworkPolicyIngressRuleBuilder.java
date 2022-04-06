@@ -12,17 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1NetworkPolicyIngressRuleBuilder
-    extends io.kubernetes.client.openapi.models.V1NetworkPolicyIngressRuleFluentImpl<
-        io.kubernetes.client.openapi.models.V1NetworkPolicyIngressRuleBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1NetworkPolicyIngressRule,
+    extends V1NetworkPolicyIngressRuleFluentImpl<V1NetworkPolicyIngressRuleBuilder>
+    implements VisitableBuilder<
+        V1NetworkPolicyIngressRule,
         io.kubernetes.client.openapi.models.V1NetworkPolicyIngressRuleBuilder> {
   public V1NetworkPolicyIngressRuleBuilder() {
     this(false);
   }
 
-  public V1NetworkPolicyIngressRuleBuilder(java.lang.Boolean validationEnabled) {
+  public V1NetworkPolicyIngressRuleBuilder(Boolean validationEnabled) {
     this(new V1NetworkPolicyIngressRule(), validationEnabled);
   }
 
@@ -81,7 +82,7 @@ public class V1NetworkPolicyIngressRuleBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

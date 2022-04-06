@@ -12,22 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1ScopeSelectorBuilder
-    extends io.kubernetes.client.openapi.models.V1ScopeSelectorFluentImpl<
-        io.kubernetes.client.openapi.models.V1ScopeSelectorBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ScopeSelector,
-        io.kubernetes.client.openapi.models.V1ScopeSelectorBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1ScopeSelectorBuilder extends V1ScopeSelectorFluentImpl<V1ScopeSelectorBuilder>
+    implements VisitableBuilder<
+        V1ScopeSelector, io.kubernetes.client.openapi.models.V1ScopeSelectorBuilder> {
   public V1ScopeSelectorBuilder() {
     this(false);
   }
 
-  public V1ScopeSelectorBuilder(java.lang.Boolean validationEnabled) {
+  public V1ScopeSelectorBuilder(Boolean validationEnabled) {
     this(new V1ScopeSelector(), validationEnabled);
   }
 
-  public V1ScopeSelectorBuilder(
-      io.kubernetes.client.openapi.models.V1ScopeSelectorFluent<?> fluent) {
+  public V1ScopeSelectorBuilder(V1ScopeSelectorFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -75,7 +73,7 @@ public class V1ScopeSelectorBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

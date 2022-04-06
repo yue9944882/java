@@ -12,22 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1LoadBalancerIngressBuilder
-    extends io.kubernetes.client.openapi.models.V1LoadBalancerIngressFluentImpl<
-        io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1LoadBalancerIngress,
-        io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder> {
+    extends V1LoadBalancerIngressFluentImpl<V1LoadBalancerIngressBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1LoadBalancerIngress, V1LoadBalancerIngressBuilder> {
   public V1LoadBalancerIngressBuilder() {
     this(false);
   }
 
-  public V1LoadBalancerIngressBuilder(java.lang.Boolean validationEnabled) {
+  public V1LoadBalancerIngressBuilder(Boolean validationEnabled) {
     this(new V1LoadBalancerIngress(), validationEnabled);
   }
 
-  public V1LoadBalancerIngressBuilder(
-      io.kubernetes.client.openapi.models.V1LoadBalancerIngressFluent<?> fluent) {
+  public V1LoadBalancerIngressBuilder(V1LoadBalancerIngressFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -86,7 +85,7 @@ public class V1LoadBalancerIngressBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

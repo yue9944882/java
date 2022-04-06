@@ -12,22 +12,23 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class ApiregistrationV1ServiceReferenceBuilder
-    extends io.kubernetes.client.openapi.models.ApiregistrationV1ServiceReferenceFluentImpl<
-        io.kubernetes.client.openapi.models.ApiregistrationV1ServiceReferenceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends ApiregistrationV1ServiceReferenceFluentImpl<ApiregistrationV1ServiceReferenceBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.ApiregistrationV1ServiceReference,
         io.kubernetes.client.openapi.models.ApiregistrationV1ServiceReferenceBuilder> {
   public ApiregistrationV1ServiceReferenceBuilder() {
     this(false);
   }
 
-  public ApiregistrationV1ServiceReferenceBuilder(java.lang.Boolean validationEnabled) {
+  public ApiregistrationV1ServiceReferenceBuilder(Boolean validationEnabled) {
     this(new ApiregistrationV1ServiceReference(), validationEnabled);
   }
 
   public ApiregistrationV1ServiceReferenceBuilder(
-      io.kubernetes.client.openapi.models.ApiregistrationV1ServiceReferenceFluent<?> fluent) {
+      ApiregistrationV1ServiceReferenceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -86,7 +87,7 @@ public class ApiregistrationV1ServiceReferenceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

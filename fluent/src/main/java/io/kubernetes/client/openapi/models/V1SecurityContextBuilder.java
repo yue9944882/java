@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1SecurityContextBuilder
-    extends io.kubernetes.client.openapi.models.V1SecurityContextFluentImpl<
-        io.kubernetes.client.openapi.models.V1SecurityContextBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1SecurityContext,
-        io.kubernetes.client.openapi.models.V1SecurityContextBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1SecurityContextBuilder extends V1SecurityContextFluentImpl<V1SecurityContextBuilder>
+    implements VisitableBuilder<
+        V1SecurityContext, io.kubernetes.client.openapi.models.V1SecurityContextBuilder> {
   public V1SecurityContextBuilder() {
     this(false);
   }
 
-  public V1SecurityContextBuilder(java.lang.Boolean validationEnabled) {
+  public V1SecurityContextBuilder(Boolean validationEnabled) {
     this(new V1SecurityContext(), validationEnabled);
   }
 
@@ -125,7 +124,7 @@ public class V1SecurityContextBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

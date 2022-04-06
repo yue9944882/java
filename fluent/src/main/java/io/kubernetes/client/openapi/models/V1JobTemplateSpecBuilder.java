@@ -12,22 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1JobTemplateSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1JobTemplateSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1JobTemplateSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1JobTemplateSpec,
-        io.kubernetes.client.openapi.models.V1JobTemplateSpecBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1JobTemplateSpecBuilder extends V1JobTemplateSpecFluentImpl<V1JobTemplateSpecBuilder>
+    implements VisitableBuilder<
+        V1JobTemplateSpec, io.kubernetes.client.openapi.models.V1JobTemplateSpecBuilder> {
   public V1JobTemplateSpecBuilder() {
     this(false);
   }
 
-  public V1JobTemplateSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1JobTemplateSpecBuilder(Boolean validationEnabled) {
     this(new V1JobTemplateSpec(), validationEnabled);
   }
 
-  public V1JobTemplateSpecBuilder(
-      io.kubernetes.client.openapi.models.V1JobTemplateSpecFluent<?> fluent) {
+  public V1JobTemplateSpecBuilder(V1JobTemplateSpecFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -80,7 +78,7 @@ public class V1JobTemplateSpecBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

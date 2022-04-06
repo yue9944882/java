@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1TCPSocketActionBuilder
-    extends io.kubernetes.client.openapi.models.V1TCPSocketActionFluentImpl<
-        io.kubernetes.client.openapi.models.V1TCPSocketActionBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1TCPSocketAction,
-        io.kubernetes.client.openapi.models.V1TCPSocketActionBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1TCPSocketActionBuilder extends V1TCPSocketActionFluentImpl<V1TCPSocketActionBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1TCPSocketAction, V1TCPSocketActionBuilder> {
   public V1TCPSocketActionBuilder() {
     this(false);
   }
 
-  public V1TCPSocketActionBuilder(java.lang.Boolean validationEnabled) {
+  public V1TCPSocketActionBuilder(Boolean validationEnabled) {
     this(new V1TCPSocketAction(), validationEnabled);
   }
 
@@ -80,7 +79,7 @@ public class V1TCPSocketActionBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

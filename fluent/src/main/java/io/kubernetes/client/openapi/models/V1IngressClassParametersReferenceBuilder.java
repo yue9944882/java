@@ -12,17 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1IngressClassParametersReferenceBuilder
-    extends io.kubernetes.client.openapi.models.V1IngressClassParametersReferenceFluentImpl<
-        io.kubernetes.client.openapi.models.V1IngressClassParametersReferenceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1IngressClassParametersReference,
+    extends V1IngressClassParametersReferenceFluentImpl<V1IngressClassParametersReferenceBuilder>
+    implements VisitableBuilder<
+        V1IngressClassParametersReference,
         io.kubernetes.client.openapi.models.V1IngressClassParametersReferenceBuilder> {
   public V1IngressClassParametersReferenceBuilder() {
     this(false);
   }
 
-  public V1IngressClassParametersReferenceBuilder(java.lang.Boolean validationEnabled) {
+  public V1IngressClassParametersReferenceBuilder(Boolean validationEnabled) {
     this(new V1IngressClassParametersReference(), validationEnabled);
   }
 
@@ -96,7 +97,7 @@ public class V1IngressClassParametersReferenceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

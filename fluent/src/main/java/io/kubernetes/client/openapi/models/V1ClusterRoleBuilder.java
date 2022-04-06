@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1ClusterRoleBuilder
-    extends io.kubernetes.client.openapi.models.V1ClusterRoleFluentImpl<
-        io.kubernetes.client.openapi.models.V1ClusterRoleBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ClusterRole,
-        io.kubernetes.client.openapi.models.V1ClusterRoleBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1ClusterRoleBuilder extends V1ClusterRoleFluentImpl<V1ClusterRoleBuilder>
+    implements VisitableBuilder<
+        V1ClusterRole, io.kubernetes.client.openapi.models.V1ClusterRoleBuilder> {
   public V1ClusterRoleBuilder() {
     this(false);
   }
 
-  public V1ClusterRoleBuilder(java.lang.Boolean validationEnabled) {
+  public V1ClusterRoleBuilder(Boolean validationEnabled) {
     this(new V1ClusterRole(), validationEnabled);
   }
 
@@ -94,7 +93,7 @@ public class V1ClusterRoleBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

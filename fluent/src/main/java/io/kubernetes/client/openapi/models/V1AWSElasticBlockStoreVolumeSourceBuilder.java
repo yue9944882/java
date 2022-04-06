@@ -12,17 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1AWSElasticBlockStoreVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1AWSElasticBlockStoreVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1AWSElasticBlockStoreVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1AWSElasticBlockStoreVolumeSource,
+    extends V1AWSElasticBlockStoreVolumeSourceFluentImpl<V1AWSElasticBlockStoreVolumeSourceBuilder>
+    implements VisitableBuilder<
+        V1AWSElasticBlockStoreVolumeSource,
         io.kubernetes.client.openapi.models.V1AWSElasticBlockStoreVolumeSourceBuilder> {
   public V1AWSElasticBlockStoreVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1AWSElasticBlockStoreVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1AWSElasticBlockStoreVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1AWSElasticBlockStoreVolumeSource(), validationEnabled);
   }
 
@@ -91,7 +92,7 @@ public class V1AWSElasticBlockStoreVolumeSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

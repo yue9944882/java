@@ -12,17 +12,17 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1VolumeAttachmentBuilder
-    extends io.kubernetes.client.openapi.models.V1VolumeAttachmentFluentImpl<
-        io.kubernetes.client.openapi.models.V1VolumeAttachmentBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1VolumeAttachment,
-        io.kubernetes.client.openapi.models.V1VolumeAttachmentBuilder> {
+    extends V1VolumeAttachmentFluentImpl<V1VolumeAttachmentBuilder>
+    implements VisitableBuilder<
+        V1VolumeAttachment, io.kubernetes.client.openapi.models.V1VolumeAttachmentBuilder> {
   public V1VolumeAttachmentBuilder() {
     this(false);
   }
 
-  public V1VolumeAttachmentBuilder(java.lang.Boolean validationEnabled) {
+  public V1VolumeAttachmentBuilder(Boolean validationEnabled) {
     this(new V1VolumeAttachment(), validationEnabled);
   }
 
@@ -96,7 +96,7 @@ public class V1VolumeAttachmentBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1alpha1SchedulingBuilder
-    extends io.kubernetes.client.openapi.models.V1alpha1SchedulingFluentImpl<
-        io.kubernetes.client.openapi.models.V1alpha1SchedulingBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1alpha1SchedulingFluentImpl<V1alpha1SchedulingBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1alpha1Scheduling,
         io.kubernetes.client.openapi.models.V1alpha1SchedulingBuilder> {
   public V1alpha1SchedulingBuilder() {
     this(false);
   }
 
-  public V1alpha1SchedulingBuilder(java.lang.Boolean validationEnabled) {
+  public V1alpha1SchedulingBuilder(Boolean validationEnabled) {
     this(new V1alpha1Scheduling(), validationEnabled);
   }
 
-  public V1alpha1SchedulingBuilder(
-      io.kubernetes.client.openapi.models.V1alpha1SchedulingFluent<?> fluent) {
+  public V1alpha1SchedulingBuilder(V1alpha1SchedulingFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +81,7 @@ public class V1alpha1SchedulingBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

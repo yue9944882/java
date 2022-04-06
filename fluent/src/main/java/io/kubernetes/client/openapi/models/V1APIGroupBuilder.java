@@ -12,21 +12,19 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1APIGroupBuilder
-    extends io.kubernetes.client.openapi.models.V1APIGroupFluentImpl<
-        io.kubernetes.client.openapi.models.V1APIGroupBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1APIGroup,
-        io.kubernetes.client.openapi.models.V1APIGroupBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1APIGroupBuilder extends V1APIGroupFluentImpl<V1APIGroupBuilder>
+    implements VisitableBuilder<V1APIGroup, io.kubernetes.client.openapi.models.V1APIGroupBuilder> {
   public V1APIGroupBuilder() {
     this(false);
   }
 
-  public V1APIGroupBuilder(java.lang.Boolean validationEnabled) {
+  public V1APIGroupBuilder(Boolean validationEnabled) {
     this(new V1APIGroup(), validationEnabled);
   }
 
-  public V1APIGroupBuilder(io.kubernetes.client.openapi.models.V1APIGroupFluent<?> fluent) {
+  public V1APIGroupBuilder(V1APIGroupFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -99,7 +97,7 @@ public class V1APIGroupBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

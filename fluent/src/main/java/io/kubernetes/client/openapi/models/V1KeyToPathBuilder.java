@@ -12,17 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1KeyToPathBuilder
-    extends io.kubernetes.client.openapi.models.V1KeyToPathFluentImpl<
-        io.kubernetes.client.openapi.models.V1KeyToPathBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1KeyToPath,
-        io.kubernetes.client.openapi.models.V1KeyToPathBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1KeyToPathBuilder extends V1KeyToPathFluentImpl<V1KeyToPathBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1KeyToPath, V1KeyToPathBuilder> {
   public V1KeyToPathBuilder() {
     this(false);
   }
 
-  public V1KeyToPathBuilder(java.lang.Boolean validationEnabled) {
+  public V1KeyToPathBuilder(Boolean validationEnabled) {
     this(new V1KeyToPath(), validationEnabled);
   }
 
@@ -84,7 +83,7 @@ public class V1KeyToPathBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

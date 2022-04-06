@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1PreferredSchedulingTermBuilder
-    extends io.kubernetes.client.openapi.models.V1PreferredSchedulingTermFluentImpl<
-        io.kubernetes.client.openapi.models.V1PreferredSchedulingTermBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1PreferredSchedulingTermFluentImpl<V1PreferredSchedulingTermBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm,
         io.kubernetes.client.openapi.models.V1PreferredSchedulingTermBuilder> {
   public V1PreferredSchedulingTermBuilder() {
     this(false);
   }
 
-  public V1PreferredSchedulingTermBuilder(java.lang.Boolean validationEnabled) {
+  public V1PreferredSchedulingTermBuilder(Boolean validationEnabled) {
     this(new V1PreferredSchedulingTerm(), validationEnabled);
   }
 
-  public V1PreferredSchedulingTermBuilder(
-      io.kubernetes.client.openapi.models.V1PreferredSchedulingTermFluent<?> fluent) {
+  public V1PreferredSchedulingTermBuilder(V1PreferredSchedulingTermFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -81,7 +81,7 @@ public class V1PreferredSchedulingTermBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

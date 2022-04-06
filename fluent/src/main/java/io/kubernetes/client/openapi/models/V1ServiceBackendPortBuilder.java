@@ -12,17 +12,17 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ServiceBackendPortBuilder
-    extends io.kubernetes.client.openapi.models.V1ServiceBackendPortFluentImpl<
-        io.kubernetes.client.openapi.models.V1ServiceBackendPortBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ServiceBackendPort,
-        io.kubernetes.client.openapi.models.V1ServiceBackendPortBuilder> {
+    extends V1ServiceBackendPortFluentImpl<V1ServiceBackendPortBuilder>
+    implements VisitableBuilder<
+        io.kubernetes.client.openapi.models.V1ServiceBackendPort, V1ServiceBackendPortBuilder> {
   public V1ServiceBackendPortBuilder() {
     this(false);
   }
 
-  public V1ServiceBackendPortBuilder(java.lang.Boolean validationEnabled) {
+  public V1ServiceBackendPortBuilder(Boolean validationEnabled) {
     this(new V1ServiceBackendPort(), validationEnabled);
   }
 
@@ -81,7 +81,7 @@ public class V1ServiceBackendPortBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

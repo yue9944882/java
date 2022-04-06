@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ConfigMapNodeConfigSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSource,
+    extends V1ConfigMapNodeConfigSourceFluentImpl<V1ConfigMapNodeConfigSourceBuilder>
+    implements VisitableBuilder<
+        V1ConfigMapNodeConfigSource,
         io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSourceBuilder> {
   public V1ConfigMapNodeConfigSourceBuilder() {
     this(false);
   }
 
-  public V1ConfigMapNodeConfigSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1ConfigMapNodeConfigSourceBuilder(Boolean validationEnabled) {
     this(new V1ConfigMapNodeConfigSource(), validationEnabled);
   }
 
-  public V1ConfigMapNodeConfigSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSourceFluent<?> fluent) {
+  public V1ConfigMapNodeConfigSourceBuilder(V1ConfigMapNodeConfigSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -96,7 +96,7 @@ public class V1ConfigMapNodeConfigSourceBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

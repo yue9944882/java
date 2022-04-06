@@ -12,22 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1PriorityClassListBuilder
-    extends io.kubernetes.client.openapi.models.V1PriorityClassListFluentImpl<
-        io.kubernetes.client.openapi.models.V1PriorityClassListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
+    extends V1PriorityClassListFluentImpl<V1PriorityClassListBuilder>
+    implements VisitableBuilder<
         io.kubernetes.client.openapi.models.V1PriorityClassList,
         io.kubernetes.client.openapi.models.V1PriorityClassListBuilder> {
   public V1PriorityClassListBuilder() {
     this(false);
   }
 
-  public V1PriorityClassListBuilder(java.lang.Boolean validationEnabled) {
+  public V1PriorityClassListBuilder(Boolean validationEnabled) {
     this(new V1PriorityClassList(), validationEnabled);
   }
 
-  public V1PriorityClassListBuilder(
-      io.kubernetes.client.openapi.models.V1PriorityClassListFluent<?> fluent) {
+  public V1PriorityClassListBuilder(V1PriorityClassListFluent<?> fluent) {
     this(fluent, false);
   }
 
@@ -91,7 +91,7 @@ public class V1PriorityClassListBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;

@@ -12,17 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1ProbeBuilder
-    extends io.kubernetes.client.openapi.models.V1ProbeFluentImpl<
-        io.kubernetes.client.openapi.models.V1ProbeBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1Probe,
-        io.kubernetes.client.openapi.models.V1ProbeBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1ProbeBuilder extends V1ProbeFluentImpl<V1ProbeBuilder>
+    implements VisitableBuilder<io.kubernetes.client.openapi.models.V1Probe, V1ProbeBuilder> {
   public V1ProbeBuilder() {
     this(false);
   }
 
-  public V1ProbeBuilder(java.lang.Boolean validationEnabled) {
+  public V1ProbeBuilder(Boolean validationEnabled) {
     this(new V1Probe(), validationEnabled);
   }
 
@@ -118,7 +116,7 @@ public class V1ProbeBuilder
     return buildable;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;
