@@ -1,53 +1,26 @@
-/*
-Copyright 2022 The Kubernetes Authors.
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
 package io.kubernetes.client.openapi.models;
 
-public class V1NodeSystemInfoBuilder
-    extends io.kubernetes.client.openapi.models.V1NodeSystemInfoFluentImpl<
-        io.kubernetes.client.openapi.models.V1NodeSystemInfoBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1NodeSystemInfo,
-        io.kubernetes.client.openapi.models.V1NodeSystemInfoBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+import java.lang.Object;
+import java.lang.Boolean;
+public class V1NodeSystemInfoBuilder extends V1NodeSystemInfoFluentImpl<V1NodeSystemInfoBuilder> implements VisitableBuilder<V1NodeSystemInfo,io.kubernetes.client.openapi.models.V1NodeSystemInfoBuilder>{
   public V1NodeSystemInfoBuilder() {
     this(false);
   }
-
-  public V1NodeSystemInfoBuilder(java.lang.Boolean validationEnabled) {
+  public V1NodeSystemInfoBuilder(Boolean validationEnabled) {
     this(new V1NodeSystemInfo(), validationEnabled);
   }
-
-  public V1NodeSystemInfoBuilder(
-      io.kubernetes.client.openapi.models.V1NodeSystemInfoFluent<?> fluent) {
+  public V1NodeSystemInfoBuilder(V1NodeSystemInfoFluent<?> fluent) {
     this(fluent, false);
   }
-
-  public V1NodeSystemInfoBuilder(
-      io.kubernetes.client.openapi.models.V1NodeSystemInfoFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1NodeSystemInfoBuilder(io.kubernetes.client.openapi.models.V1NodeSystemInfoFluent<?> fluent,java.lang.Boolean validationEnabled) {
     this(fluent, new V1NodeSystemInfo(), validationEnabled);
   }
-
-  public V1NodeSystemInfoBuilder(
-      io.kubernetes.client.openapi.models.V1NodeSystemInfoFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1NodeSystemInfo instance) {
+  public V1NodeSystemInfoBuilder(io.kubernetes.client.openapi.models.V1NodeSystemInfoFluent<?> fluent,io.kubernetes.client.openapi.models.V1NodeSystemInfo instance) {
     this(fluent, instance, false);
   }
-
-  public V1NodeSystemInfoBuilder(
-      io.kubernetes.client.openapi.models.V1NodeSystemInfoFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1NodeSystemInfo instance,
-      java.lang.Boolean validationEnabled) {
-    this.fluent = fluent;
+  public V1NodeSystemInfoBuilder(io.kubernetes.client.openapi.models.V1NodeSystemInfoFluent<?> fluent,io.kubernetes.client.openapi.models.V1NodeSystemInfo instance,java.lang.Boolean validationEnabled) {
+    this.fluent = fluent; 
     fluent.withArchitecture(instance.getArchitecture());
 
     fluent.withBootID(instance.getBootID());
@@ -68,17 +41,13 @@ public class V1NodeSystemInfoBuilder
 
     fluent.withSystemUUID(instance.getSystemUUID());
 
-    this.validationEnabled = validationEnabled;
+    this.validationEnabled = validationEnabled; 
   }
-
   public V1NodeSystemInfoBuilder(io.kubernetes.client.openapi.models.V1NodeSystemInfo instance) {
-    this(instance, false);
+    this(instance,false);
   }
-
-  public V1NodeSystemInfoBuilder(
-      io.kubernetes.client.openapi.models.V1NodeSystemInfo instance,
-      java.lang.Boolean validationEnabled) {
-    this.fluent = this;
+  public V1NodeSystemInfoBuilder(io.kubernetes.client.openapi.models.V1NodeSystemInfo instance,java.lang.Boolean validationEnabled) {
+    this.fluent = this; 
     this.withArchitecture(instance.getArchitecture());
 
     this.withBootID(instance.getBootID());
@@ -99,12 +68,10 @@ public class V1NodeSystemInfoBuilder
 
     this.withSystemUUID(instance.getSystemUUID());
 
-    this.validationEnabled = validationEnabled;
+    this.validationEnabled = validationEnabled; 
   }
-
   io.kubernetes.client.openapi.models.V1NodeSystemInfoFluent<?> fluent;
   java.lang.Boolean validationEnabled;
-
   public io.kubernetes.client.openapi.models.V1NodeSystemInfo build() {
     V1NodeSystemInfo buildable = new V1NodeSystemInfo();
     buildable.setArchitecture(fluent.getArchitecture());
@@ -119,23 +86,18 @@ public class V1NodeSystemInfoBuilder
     buildable.setSystemUUID(fluent.getSystemUUID());
     return buildable;
   }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;
     V1NodeSystemInfoBuilder that = (V1NodeSystemInfoBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
+    if (fluent != null &&fluent != this ? !fluent.equals(that.fluent) :that.fluent != null &&fluent != this ) return false;
 
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
+    if (validationEnabled != null ? !validationEnabled.equals(that.validationEnabled) :that.validationEnabled != null) return false;
     return true;
   }
-
   public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
+    return java.util.Objects.hash(fluent,  validationEnabled,  super.hashCode());
   }
+  
 }

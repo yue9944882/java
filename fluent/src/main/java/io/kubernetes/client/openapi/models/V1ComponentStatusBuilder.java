@@ -1,53 +1,26 @@
-/*
-Copyright 2022 The Kubernetes Authors.
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
 package io.kubernetes.client.openapi.models;
 
-public class V1ComponentStatusBuilder
-    extends io.kubernetes.client.openapi.models.V1ComponentStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V1ComponentStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ComponentStatus,
-        io.kubernetes.client.openapi.models.V1ComponentStatusBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+import java.lang.Object;
+import java.lang.Boolean;
+public class V1ComponentStatusBuilder extends V1ComponentStatusFluentImpl<V1ComponentStatusBuilder> implements VisitableBuilder<io.kubernetes.client.openapi.models.V1ComponentStatus,io.kubernetes.client.openapi.models.V1ComponentStatusBuilder>{
   public V1ComponentStatusBuilder() {
     this(false);
   }
-
-  public V1ComponentStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V1ComponentStatusBuilder(Boolean validationEnabled) {
     this(new V1ComponentStatus(), validationEnabled);
   }
-
-  public V1ComponentStatusBuilder(
-      io.kubernetes.client.openapi.models.V1ComponentStatusFluent<?> fluent) {
+  public V1ComponentStatusBuilder(V1ComponentStatusFluent<?> fluent) {
     this(fluent, false);
   }
-
-  public V1ComponentStatusBuilder(
-      io.kubernetes.client.openapi.models.V1ComponentStatusFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1ComponentStatusBuilder(io.kubernetes.client.openapi.models.V1ComponentStatusFluent<?> fluent,java.lang.Boolean validationEnabled) {
     this(fluent, new V1ComponentStatus(), validationEnabled);
   }
-
-  public V1ComponentStatusBuilder(
-      io.kubernetes.client.openapi.models.V1ComponentStatusFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ComponentStatus instance) {
+  public V1ComponentStatusBuilder(io.kubernetes.client.openapi.models.V1ComponentStatusFluent<?> fluent,io.kubernetes.client.openapi.models.V1ComponentStatus instance) {
     this(fluent, instance, false);
   }
-
-  public V1ComponentStatusBuilder(
-      io.kubernetes.client.openapi.models.V1ComponentStatusFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ComponentStatus instance,
-      java.lang.Boolean validationEnabled) {
-    this.fluent = fluent;
+  public V1ComponentStatusBuilder(io.kubernetes.client.openapi.models.V1ComponentStatusFluent<?> fluent,io.kubernetes.client.openapi.models.V1ComponentStatus instance,java.lang.Boolean validationEnabled) {
+    this.fluent = fluent; 
     fluent.withApiVersion(instance.getApiVersion());
 
     fluent.withConditions(instance.getConditions());
@@ -56,17 +29,13 @@ public class V1ComponentStatusBuilder
 
     fluent.withMetadata(instance.getMetadata());
 
-    this.validationEnabled = validationEnabled;
+    this.validationEnabled = validationEnabled; 
   }
-
   public V1ComponentStatusBuilder(io.kubernetes.client.openapi.models.V1ComponentStatus instance) {
-    this(instance, false);
+    this(instance,false);
   }
-
-  public V1ComponentStatusBuilder(
-      io.kubernetes.client.openapi.models.V1ComponentStatus instance,
-      java.lang.Boolean validationEnabled) {
-    this.fluent = this;
+  public V1ComponentStatusBuilder(io.kubernetes.client.openapi.models.V1ComponentStatus instance,java.lang.Boolean validationEnabled) {
+    this.fluent = this; 
     this.withApiVersion(instance.getApiVersion());
 
     this.withConditions(instance.getConditions());
@@ -75,12 +44,10 @@ public class V1ComponentStatusBuilder
 
     this.withMetadata(instance.getMetadata());
 
-    this.validationEnabled = validationEnabled;
+    this.validationEnabled = validationEnabled; 
   }
-
   io.kubernetes.client.openapi.models.V1ComponentStatusFluent<?> fluent;
   java.lang.Boolean validationEnabled;
-
   public io.kubernetes.client.openapi.models.V1ComponentStatus build() {
     V1ComponentStatus buildable = new V1ComponentStatus();
     buildable.setApiVersion(fluent.getApiVersion());
@@ -89,23 +56,18 @@ public class V1ComponentStatusBuilder
     buildable.setMetadata(fluent.getMetadata());
     return buildable;
   }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;
     V1ComponentStatusBuilder that = (V1ComponentStatusBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
+    if (fluent != null &&fluent != this ? !fluent.equals(that.fluent) :that.fluent != null &&fluent != this ) return false;
 
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
+    if (validationEnabled != null ? !validationEnabled.equals(that.validationEnabled) :that.validationEnabled != null) return false;
     return true;
   }
-
   public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
+    return java.util.Objects.hash(fluent,  validationEnabled,  super.hashCode());
   }
+  
 }

@@ -1,18 +1,52 @@
-/*
-Copyright 2022 The Kubernetes Authors.
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
 package io.kubernetes.client.fluent;
 
-@java.lang.FunctionalInterface
-public interface Visitor<T> {
+import java.lang.Class;
+import java.lang.FunctionalInterface;
+import java.lang.Object;
+import java.util.List;
+import java.lang.reflect.Method;
+import java.lang.Boolean;
+  @FunctionalInterface
+  public interface Visitor<T>{
+  default Class<T> getType() {
+    List<Class> args = Visitors.getTypeArguments(Visitor.class, getClass());
+    if (args == null || args.isEmpty()) {
+      return null;
+    }
+    return (Class<T>) args.get(0);
+  }
   void visit(T element);
+  default int order() {
+    return 0;
+  }
+  default void visit(List<Object> path,T element) {
+    visit(element);
+  }
+  default <F>Boolean canVisit(F target) {
+    if (target == null) {
+      return false;
+    }
+
+    if (getType() == null) {
+      return hasVisitMethodMatching(target);
+    } else if (!getType().isAssignableFrom(target.getClass())) {
+      return false;
+    }
+    return true;
+  }
+  default <F>java.lang.Boolean hasVisitMethodMatching(F target) {
+    for (Method method : getClass().getMethods()) {
+      if (!method.getName().equals("visit") || method.getParameterTypes().length != 1) {
+        continue;
+      }
+      Class<?> visitorType = method.getParameterTypes()[0];
+      if (visitorType.isAssignableFrom(target.getClass())) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    return false;
+  }
+  
 }

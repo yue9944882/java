@@ -1,52 +1,26 @@
-/*
-Copyright 2022 The Kubernetes Authors.
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
 package io.kubernetes.client.openapi.models;
 
-public class V1PodListBuilder
-    extends io.kubernetes.client.openapi.models.V1PodListFluentImpl<
-        io.kubernetes.client.openapi.models.V1PodListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1PodList,
-        io.kubernetes.client.openapi.models.V1PodListBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+import java.lang.Object;
+import java.lang.Boolean;
+public class V1PodListBuilder extends V1PodListFluentImpl<V1PodListBuilder> implements VisitableBuilder<io.kubernetes.client.openapi.models.V1PodList,io.kubernetes.client.openapi.models.V1PodListBuilder>{
   public V1PodListBuilder() {
     this(false);
   }
-
-  public V1PodListBuilder(java.lang.Boolean validationEnabled) {
+  public V1PodListBuilder(Boolean validationEnabled) {
     this(new V1PodList(), validationEnabled);
   }
-
-  public V1PodListBuilder(io.kubernetes.client.openapi.models.V1PodListFluent<?> fluent) {
+  public V1PodListBuilder(V1PodListFluent<?> fluent) {
     this(fluent, false);
   }
-
-  public V1PodListBuilder(
-      io.kubernetes.client.openapi.models.V1PodListFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1PodListBuilder(io.kubernetes.client.openapi.models.V1PodListFluent<?> fluent,java.lang.Boolean validationEnabled) {
     this(fluent, new V1PodList(), validationEnabled);
   }
-
-  public V1PodListBuilder(
-      io.kubernetes.client.openapi.models.V1PodListFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1PodList instance) {
+  public V1PodListBuilder(io.kubernetes.client.openapi.models.V1PodListFluent<?> fluent,io.kubernetes.client.openapi.models.V1PodList instance) {
     this(fluent, instance, false);
   }
-
-  public V1PodListBuilder(
-      io.kubernetes.client.openapi.models.V1PodListFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1PodList instance,
-      java.lang.Boolean validationEnabled) {
-    this.fluent = fluent;
+  public V1PodListBuilder(io.kubernetes.client.openapi.models.V1PodListFluent<?> fluent,io.kubernetes.client.openapi.models.V1PodList instance,java.lang.Boolean validationEnabled) {
+    this.fluent = fluent; 
     fluent.withApiVersion(instance.getApiVersion());
 
     fluent.withItems(instance.getItems());
@@ -55,16 +29,13 @@ public class V1PodListBuilder
 
     fluent.withMetadata(instance.getMetadata());
 
-    this.validationEnabled = validationEnabled;
+    this.validationEnabled = validationEnabled; 
   }
-
   public V1PodListBuilder(io.kubernetes.client.openapi.models.V1PodList instance) {
-    this(instance, false);
+    this(instance,false);
   }
-
-  public V1PodListBuilder(
-      io.kubernetes.client.openapi.models.V1PodList instance, java.lang.Boolean validationEnabled) {
-    this.fluent = this;
+  public V1PodListBuilder(io.kubernetes.client.openapi.models.V1PodList instance,java.lang.Boolean validationEnabled) {
+    this.fluent = this; 
     this.withApiVersion(instance.getApiVersion());
 
     this.withItems(instance.getItems());
@@ -73,12 +44,10 @@ public class V1PodListBuilder
 
     this.withMetadata(instance.getMetadata());
 
-    this.validationEnabled = validationEnabled;
+    this.validationEnabled = validationEnabled; 
   }
-
   io.kubernetes.client.openapi.models.V1PodListFluent<?> fluent;
   java.lang.Boolean validationEnabled;
-
   public io.kubernetes.client.openapi.models.V1PodList build() {
     V1PodList buildable = new V1PodList();
     buildable.setApiVersion(fluent.getApiVersion());
@@ -87,23 +56,18 @@ public class V1PodListBuilder
     buildable.setMetadata(fluent.getMetadata());
     return buildable;
   }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;
     V1PodListBuilder that = (V1PodListBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
+    if (fluent != null &&fluent != this ? !fluent.equals(that.fluent) :that.fluent != null &&fluent != this ) return false;
 
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
+    if (validationEnabled != null ? !validationEnabled.equals(that.validationEnabled) :that.validationEnabled != null) return false;
     return true;
   }
-
   public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
+    return java.util.Objects.hash(fluent,  validationEnabled,  super.hashCode());
   }
+  
 }

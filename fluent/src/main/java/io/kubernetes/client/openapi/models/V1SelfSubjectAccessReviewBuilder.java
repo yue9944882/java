@@ -1,53 +1,26 @@
-/*
-Copyright 2022 The Kubernetes Authors.
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
 package io.kubernetes.client.openapi.models;
 
-public class V1SelfSubjectAccessReviewBuilder
-    extends io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluentImpl<
-        io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1SelfSubjectAccessReview,
-        io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+import java.lang.Object;
+import java.lang.Boolean;
+public class V1SelfSubjectAccessReviewBuilder extends V1SelfSubjectAccessReviewFluentImpl<V1SelfSubjectAccessReviewBuilder> implements VisitableBuilder<io.kubernetes.client.openapi.models.V1SelfSubjectAccessReview,V1SelfSubjectAccessReviewBuilder>{
   public V1SelfSubjectAccessReviewBuilder() {
     this(false);
   }
-
-  public V1SelfSubjectAccessReviewBuilder(java.lang.Boolean validationEnabled) {
+  public V1SelfSubjectAccessReviewBuilder(Boolean validationEnabled) {
     this(new V1SelfSubjectAccessReview(), validationEnabled);
   }
-
-  public V1SelfSubjectAccessReviewBuilder(
-      io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent<?> fluent) {
+  public V1SelfSubjectAccessReviewBuilder(V1SelfSubjectAccessReviewFluent<?> fluent) {
     this(fluent, false);
   }
-
-  public V1SelfSubjectAccessReviewBuilder(
-      io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1SelfSubjectAccessReviewBuilder(io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent<?> fluent,java.lang.Boolean validationEnabled) {
     this(fluent, new V1SelfSubjectAccessReview(), validationEnabled);
   }
-
-  public V1SelfSubjectAccessReviewBuilder(
-      io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1SelfSubjectAccessReview instance) {
+  public V1SelfSubjectAccessReviewBuilder(io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent<?> fluent,io.kubernetes.client.openapi.models.V1SelfSubjectAccessReview instance) {
     this(fluent, instance, false);
   }
-
-  public V1SelfSubjectAccessReviewBuilder(
-      io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1SelfSubjectAccessReview instance,
-      java.lang.Boolean validationEnabled) {
-    this.fluent = fluent;
+  public V1SelfSubjectAccessReviewBuilder(io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent<?> fluent,io.kubernetes.client.openapi.models.V1SelfSubjectAccessReview instance,java.lang.Boolean validationEnabled) {
+    this.fluent = fluent; 
     fluent.withApiVersion(instance.getApiVersion());
 
     fluent.withKind(instance.getKind());
@@ -58,18 +31,13 @@ public class V1SelfSubjectAccessReviewBuilder
 
     fluent.withStatus(instance.getStatus());
 
-    this.validationEnabled = validationEnabled;
+    this.validationEnabled = validationEnabled; 
   }
-
-  public V1SelfSubjectAccessReviewBuilder(
-      io.kubernetes.client.openapi.models.V1SelfSubjectAccessReview instance) {
-    this(instance, false);
+  public V1SelfSubjectAccessReviewBuilder(io.kubernetes.client.openapi.models.V1SelfSubjectAccessReview instance) {
+    this(instance,false);
   }
-
-  public V1SelfSubjectAccessReviewBuilder(
-      io.kubernetes.client.openapi.models.V1SelfSubjectAccessReview instance,
-      java.lang.Boolean validationEnabled) {
-    this.fluent = this;
+  public V1SelfSubjectAccessReviewBuilder(io.kubernetes.client.openapi.models.V1SelfSubjectAccessReview instance,java.lang.Boolean validationEnabled) {
+    this.fluent = this; 
     this.withApiVersion(instance.getApiVersion());
 
     this.withKind(instance.getKind());
@@ -80,12 +48,10 @@ public class V1SelfSubjectAccessReviewBuilder
 
     this.withStatus(instance.getStatus());
 
-    this.validationEnabled = validationEnabled;
+    this.validationEnabled = validationEnabled; 
   }
-
   io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent<?> fluent;
   java.lang.Boolean validationEnabled;
-
   public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReview build() {
     V1SelfSubjectAccessReview buildable = new V1SelfSubjectAccessReview();
     buildable.setApiVersion(fluent.getApiVersion());
@@ -95,23 +61,18 @@ public class V1SelfSubjectAccessReviewBuilder
     buildable.setStatus(fluent.getStatus());
     return buildable;
   }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;
     V1SelfSubjectAccessReviewBuilder that = (V1SelfSubjectAccessReviewBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
+    if (fluent != null &&fluent != this ? !fluent.equals(that.fluent) :that.fluent != null &&fluent != this ) return false;
 
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
+    if (validationEnabled != null ? !validationEnabled.equals(that.validationEnabled) :that.validationEnabled != null) return false;
     return true;
   }
-
   public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
+    return java.util.Objects.hash(fluent,  validationEnabled,  super.hashCode());
   }
+  
 }

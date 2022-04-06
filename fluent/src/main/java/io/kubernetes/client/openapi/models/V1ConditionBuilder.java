@@ -1,52 +1,26 @@
-/*
-Copyright 2022 The Kubernetes Authors.
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
 package io.kubernetes.client.openapi.models;
 
-public class V1ConditionBuilder
-    extends io.kubernetes.client.openapi.models.V1ConditionFluentImpl<
-        io.kubernetes.client.openapi.models.V1ConditionBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1Condition,
-        io.kubernetes.client.openapi.models.V1ConditionBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+import java.lang.Object;
+import java.lang.Boolean;
+public class V1ConditionBuilder extends V1ConditionFluentImpl<V1ConditionBuilder> implements VisitableBuilder<V1Condition,io.kubernetes.client.openapi.models.V1ConditionBuilder>{
   public V1ConditionBuilder() {
     this(false);
   }
-
-  public V1ConditionBuilder(java.lang.Boolean validationEnabled) {
+  public V1ConditionBuilder(Boolean validationEnabled) {
     this(new V1Condition(), validationEnabled);
   }
-
   public V1ConditionBuilder(io.kubernetes.client.openapi.models.V1ConditionFluent<?> fluent) {
     this(fluent, false);
   }
-
-  public V1ConditionBuilder(
-      io.kubernetes.client.openapi.models.V1ConditionFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1ConditionBuilder(io.kubernetes.client.openapi.models.V1ConditionFluent<?> fluent,java.lang.Boolean validationEnabled) {
     this(fluent, new V1Condition(), validationEnabled);
   }
-
-  public V1ConditionBuilder(
-      io.kubernetes.client.openapi.models.V1ConditionFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1Condition instance) {
+  public V1ConditionBuilder(io.kubernetes.client.openapi.models.V1ConditionFluent<?> fluent,io.kubernetes.client.openapi.models.V1Condition instance) {
     this(fluent, instance, false);
   }
-
-  public V1ConditionBuilder(
-      io.kubernetes.client.openapi.models.V1ConditionFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1Condition instance,
-      java.lang.Boolean validationEnabled) {
-    this.fluent = fluent;
+  public V1ConditionBuilder(io.kubernetes.client.openapi.models.V1ConditionFluent<?> fluent,io.kubernetes.client.openapi.models.V1Condition instance,java.lang.Boolean validationEnabled) {
+    this.fluent = fluent; 
     fluent.withLastTransitionTime(instance.getLastTransitionTime());
 
     fluent.withMessage(instance.getMessage());
@@ -59,17 +33,13 @@ public class V1ConditionBuilder
 
     fluent.withType(instance.getType());
 
-    this.validationEnabled = validationEnabled;
+    this.validationEnabled = validationEnabled; 
   }
-
   public V1ConditionBuilder(io.kubernetes.client.openapi.models.V1Condition instance) {
-    this(instance, false);
+    this(instance,false);
   }
-
-  public V1ConditionBuilder(
-      io.kubernetes.client.openapi.models.V1Condition instance,
-      java.lang.Boolean validationEnabled) {
-    this.fluent = this;
+  public V1ConditionBuilder(io.kubernetes.client.openapi.models.V1Condition instance,java.lang.Boolean validationEnabled) {
+    this.fluent = this; 
     this.withLastTransitionTime(instance.getLastTransitionTime());
 
     this.withMessage(instance.getMessage());
@@ -82,12 +52,10 @@ public class V1ConditionBuilder
 
     this.withType(instance.getType());
 
-    this.validationEnabled = validationEnabled;
+    this.validationEnabled = validationEnabled; 
   }
-
   io.kubernetes.client.openapi.models.V1ConditionFluent<?> fluent;
   java.lang.Boolean validationEnabled;
-
   public io.kubernetes.client.openapi.models.V1Condition build() {
     V1Condition buildable = new V1Condition();
     buildable.setLastTransitionTime(fluent.getLastTransitionTime());
@@ -98,23 +66,18 @@ public class V1ConditionBuilder
     buildable.setType(fluent.getType());
     return buildable;
   }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;
     V1ConditionBuilder that = (V1ConditionBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
+    if (fluent != null &&fluent != this ? !fluent.equals(that.fluent) :that.fluent != null &&fluent != this ) return false;
 
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
+    if (validationEnabled != null ? !validationEnabled.equals(that.validationEnabled) :that.validationEnabled != null) return false;
     return true;
   }
-
   public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
+    return java.util.Objects.hash(fluent,  validationEnabled,  super.hashCode());
   }
+  
 }

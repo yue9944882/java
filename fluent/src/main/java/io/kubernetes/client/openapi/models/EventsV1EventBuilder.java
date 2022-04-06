@@ -1,52 +1,26 @@
-/*
-Copyright 2022 The Kubernetes Authors.
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
 package io.kubernetes.client.openapi.models;
 
-public class EventsV1EventBuilder
-    extends io.kubernetes.client.openapi.models.EventsV1EventFluentImpl<
-        io.kubernetes.client.openapi.models.EventsV1EventBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.EventsV1Event,
-        io.kubernetes.client.openapi.models.EventsV1EventBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+import java.lang.Object;
+import java.lang.Boolean;
+public class EventsV1EventBuilder extends EventsV1EventFluentImpl<EventsV1EventBuilder> implements VisitableBuilder<EventsV1Event,io.kubernetes.client.openapi.models.EventsV1EventBuilder>{
   public EventsV1EventBuilder() {
     this(false);
   }
-
-  public EventsV1EventBuilder(java.lang.Boolean validationEnabled) {
+  public EventsV1EventBuilder(Boolean validationEnabled) {
     this(new EventsV1Event(), validationEnabled);
   }
-
-  public EventsV1EventBuilder(io.kubernetes.client.openapi.models.EventsV1EventFluent<?> fluent) {
+  public EventsV1EventBuilder(EventsV1EventFluent<?> fluent) {
     this(fluent, false);
   }
-
-  public EventsV1EventBuilder(
-      io.kubernetes.client.openapi.models.EventsV1EventFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public EventsV1EventBuilder(io.kubernetes.client.openapi.models.EventsV1EventFluent<?> fluent,java.lang.Boolean validationEnabled) {
     this(fluent, new EventsV1Event(), validationEnabled);
   }
-
-  public EventsV1EventBuilder(
-      io.kubernetes.client.openapi.models.EventsV1EventFluent<?> fluent,
-      io.kubernetes.client.openapi.models.EventsV1Event instance) {
+  public EventsV1EventBuilder(io.kubernetes.client.openapi.models.EventsV1EventFluent<?> fluent,io.kubernetes.client.openapi.models.EventsV1Event instance) {
     this(fluent, instance, false);
   }
-
-  public EventsV1EventBuilder(
-      io.kubernetes.client.openapi.models.EventsV1EventFluent<?> fluent,
-      io.kubernetes.client.openapi.models.EventsV1Event instance,
-      java.lang.Boolean validationEnabled) {
-    this.fluent = fluent;
+  public EventsV1EventBuilder(io.kubernetes.client.openapi.models.EventsV1EventFluent<?> fluent,io.kubernetes.client.openapi.models.EventsV1Event instance,java.lang.Boolean validationEnabled) {
+    this.fluent = fluent; 
     fluent.withAction(instance.getAction());
 
     fluent.withApiVersion(instance.getApiVersion());
@@ -81,17 +55,13 @@ public class EventsV1EventBuilder
 
     fluent.withType(instance.getType());
 
-    this.validationEnabled = validationEnabled;
+    this.validationEnabled = validationEnabled; 
   }
-
   public EventsV1EventBuilder(io.kubernetes.client.openapi.models.EventsV1Event instance) {
-    this(instance, false);
+    this(instance,false);
   }
-
-  public EventsV1EventBuilder(
-      io.kubernetes.client.openapi.models.EventsV1Event instance,
-      java.lang.Boolean validationEnabled) {
-    this.fluent = this;
+  public EventsV1EventBuilder(io.kubernetes.client.openapi.models.EventsV1Event instance,java.lang.Boolean validationEnabled) {
+    this.fluent = this; 
     this.withAction(instance.getAction());
 
     this.withApiVersion(instance.getApiVersion());
@@ -126,12 +96,10 @@ public class EventsV1EventBuilder
 
     this.withType(instance.getType());
 
-    this.validationEnabled = validationEnabled;
+    this.validationEnabled = validationEnabled; 
   }
-
   io.kubernetes.client.openapi.models.EventsV1EventFluent<?> fluent;
   java.lang.Boolean validationEnabled;
-
   public io.kubernetes.client.openapi.models.EventsV1Event build() {
     EventsV1Event buildable = new EventsV1Event();
     buildable.setAction(fluent.getAction());
@@ -153,23 +121,18 @@ public class EventsV1EventBuilder
     buildable.setType(fluent.getType());
     return buildable;
   }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;
     EventsV1EventBuilder that = (EventsV1EventBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
+    if (fluent != null &&fluent != this ? !fluent.equals(that.fluent) :that.fluent != null &&fluent != this ) return false;
 
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
+    if (validationEnabled != null ? !validationEnabled.equals(that.validationEnabled) :that.validationEnabled != null) return false;
     return true;
   }
-
   public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
+    return java.util.Objects.hash(fluent,  validationEnabled,  super.hashCode());
   }
+  
 }
