@@ -1,0 +1,51 @@
+name: CRD Java Model Generate
+
+on:
+  workflow_dispatch:
+    inputs:
+      kubernetesBranch:
+        type: string
+        required: true
+        description: 'The remote kubernetes release branch to fetch openapi spec. .e.g. "release-1.23"'
+
+env:
+  IMAGE_NAME: docker.pkg.github.com/kubernetes-client/java/crd-model-gen
+  IMAGE_TAG: v1.0.6
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    permissions:
+      contents: write  # for Git to git push
+      pull-requests: write  # for repo-sync/pull-request to create pull requests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Java
+        uses: actions/checkout@v3
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: 8.0.x
+      - name: Run CRD Model Generation
+        run: |
+          docker run \
+            --rm \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            -v "$(pwd)":"$(pwd)" \
+            --network host \
+            ${IMAGE_NAME}:${IMAGE_TAG} \
+            /generate.sh \
+            -u https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.38.1/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagers.yaml \
+            -u https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.38.1/example/prometheus-operator-crd/monitoring.coreos.com_thanosrulers.yaml \
+            -u https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.38.1/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml \
+            -u https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.38.1/example/prometheus-operator-crd/monitoring.coreos.com_prometheuses.yaml \
+            -u https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.38.1/example/prometheus-operator-crd/monitoring.coreos.com_prometheusrules.yaml \
+            -u https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.38.1/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml \
+            -u https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.38.1/example/prometheus-operator-crd/monitoring.coreos.com_thanosrulers.yaml \
+            -n com.coreos.monitoring \
+            -p com.coreos.monitoring \
+            -o "$(pwd)"
+
