@@ -1,38 +1,123 @@
 package io.kubernetes.client.openapi.models;
 
-import java.lang.Deprecated;
-import com.google.gson.annotations.SerializedName;
-import io.kubernetes.client.fluent.Fluent;
+import java.lang.SuppressWarnings;
+import io.kubernetes.client.fluent.BaseFluent;
 import io.kubernetes.client.fluent.Nested;
+import java.lang.Object;
 import java.lang.String;
-import java.lang.Boolean;
 
- /**
-  * Generated
-  */
-public interface V1beta3PriorityLevelConfigurationSpecFluent<A extends V1beta3PriorityLevelConfigurationSpecFluent<A>> extends Fluent<A>{
-  
-  /**
-   * This method has been deprecated, please use method buildLimited instead.
-   * @return The buildable object.
-   */
-  @Deprecated
-  public V1beta3LimitedPriorityLevelConfiguration getLimited();
-  public V1beta3LimitedPriorityLevelConfiguration buildLimited();
-  public A withLimited(V1beta3LimitedPriorityLevelConfiguration limited);
-  public Boolean hasLimited();
-  public V1beta3PriorityLevelConfigurationSpecFluent.LimitedNested<A> withNewLimited();
-  public V1beta3PriorityLevelConfigurationSpecFluent.LimitedNested<A> withNewLimitedLike(V1beta3LimitedPriorityLevelConfiguration item);
-  public V1beta3PriorityLevelConfigurationSpecFluent.LimitedNested<A> editLimited();
-  public V1beta3PriorityLevelConfigurationSpecFluent.LimitedNested<A> editOrNewLimited();
-  public V1beta3PriorityLevelConfigurationSpecFluent.LimitedNested<A> editOrNewLimitedLike(V1beta3LimitedPriorityLevelConfiguration item);
-  public String getType();
-  public A withType(String type);
-  public Boolean hasType();
-  public interface LimitedNested<N> extends Nested<N>,V1beta3LimitedPriorityLevelConfigurationFluent<V1beta3PriorityLevelConfigurationSpecFluent.LimitedNested<N>>{
-    public N and();
-    public N endLimited();
-    
+/**
+ * Generated
+ */
+@SuppressWarnings("unchecked")
+public class V1beta3PriorityLevelConfigurationSpecFluent<A extends V1beta3PriorityLevelConfigurationSpecFluent<A>> extends BaseFluent<A>{
+  public V1beta3PriorityLevelConfigurationSpecFluent() {
   }
   
+  public V1beta3PriorityLevelConfigurationSpecFluent(V1beta3PriorityLevelConfigurationSpec instance) {
+    this.copyInstance(instance);
+  }
+  private V1beta3LimitedPriorityLevelConfigurationBuilder limited;
+  private String type;
+  
+  protected void copyInstance(V1beta3PriorityLevelConfigurationSpec instance) {
+    instance = (instance != null ? instance : new V1beta3PriorityLevelConfigurationSpec());
+    if (instance != null) {
+          this.withLimited(instance.getLimited());
+          this.withType(instance.getType());
+        }
+  }
+  
+  public V1beta3LimitedPriorityLevelConfiguration buildLimited() {
+    return this.limited != null ? this.limited.build() : null;
+  }
+  
+  public A withLimited(V1beta3LimitedPriorityLevelConfiguration limited) {
+    this._visitables.remove(this.limited);
+    if (limited != null) {
+        this.limited = new V1beta3LimitedPriorityLevelConfigurationBuilder(limited);
+        this._visitables.get("limited").add(this.limited);
+    } else {
+        this.limited = null;
+        this._visitables.get("limited").remove(this.limited);
+    }
+    return (A) this;
+  }
+  
+  public boolean hasLimited() {
+    return this.limited != null;
+  }
+  
+  public LimitedNested<A> withNewLimited() {
+    return new LimitedNested(null);
+  }
+  
+  public LimitedNested<A> withNewLimitedLike(V1beta3LimitedPriorityLevelConfiguration item) {
+    return new LimitedNested(item);
+  }
+  
+  public LimitedNested<A> editLimited() {
+    return withNewLimitedLike(java.util.Optional.ofNullable(buildLimited()).orElse(null));
+  }
+  
+  public LimitedNested<A> editOrNewLimited() {
+    return withNewLimitedLike(java.util.Optional.ofNullable(buildLimited()).orElse(new V1beta3LimitedPriorityLevelConfigurationBuilder().build()));
+  }
+  
+  public LimitedNested<A> editOrNewLimitedLike(V1beta3LimitedPriorityLevelConfiguration item) {
+    return withNewLimitedLike(java.util.Optional.ofNullable(buildLimited()).orElse(item));
+  }
+  
+  public String getType() {
+    return this.type;
+  }
+  
+  public A withType(String type) {
+    this.type = type;
+    return (A) this;
+  }
+  
+  public boolean hasType() {
+    return this.type != null;
+  }
+  
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    if (!super.equals(o)) return false;
+    V1beta3PriorityLevelConfigurationSpecFluent that = (V1beta3PriorityLevelConfigurationSpecFluent) o;
+    if (!java.util.Objects.equals(limited, that.limited)) return false;
+    if (!java.util.Objects.equals(type, that.type)) return false;
+    return true;
+  }
+  
+  public int hashCode() {
+    return java.util.Objects.hash(limited,  type,  super.hashCode());
+  }
+  
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (limited != null) { sb.append("limited:"); sb.append(limited + ","); }
+    if (type != null) { sb.append("type:"); sb.append(type); }
+    sb.append("}");
+    return sb.toString();
+  }
+  public class LimitedNested<N> extends V1beta3LimitedPriorityLevelConfigurationFluent<LimitedNested<N>> implements Nested<N>{
+    LimitedNested(V1beta3LimitedPriorityLevelConfiguration item) {
+      this.builder = new V1beta3LimitedPriorityLevelConfigurationBuilder(this, item);
+    }
+    V1beta3LimitedPriorityLevelConfigurationBuilder builder;
+    
+    public N and() {
+      return (N) V1beta3PriorityLevelConfigurationSpecFluent.this.withLimited(builder.build());
+    }
+    
+    public N endLimited() {
+      return and();
+    }
+    
+  
+  }
+
 }
