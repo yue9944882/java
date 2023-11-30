@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: gen
-          repository: kubernetes-client/gen
+          repository: yue9944882/gen
           token: ${{ secrets.PAT_TOKEN }}
       - name: Generate Branch Name
         run: |
@@ -46,8 +46,9 @@ jobs:
                       org.codehaus.mojo:exec-maven-plugin:1.6.0:exec)" >> $GITHUB_ENV
       - name: Generate Openapi
         run: |
+          mkdir -p kubernetes-legacy/
           pushd gen/openapi
-          cat <<"EOF"> settings
+          cat <<"EOF"> settings.legacy
           # Kubernetes branch to get the OpenAPI spec from.
           export KUBERNETES_BRANCH="${{ github.event.inputs.kubernetesBranch }}"
 
@@ -58,8 +59,24 @@ jobs:
           # Name of the release package
           export PACKAGE_NAME="io.kubernetes.client.openapi"
           EOF
+          
+          cat <<"EOF"> settings
+          # Kubernetes branch to get the OpenAPI spec from.
+          export KUBERNETES_BRANCH="${{ github.event.inputs.kubernetesBranch }}"
 
-          bash java.sh ../../kubernetes/ settings
+          # client version for packaging and releasing. It can
+          # be different than SPEC_VERSION.
+          export CLIENT_VERSION=${{ env.PROJECT_VERSION }}
+
+          # Name of the release package
+          export PACKAGE_NAME="io.kubernetes.client.openapi.v2"
+          EOF
+          
+
+          # Generate Legacy Client (With Java 8 support)
+          USE_SINGLE_PARAMETER=false OPENAPI_GENERATOR_COMMIT=v4.3.1 bash java.sh ../../kubernetes/ settings.legacy
+          # Generate Latest Client
+          USE_SINGLE_PARAMETER=true bash java.sh ../../kubernetes-new/ settings
           popd
           rm -rf gen
       - name: Generate Fluent
