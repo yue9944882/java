@@ -46,6 +46,7 @@ jobs:
                       org.codehaus.mojo:exec-maven-plugin:1.6.0:exec)" >> $GITHUB_ENV
       - name: Generate Openapi
         run: |
+          mkdir -p kubernetes-legacy/
           pushd gen/openapi
           cat <<"EOF"> settings
           # Kubernetes branch to get the OpenAPI spec from.
@@ -59,6 +60,9 @@ jobs:
           export PACKAGE_NAME="io.kubernetes.client.openapi"
           EOF
 
+          # Generate Legacy Client (With Java 8 support)
+          OPENAPI_GENERATOR_COMMIT=v4.3.1 bash java.sh ../../kubernetes-legacy/ settings
+          # Generate Latest Client
           bash java.sh ../../kubernetes/ settings
           popd
           rm -rf gen
