@@ -28,7 +28,7 @@ import java.io.IOException;
  * RollingUpdateStatefulSetStrategy is used to communicate parameter for RollingUpdateStatefulSetStrategyType.
  */
 @ApiModel(description = "RollingUpdateStatefulSetStrategy is used to communicate parameter for RollingUpdateStatefulSetStrategyType.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-18T15:05:57.863601Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-01T18:54:59.416086Z[Etc/UTC]")
 public class V1RollingUpdateStatefulSetStrategy {
   public static final String SERIALIZED_NAME_MAX_UNAVAILABLE = "maxUnavailable";
   @SerializedName(SERIALIZED_NAME_MAX_UNAVAILABLE)
