@@ -27,7 +27,7 @@ import java.io.IOException;
  * ResourceAttributes includes the authorization attributes available for resource requests to the Authorizer interface
  */
 @ApiModel(description = "ResourceAttributes includes the authorization attributes available for resource requests to the Authorizer interface")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-18T15:05:57.863601Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-01T18:54:59.416086Z[Etc/UTC]")
 public class V1ResourceAttributes {
   public static final String SERIALIZED_NAME_GROUP = "group";
   @SerializedName(SERIALIZED_NAME_GROUP)
