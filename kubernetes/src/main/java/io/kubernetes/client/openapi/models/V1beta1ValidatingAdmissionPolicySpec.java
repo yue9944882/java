@@ -57,7 +57,7 @@ import io.kubernetes.client.openapi.JSON;
 /**
  * ValidatingAdmissionPolicySpec is the specification of the desired behavior of the AdmissionPolicy.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-10T18:43:25.181149Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T19:42:42.977447Z[Etc/UTC]")
 public class V1beta1ValidatingAdmissionPolicySpec {
   public static final String SERIALIZED_NAME_AUDIT_ANNOTATIONS = "auditAnnotations";
   @SerializedName(SERIALIZED_NAME_AUDIT_ANNOTATIONS)
