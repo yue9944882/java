@@ -54,7 +54,7 @@ import io.kubernetes.client.openapi.JSON;
 /**
  * NetworkPolicySpec provides the specification of a NetworkPolicy
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-10T18:43:25.181149Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T01:56:23.031733Z[Etc/UTC]")
 public class V1NetworkPolicySpec {
   public static final String SERIALIZED_NAME_EGRESS = "egress";
   @SerializedName(SERIALIZED_NAME_EGRESS)

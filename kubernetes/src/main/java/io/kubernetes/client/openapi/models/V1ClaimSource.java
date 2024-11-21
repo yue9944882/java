@@ -49,7 +49,7 @@ import io.kubernetes.client.openapi.JSON;
 /**
  * ClaimSource describes a reference to a ResourceClaim.  Exactly one of these fields should be set.  Consumers of this type must treat an empty object as if it has an unknown value.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-10T18:43:25.181149Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T01:56:23.031733Z[Etc/UTC]")
 public class V1ClaimSource {
   public static final String SERIALIZED_NAME_RESOURCE_CLAIM_NAME = "resourceClaimName";
   @SerializedName(SERIALIZED_NAME_RESOURCE_CLAIM_NAME)

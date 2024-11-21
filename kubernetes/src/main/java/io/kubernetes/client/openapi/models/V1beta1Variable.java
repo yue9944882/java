@@ -49,7 +49,7 @@ import io.kubernetes.client.openapi.JSON;
 /**
  * Variable is the definition of a variable that is used for composition. A variable is defined as a named expression.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-10T18:43:25.181149Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T01:56:23.031733Z[Etc/UTC]")
 public class V1beta1Variable {
   public static final String SERIALIZED_NAME_EXPRESSION = "expression";
   @SerializedName(SERIALIZED_NAME_EXPRESSION)

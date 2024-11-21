@@ -49,7 +49,7 @@ import io.kubernetes.client.openapi.JSON;
 /**
  * NonResourceAttributes includes the authorization attributes available for non-resource requests to the Authorizer interface
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-10T18:43:25.181149Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T01:56:23.031733Z[Etc/UTC]")
 public class V1NonResourceAttributes {
   public static final String SERIALIZED_NAME_PATH = "path";
   @SerializedName(SERIALIZED_NAME_PATH)

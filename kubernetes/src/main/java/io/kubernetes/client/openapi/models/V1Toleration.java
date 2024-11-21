@@ -49,7 +49,7 @@ import io.kubernetes.client.openapi.JSON;
 /**
  * The pod this Toleration is attached to tolerates any taint that matches the triple &lt;key,value,effect&gt; using the matching operator &lt;operator&gt;.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-10T18:43:25.181149Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T01:56:23.031733Z[Etc/UTC]")
 public class V1Toleration {
   public static final String SERIALIZED_NAME_EFFECT = "effect";
   @SerializedName(SERIALIZED_NAME_EFFECT)

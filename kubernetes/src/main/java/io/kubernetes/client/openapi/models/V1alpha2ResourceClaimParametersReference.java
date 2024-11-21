@@ -49,7 +49,7 @@ import io.kubernetes.client.openapi.JSON;
 /**
  * ResourceClaimParametersReference contains enough information to let you locate the parameters for a ResourceClaim. The object must be in the same namespace as the ResourceClaim.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-10T18:43:25.181149Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T01:56:23.031733Z[Etc/UTC]")
 public class V1alpha2ResourceClaimParametersReference {
   public static final String SERIALIZED_NAME_API_GROUP = "apiGroup";
   @SerializedName(SERIALIZED_NAME_API_GROUP)

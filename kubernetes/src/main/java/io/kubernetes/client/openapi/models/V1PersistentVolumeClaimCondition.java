@@ -50,7 +50,7 @@ import io.kubernetes.client.openapi.JSON;
 /**
  * PersistentVolumeClaimCondition contains details about state of pvc
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-10T18:43:25.181149Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T01:56:23.031733Z[Etc/UTC]")
 public class V1PersistentVolumeClaimCondition {
   public static final String SERIALIZED_NAME_LAST_PROBE_TIME = "lastProbeTime";
   @SerializedName(SERIALIZED_NAME_LAST_PROBE_TIME)

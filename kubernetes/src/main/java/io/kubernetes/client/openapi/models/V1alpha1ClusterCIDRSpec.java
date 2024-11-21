@@ -50,7 +50,7 @@ import io.kubernetes.client.openapi.JSON;
 /**
  * ClusterCIDRSpec defines the desired state of ClusterCIDR.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-10T18:43:25.181149Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T01:56:23.031733Z[Etc/UTC]")
 public class V1alpha1ClusterCIDRSpec {
   public static final String SERIALIZED_NAME_IPV4 = "ipv4";
   @SerializedName(SERIALIZED_NAME_IPV4)

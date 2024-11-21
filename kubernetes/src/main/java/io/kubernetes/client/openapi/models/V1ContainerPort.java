@@ -49,7 +49,7 @@ import io.kubernetes.client.openapi.JSON;
 /**
  * ContainerPort represents a network port in a single container.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-10T18:43:25.181149Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T01:56:23.031733Z[Etc/UTC]")
 public class V1ContainerPort {
   public static final String SERIALIZED_NAME_CONTAINER_PORT = "containerPort";
   @SerializedName(SERIALIZED_NAME_CONTAINER_PORT)

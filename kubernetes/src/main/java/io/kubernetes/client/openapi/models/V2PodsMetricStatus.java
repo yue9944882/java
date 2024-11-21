@@ -51,7 +51,7 @@ import io.kubernetes.client.openapi.JSON;
 /**
  * PodsMetricStatus indicates the current value of a metric describing each pod in the current scale target (for example, transactions-processed-per-second).
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-10T18:43:25.181149Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T01:56:23.031733Z[Etc/UTC]")
 public class V2PodsMetricStatus {
   public static final String SERIALIZED_NAME_CURRENT = "current";
   @SerializedName(SERIALIZED_NAME_CURRENT)

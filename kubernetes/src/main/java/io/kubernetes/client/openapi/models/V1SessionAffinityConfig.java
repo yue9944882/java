@@ -50,7 +50,7 @@ import io.kubernetes.client.openapi.JSON;
 /**
  * SessionAffinityConfig represents the configurations of session affinity.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-10T18:43:25.181149Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T01:56:23.031733Z[Etc/UTC]")
 public class V1SessionAffinityConfig {
   public static final String SERIALIZED_NAME_CLIENT_I_P = "clientIP";
   @SerializedName(SERIALIZED_NAME_CLIENT_I_P)
