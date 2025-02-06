@@ -1,5 +1,5 @@
 /*
-Copyright 2024 The Kubernetes Authors.
+Copyright 2025 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -12,8 +12,10 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T13:45:08.546919Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-06T02:49:33.269533Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class Configuration {
+    public static final String VERSION = "22.0.1-legacy-SNAPSHOT";
+
     private static ApiClient defaultApiClient = new ApiClient();
 
     /**

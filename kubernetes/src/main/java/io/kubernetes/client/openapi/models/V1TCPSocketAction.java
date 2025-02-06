@@ -1,5 +1,5 @@
 /*
-Copyright 2024 The Kubernetes Authors.
+Copyright 2025 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -13,7 +13,6 @@ limitations under the License.
 package io.kubernetes.client.openapi.models;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,12 +22,37 @@ import io.kubernetes.client.custom.IntOrString;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import io.kubernetes.client.openapi.JSON;
 
 /**
  * TCPSocketAction describes an action based on opening a socket
  */
 @ApiModel(description = "TCPSocketAction describes an action based on opening a socket")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T13:45:08.546919Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-06T02:49:33.269533Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class V1TCPSocketAction {
   public static final String SERIALIZED_NAME_HOST = "host";
   @SerializedName(SERIALIZED_NAME_HOST)
@@ -38,9 +62,10 @@ public class V1TCPSocketAction {
   @SerializedName(SERIALIZED_NAME_PORT)
   private IntOrString port;
 
+  public V1TCPSocketAction() {
+  }
 
   public V1TCPSocketAction host(String host) {
-
     this.host = host;
     return this;
   }
@@ -49,13 +74,11 @@ public class V1TCPSocketAction {
    * Optional: Host name to connect to, defaults to the pod IP.
    * @return host
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Optional: Host name to connect to, defaults to the pod IP.")
-
   public String getHost() {
     return host;
   }
-
 
   public void setHost(String host) {
     this.host = host;
@@ -63,7 +86,6 @@ public class V1TCPSocketAction {
 
 
   public V1TCPSocketAction port(IntOrString port) {
-
     this.port = port;
     return this;
   }
@@ -72,20 +94,20 @@ public class V1TCPSocketAction {
    * IntOrString is a type that can hold an int32 or a string.  When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type.  This allows you to have, for example, a JSON field that can accept a name or number.
    * @return port
   **/
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "IntOrString is a type that can hold an int32 or a string.  When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type.  This allows you to have, for example, a JSON field that can accept a name or number.")
-
   public IntOrString getPort() {
     return port;
   }
-
 
   public void setPort(IntOrString port) {
     this.port = port;
   }
 
 
+
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -102,7 +124,6 @@ public class V1TCPSocketAction {
     return Objects.hash(host, port);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -117,11 +138,110 @@ public class V1TCPSocketAction {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("host");
+    openapiFields.add("port");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("port");
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to V1TCPSocketAction
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!V1TCPSocketAction.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in V1TCPSocketAction is not found in the empty JSON string", V1TCPSocketAction.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!V1TCPSocketAction.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `V1TCPSocketAction` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : V1TCPSocketAction.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("host") != null && !jsonObj.get("host").isJsonNull()) && !jsonObj.get("host").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `host` to be a primitive type in the JSON string but got `%s`", jsonObj.get("host").toString()));
+      }
+      if (!jsonObj.get("port").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `port` to be a primitive type in the JSON string but got `%s`", jsonObj.get("port").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!V1TCPSocketAction.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'V1TCPSocketAction' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<V1TCPSocketAction> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(V1TCPSocketAction.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<V1TCPSocketAction>() {
+           @Override
+           public void write(JsonWriter out, V1TCPSocketAction value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public V1TCPSocketAction read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of V1TCPSocketAction given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of V1TCPSocketAction
+  * @throws IOException if the JSON string is invalid with respect to V1TCPSocketAction
+  */
+  public static V1TCPSocketAction fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, V1TCPSocketAction.class);
+  }
+
+ /**
+  * Convert an instance of V1TCPSocketAction to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
