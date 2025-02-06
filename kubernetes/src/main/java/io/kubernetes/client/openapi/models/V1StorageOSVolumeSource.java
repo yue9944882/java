@@ -1,5 +1,5 @@
 /*
-Copyright 2024 The Kubernetes Authors.
+Copyright 2025 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -13,7 +13,6 @@ limitations under the License.
 package io.kubernetes.client.openapi.models;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,12 +22,37 @@ import io.kubernetes.client.openapi.models.V1LocalObjectReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import io.kubernetes.client.openapi.JSON;
 
 /**
  * Represents a StorageOS persistent volume resource.
  */
 @ApiModel(description = "Represents a StorageOS persistent volume resource.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T13:45:08.546919Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-06T02:28:22.507737Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class V1StorageOSVolumeSource {
   public static final String SERIALIZED_NAME_FS_TYPE = "fsType";
   @SerializedName(SERIALIZED_NAME_FS_TYPE)
@@ -50,9 +74,10 @@ public class V1StorageOSVolumeSource {
   @SerializedName(SERIALIZED_NAME_VOLUME_NAMESPACE)
   private String volumeNamespace;
 
+  public V1StorageOSVolumeSource() {
+  }
 
   public V1StorageOSVolumeSource fsType(String fsType) {
-
     this.fsType = fsType;
     return this;
   }
@@ -61,13 +86,11 @@ public class V1StorageOSVolumeSource {
    * fsType is the filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. \&quot;ext4\&quot;, \&quot;xfs\&quot;, \&quot;ntfs\&quot;. Implicitly inferred to be \&quot;ext4\&quot; if unspecified.
    * @return fsType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "fsType is the filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified.")
-
   public String getFsType() {
     return fsType;
   }
-
 
   public void setFsType(String fsType) {
     this.fsType = fsType;
@@ -75,7 +98,6 @@ public class V1StorageOSVolumeSource {
 
 
   public V1StorageOSVolumeSource readOnly(Boolean readOnly) {
-
     this.readOnly = readOnly;
     return this;
   }
@@ -84,13 +106,11 @@ public class V1StorageOSVolumeSource {
    * readOnly defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
    * @return readOnly
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "readOnly defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.")
-
   public Boolean getReadOnly() {
     return readOnly;
   }
-
 
   public void setReadOnly(Boolean readOnly) {
     this.readOnly = readOnly;
@@ -98,7 +118,6 @@ public class V1StorageOSVolumeSource {
 
 
   public V1StorageOSVolumeSource secretRef(V1LocalObjectReference secretRef) {
-
     this.secretRef = secretRef;
     return this;
   }
@@ -107,13 +126,11 @@ public class V1StorageOSVolumeSource {
    * Get secretRef
    * @return secretRef
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public V1LocalObjectReference getSecretRef() {
     return secretRef;
   }
-
 
   public void setSecretRef(V1LocalObjectReference secretRef) {
     this.secretRef = secretRef;
@@ -121,7 +138,6 @@ public class V1StorageOSVolumeSource {
 
 
   public V1StorageOSVolumeSource volumeName(String volumeName) {
-
     this.volumeName = volumeName;
     return this;
   }
@@ -130,13 +146,11 @@ public class V1StorageOSVolumeSource {
    * volumeName is the human-readable name of the StorageOS volume.  Volume names are only unique within a namespace.
    * @return volumeName
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "volumeName is the human-readable name of the StorageOS volume.  Volume names are only unique within a namespace.")
-
   public String getVolumeName() {
     return volumeName;
   }
-
 
   public void setVolumeName(String volumeName) {
     this.volumeName = volumeName;
@@ -144,7 +158,6 @@ public class V1StorageOSVolumeSource {
 
 
   public V1StorageOSVolumeSource volumeNamespace(String volumeNamespace) {
-
     this.volumeNamespace = volumeNamespace;
     return this;
   }
@@ -153,21 +166,20 @@ public class V1StorageOSVolumeSource {
    * volumeNamespace specifies the scope of the volume within StorageOS.  If no namespace is specified then the Pod&#39;s namespace will be used.  This allows the Kubernetes name scoping to be mirrored within StorageOS for tighter integration. Set VolumeName to any name to override the default behaviour. Set to \&quot;default\&quot; if you are not using namespaces within StorageOS. Namespaces that do not pre-exist within StorageOS will be created.
    * @return volumeNamespace
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "volumeNamespace specifies the scope of the volume within StorageOS.  If no namespace is specified then the Pod's namespace will be used.  This allows the Kubernetes name scoping to be mirrored within StorageOS for tighter integration. Set VolumeName to any name to override the default behaviour. Set to \"default\" if you are not using namespaces within StorageOS. Namespaces that do not pre-exist within StorageOS will be created.")
-
   public String getVolumeNamespace() {
     return volumeNamespace;
   }
-
 
   public void setVolumeNamespace(String volumeNamespace) {
     this.volumeNamespace = volumeNamespace;
   }
 
 
+
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -187,7 +199,6 @@ public class V1StorageOSVolumeSource {
     return Objects.hash(fsType, readOnly, secretRef, volumeName, volumeNamespace);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -205,11 +216,112 @@ public class V1StorageOSVolumeSource {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("fsType");
+    openapiFields.add("readOnly");
+    openapiFields.add("secretRef");
+    openapiFields.add("volumeName");
+    openapiFields.add("volumeNamespace");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to V1StorageOSVolumeSource
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!V1StorageOSVolumeSource.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in V1StorageOSVolumeSource is not found in the empty JSON string", V1StorageOSVolumeSource.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!V1StorageOSVolumeSource.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `V1StorageOSVolumeSource` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("fsType") != null && !jsonObj.get("fsType").isJsonNull()) && !jsonObj.get("fsType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `fsType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fsType").toString()));
+      }
+      // validate the optional field `secretRef`
+      if (jsonObj.get("secretRef") != null && !jsonObj.get("secretRef").isJsonNull()) {
+        V1LocalObjectReference.validateJsonElement(jsonObj.get("secretRef"));
+      }
+      if ((jsonObj.get("volumeName") != null && !jsonObj.get("volumeName").isJsonNull()) && !jsonObj.get("volumeName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `volumeName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("volumeName").toString()));
+      }
+      if ((jsonObj.get("volumeNamespace") != null && !jsonObj.get("volumeNamespace").isJsonNull()) && !jsonObj.get("volumeNamespace").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `volumeNamespace` to be a primitive type in the JSON string but got `%s`", jsonObj.get("volumeNamespace").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!V1StorageOSVolumeSource.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'V1StorageOSVolumeSource' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<V1StorageOSVolumeSource> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(V1StorageOSVolumeSource.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<V1StorageOSVolumeSource>() {
+           @Override
+           public void write(JsonWriter out, V1StorageOSVolumeSource value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public V1StorageOSVolumeSource read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of V1StorageOSVolumeSource given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of V1StorageOSVolumeSource
+  * @throws IOException if the JSON string is invalid with respect to V1StorageOSVolumeSource
+  */
+  public static V1StorageOSVolumeSource fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, V1StorageOSVolumeSource.class);
+  }
+
+ /**
+  * Convert an instance of V1StorageOSVolumeSource to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }

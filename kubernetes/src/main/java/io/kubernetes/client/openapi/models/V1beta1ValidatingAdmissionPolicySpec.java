@@ -1,5 +1,5 @@
 /*
-Copyright 2024 The Kubernetes Authors.
+Copyright 2025 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -13,7 +13,6 @@ limitations under the License.
 package io.kubernetes.client.openapi.models;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,17 +28,42 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import io.kubernetes.client.openapi.JSON;
 
 /**
  * ValidatingAdmissionPolicySpec is the specification of the desired behavior of the AdmissionPolicy.
  */
 @ApiModel(description = "ValidatingAdmissionPolicySpec is the specification of the desired behavior of the AdmissionPolicy.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T13:45:08.546919Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-06T02:28:22.507737Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class V1beta1ValidatingAdmissionPolicySpec {
   public static final String SERIALIZED_NAME_AUDIT_ANNOTATIONS = "auditAnnotations";
   @SerializedName(SERIALIZED_NAME_AUDIT_ANNOTATIONS)
-  private List<V1beta1AuditAnnotation> auditAnnotations = null;
+  private List<V1beta1AuditAnnotation> auditAnnotations = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FAILURE_POLICY = "failurePolicy";
   @SerializedName(SERIALIZED_NAME_FAILURE_POLICY)
@@ -47,7 +71,7 @@ public class V1beta1ValidatingAdmissionPolicySpec {
 
   public static final String SERIALIZED_NAME_MATCH_CONDITIONS = "matchConditions";
   @SerializedName(SERIALIZED_NAME_MATCH_CONDITIONS)
-  private List<V1beta1MatchCondition> matchConditions = null;
+  private List<V1beta1MatchCondition> matchConditions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MATCH_CONSTRAINTS = "matchConstraints";
   @SerializedName(SERIALIZED_NAME_MATCH_CONSTRAINTS)
@@ -59,15 +83,16 @@ public class V1beta1ValidatingAdmissionPolicySpec {
 
   public static final String SERIALIZED_NAME_VALIDATIONS = "validations";
   @SerializedName(SERIALIZED_NAME_VALIDATIONS)
-  private List<V1beta1Validation> validations = null;
+  private List<V1beta1Validation> validations = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VARIABLES = "variables";
   @SerializedName(SERIALIZED_NAME_VARIABLES)
-  private List<V1beta1Variable> variables = null;
+  private List<V1beta1Variable> variables = new ArrayList<>();
 
+  public V1beta1ValidatingAdmissionPolicySpec() {
+  }
 
   public V1beta1ValidatingAdmissionPolicySpec auditAnnotations(List<V1beta1AuditAnnotation> auditAnnotations) {
-
     this.auditAnnotations = auditAnnotations;
     return this;
   }
@@ -84,13 +109,11 @@ public class V1beta1ValidatingAdmissionPolicySpec {
    * auditAnnotations contains CEL expressions which are used to produce audit annotations for the audit event of the API request. validations and auditAnnotations may not both be empty; a least one of validations or auditAnnotations is required.
    * @return auditAnnotations
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "auditAnnotations contains CEL expressions which are used to produce audit annotations for the audit event of the API request. validations and auditAnnotations may not both be empty; a least one of validations or auditAnnotations is required.")
-
   public List<V1beta1AuditAnnotation> getAuditAnnotations() {
     return auditAnnotations;
   }
-
 
   public void setAuditAnnotations(List<V1beta1AuditAnnotation> auditAnnotations) {
     this.auditAnnotations = auditAnnotations;
@@ -98,7 +121,6 @@ public class V1beta1ValidatingAdmissionPolicySpec {
 
 
   public V1beta1ValidatingAdmissionPolicySpec failurePolicy(String failurePolicy) {
-
     this.failurePolicy = failurePolicy;
     return this;
   }
@@ -107,13 +129,11 @@ public class V1beta1ValidatingAdmissionPolicySpec {
    * failurePolicy defines how to handle failures for the admission policy. Failures can occur from CEL expression parse errors, type check errors, runtime errors and invalid or mis-configured policy definitions or bindings.  A policy is invalid if spec.paramKind refers to a non-existent Kind. A binding is invalid if spec.paramRef.name refers to a non-existent resource.  failurePolicy does not define how validations that evaluate to false are handled.  When failurePolicy is set to Fail, ValidatingAdmissionPolicyBinding validationActions define how failures are enforced.  Allowed values are Ignore or Fail. Defaults to Fail.
    * @return failurePolicy
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "failurePolicy defines how to handle failures for the admission policy. Failures can occur from CEL expression parse errors, type check errors, runtime errors and invalid or mis-configured policy definitions or bindings.  A policy is invalid if spec.paramKind refers to a non-existent Kind. A binding is invalid if spec.paramRef.name refers to a non-existent resource.  failurePolicy does not define how validations that evaluate to false are handled.  When failurePolicy is set to Fail, ValidatingAdmissionPolicyBinding validationActions define how failures are enforced.  Allowed values are Ignore or Fail. Defaults to Fail.")
-
   public String getFailurePolicy() {
     return failurePolicy;
   }
-
 
   public void setFailurePolicy(String failurePolicy) {
     this.failurePolicy = failurePolicy;
@@ -121,7 +141,6 @@ public class V1beta1ValidatingAdmissionPolicySpec {
 
 
   public V1beta1ValidatingAdmissionPolicySpec matchConditions(List<V1beta1MatchCondition> matchConditions) {
-
     this.matchConditions = matchConditions;
     return this;
   }
@@ -138,13 +157,11 @@ public class V1beta1ValidatingAdmissionPolicySpec {
    * MatchConditions is a list of conditions that must be met for a request to be validated. Match conditions filter requests that have already been matched by the rules, namespaceSelector, and objectSelector. An empty list of matchConditions matches all requests. There are a maximum of 64 match conditions allowed.  If a parameter object is provided, it can be accessed via the &#x60;params&#x60; handle in the same manner as validation expressions.  The exact matching logic is (in order):   1. If ANY matchCondition evaluates to FALSE, the policy is skipped.   2. If ALL matchConditions evaluate to TRUE, the policy is evaluated.   3. If any matchCondition evaluates to an error (but none are FALSE):      - If failurePolicy&#x3D;Fail, reject the request      - If failurePolicy&#x3D;Ignore, the policy is skipped
    * @return matchConditions
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "MatchConditions is a list of conditions that must be met for a request to be validated. Match conditions filter requests that have already been matched by the rules, namespaceSelector, and objectSelector. An empty list of matchConditions matches all requests. There are a maximum of 64 match conditions allowed.  If a parameter object is provided, it can be accessed via the `params` handle in the same manner as validation expressions.  The exact matching logic is (in order):   1. If ANY matchCondition evaluates to FALSE, the policy is skipped.   2. If ALL matchConditions evaluate to TRUE, the policy is evaluated.   3. If any matchCondition evaluates to an error (but none are FALSE):      - If failurePolicy=Fail, reject the request      - If failurePolicy=Ignore, the policy is skipped")
-
   public List<V1beta1MatchCondition> getMatchConditions() {
     return matchConditions;
   }
-
 
   public void setMatchConditions(List<V1beta1MatchCondition> matchConditions) {
     this.matchConditions = matchConditions;
@@ -152,7 +169,6 @@ public class V1beta1ValidatingAdmissionPolicySpec {
 
 
   public V1beta1ValidatingAdmissionPolicySpec matchConstraints(V1beta1MatchResources matchConstraints) {
-
     this.matchConstraints = matchConstraints;
     return this;
   }
@@ -161,13 +177,11 @@ public class V1beta1ValidatingAdmissionPolicySpec {
    * Get matchConstraints
    * @return matchConstraints
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public V1beta1MatchResources getMatchConstraints() {
     return matchConstraints;
   }
-
 
   public void setMatchConstraints(V1beta1MatchResources matchConstraints) {
     this.matchConstraints = matchConstraints;
@@ -175,7 +189,6 @@ public class V1beta1ValidatingAdmissionPolicySpec {
 
 
   public V1beta1ValidatingAdmissionPolicySpec paramKind(V1beta1ParamKind paramKind) {
-
     this.paramKind = paramKind;
     return this;
   }
@@ -184,13 +197,11 @@ public class V1beta1ValidatingAdmissionPolicySpec {
    * Get paramKind
    * @return paramKind
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public V1beta1ParamKind getParamKind() {
     return paramKind;
   }
-
 
   public void setParamKind(V1beta1ParamKind paramKind) {
     this.paramKind = paramKind;
@@ -198,7 +209,6 @@ public class V1beta1ValidatingAdmissionPolicySpec {
 
 
   public V1beta1ValidatingAdmissionPolicySpec validations(List<V1beta1Validation> validations) {
-
     this.validations = validations;
     return this;
   }
@@ -215,13 +225,11 @@ public class V1beta1ValidatingAdmissionPolicySpec {
    * Validations contain CEL expressions which is used to apply the validation. Validations and AuditAnnotations may not both be empty; a minimum of one Validations or AuditAnnotations is required.
    * @return validations
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Validations contain CEL expressions which is used to apply the validation. Validations and AuditAnnotations may not both be empty; a minimum of one Validations or AuditAnnotations is required.")
-
   public List<V1beta1Validation> getValidations() {
     return validations;
   }
-
 
   public void setValidations(List<V1beta1Validation> validations) {
     this.validations = validations;
@@ -229,7 +237,6 @@ public class V1beta1ValidatingAdmissionPolicySpec {
 
 
   public V1beta1ValidatingAdmissionPolicySpec variables(List<V1beta1Variable> variables) {
-
     this.variables = variables;
     return this;
   }
@@ -246,21 +253,20 @@ public class V1beta1ValidatingAdmissionPolicySpec {
    * Variables contain definitions of variables that can be used in composition of other expressions. Each variable is defined as a named CEL expression. The variables defined here will be available under &#x60;variables&#x60; in other expressions of the policy except MatchConditions because MatchConditions are evaluated before the rest of the policy.  The expression of a variable can refer to other variables defined earlier in the list but not those after. Thus, Variables must be sorted by the order of first appearance and acyclic.
    * @return variables
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Variables contain definitions of variables that can be used in composition of other expressions. Each variable is defined as a named CEL expression. The variables defined here will be available under `variables` in other expressions of the policy except MatchConditions because MatchConditions are evaluated before the rest of the policy.  The expression of a variable can refer to other variables defined earlier in the list but not those after. Thus, Variables must be sorted by the order of first appearance and acyclic.")
-
   public List<V1beta1Variable> getVariables() {
     return variables;
   }
-
 
   public void setVariables(List<V1beta1Variable> variables) {
     this.variables = variables;
   }
 
 
+
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -282,7 +288,6 @@ public class V1beta1ValidatingAdmissionPolicySpec {
     return Objects.hash(auditAnnotations, failurePolicy, matchConditions, matchConstraints, paramKind, validations, variables);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -302,11 +307,168 @@ public class V1beta1ValidatingAdmissionPolicySpec {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("auditAnnotations");
+    openapiFields.add("failurePolicy");
+    openapiFields.add("matchConditions");
+    openapiFields.add("matchConstraints");
+    openapiFields.add("paramKind");
+    openapiFields.add("validations");
+    openapiFields.add("variables");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to V1beta1ValidatingAdmissionPolicySpec
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!V1beta1ValidatingAdmissionPolicySpec.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in V1beta1ValidatingAdmissionPolicySpec is not found in the empty JSON string", V1beta1ValidatingAdmissionPolicySpec.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!V1beta1ValidatingAdmissionPolicySpec.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `V1beta1ValidatingAdmissionPolicySpec` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (jsonObj.get("auditAnnotations") != null && !jsonObj.get("auditAnnotations").isJsonNull()) {
+        JsonArray jsonArrayauditAnnotations = jsonObj.getAsJsonArray("auditAnnotations");
+        if (jsonArrayauditAnnotations != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("auditAnnotations").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `auditAnnotations` to be an array in the JSON string but got `%s`", jsonObj.get("auditAnnotations").toString()));
+          }
+
+          // validate the optional field `auditAnnotations` (array)
+          for (int i = 0; i < jsonArrayauditAnnotations.size(); i++) {
+            V1beta1AuditAnnotation.validateJsonElement(jsonArrayauditAnnotations.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("failurePolicy") != null && !jsonObj.get("failurePolicy").isJsonNull()) && !jsonObj.get("failurePolicy").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `failurePolicy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("failurePolicy").toString()));
+      }
+      if (jsonObj.get("matchConditions") != null && !jsonObj.get("matchConditions").isJsonNull()) {
+        JsonArray jsonArraymatchConditions = jsonObj.getAsJsonArray("matchConditions");
+        if (jsonArraymatchConditions != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("matchConditions").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `matchConditions` to be an array in the JSON string but got `%s`", jsonObj.get("matchConditions").toString()));
+          }
+
+          // validate the optional field `matchConditions` (array)
+          for (int i = 0; i < jsonArraymatchConditions.size(); i++) {
+            V1beta1MatchCondition.validateJsonElement(jsonArraymatchConditions.get(i));
+          };
+        }
+      }
+      // validate the optional field `matchConstraints`
+      if (jsonObj.get("matchConstraints") != null && !jsonObj.get("matchConstraints").isJsonNull()) {
+        V1beta1MatchResources.validateJsonElement(jsonObj.get("matchConstraints"));
+      }
+      // validate the optional field `paramKind`
+      if (jsonObj.get("paramKind") != null && !jsonObj.get("paramKind").isJsonNull()) {
+        V1beta1ParamKind.validateJsonElement(jsonObj.get("paramKind"));
+      }
+      if (jsonObj.get("validations") != null && !jsonObj.get("validations").isJsonNull()) {
+        JsonArray jsonArrayvalidations = jsonObj.getAsJsonArray("validations");
+        if (jsonArrayvalidations != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("validations").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `validations` to be an array in the JSON string but got `%s`", jsonObj.get("validations").toString()));
+          }
+
+          // validate the optional field `validations` (array)
+          for (int i = 0; i < jsonArrayvalidations.size(); i++) {
+            V1beta1Validation.validateJsonElement(jsonArrayvalidations.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("variables") != null && !jsonObj.get("variables").isJsonNull()) {
+        JsonArray jsonArrayvariables = jsonObj.getAsJsonArray("variables");
+        if (jsonArrayvariables != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("variables").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `variables` to be an array in the JSON string but got `%s`", jsonObj.get("variables").toString()));
+          }
+
+          // validate the optional field `variables` (array)
+          for (int i = 0; i < jsonArrayvariables.size(); i++) {
+            V1beta1Variable.validateJsonElement(jsonArrayvariables.get(i));
+          };
+        }
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!V1beta1ValidatingAdmissionPolicySpec.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'V1beta1ValidatingAdmissionPolicySpec' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<V1beta1ValidatingAdmissionPolicySpec> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(V1beta1ValidatingAdmissionPolicySpec.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<V1beta1ValidatingAdmissionPolicySpec>() {
+           @Override
+           public void write(JsonWriter out, V1beta1ValidatingAdmissionPolicySpec value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public V1beta1ValidatingAdmissionPolicySpec read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of V1beta1ValidatingAdmissionPolicySpec given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of V1beta1ValidatingAdmissionPolicySpec
+  * @throws IOException if the JSON string is invalid with respect to V1beta1ValidatingAdmissionPolicySpec
+  */
+  public static V1beta1ValidatingAdmissionPolicySpec fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, V1beta1ValidatingAdmissionPolicySpec.class);
+  }
+
+ /**
+  * Convert an instance of V1beta1ValidatingAdmissionPolicySpec to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }

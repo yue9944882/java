@@ -1,5 +1,5 @@
 /*
-Copyright 2024 The Kubernetes Authors.
+Copyright 2025 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -13,7 +13,6 @@ limitations under the License.
 package io.kubernetes.client.openapi.models;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,12 +21,37 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import io.kubernetes.client.openapi.JSON;
 
 /**
  * Info contains versioning information. how we&#39;ll want to distribute that information.
  */
 @ApiModel(description = "Info contains versioning information. how we'll want to distribute that information.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T13:45:08.546919Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-06T02:28:22.507737Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class VersionInfo {
   public static final String SERIALIZED_NAME_BUILD_DATE = "buildDate";
   @SerializedName(SERIALIZED_NAME_BUILD_DATE)
@@ -65,9 +89,10 @@ public class VersionInfo {
   @SerializedName(SERIALIZED_NAME_PLATFORM)
   private String platform;
 
+  public VersionInfo() {
+  }
 
   public VersionInfo buildDate(String buildDate) {
-
     this.buildDate = buildDate;
     return this;
   }
@@ -76,12 +101,11 @@ public class VersionInfo {
    * Get buildDate
    * @return buildDate
   **/
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
-
   public String getBuildDate() {
     return buildDate;
   }
-
 
   public void setBuildDate(String buildDate) {
     this.buildDate = buildDate;
@@ -89,7 +113,6 @@ public class VersionInfo {
 
 
   public VersionInfo compiler(String compiler) {
-
     this.compiler = compiler;
     return this;
   }
@@ -98,12 +121,11 @@ public class VersionInfo {
    * Get compiler
    * @return compiler
   **/
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
-
   public String getCompiler() {
     return compiler;
   }
-
 
   public void setCompiler(String compiler) {
     this.compiler = compiler;
@@ -111,7 +133,6 @@ public class VersionInfo {
 
 
   public VersionInfo gitCommit(String gitCommit) {
-
     this.gitCommit = gitCommit;
     return this;
   }
@@ -120,12 +141,11 @@ public class VersionInfo {
    * Get gitCommit
    * @return gitCommit
   **/
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
-
   public String getGitCommit() {
     return gitCommit;
   }
-
 
   public void setGitCommit(String gitCommit) {
     this.gitCommit = gitCommit;
@@ -133,7 +153,6 @@ public class VersionInfo {
 
 
   public VersionInfo gitTreeState(String gitTreeState) {
-
     this.gitTreeState = gitTreeState;
     return this;
   }
@@ -142,12 +161,11 @@ public class VersionInfo {
    * Get gitTreeState
    * @return gitTreeState
   **/
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
-
   public String getGitTreeState() {
     return gitTreeState;
   }
-
 
   public void setGitTreeState(String gitTreeState) {
     this.gitTreeState = gitTreeState;
@@ -155,7 +173,6 @@ public class VersionInfo {
 
 
   public VersionInfo gitVersion(String gitVersion) {
-
     this.gitVersion = gitVersion;
     return this;
   }
@@ -164,12 +181,11 @@ public class VersionInfo {
    * Get gitVersion
    * @return gitVersion
   **/
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
-
   public String getGitVersion() {
     return gitVersion;
   }
-
 
   public void setGitVersion(String gitVersion) {
     this.gitVersion = gitVersion;
@@ -177,7 +193,6 @@ public class VersionInfo {
 
 
   public VersionInfo goVersion(String goVersion) {
-
     this.goVersion = goVersion;
     return this;
   }
@@ -186,12 +201,11 @@ public class VersionInfo {
    * Get goVersion
    * @return goVersion
   **/
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
-
   public String getGoVersion() {
     return goVersion;
   }
-
 
   public void setGoVersion(String goVersion) {
     this.goVersion = goVersion;
@@ -199,7 +213,6 @@ public class VersionInfo {
 
 
   public VersionInfo major(String major) {
-
     this.major = major;
     return this;
   }
@@ -208,12 +221,11 @@ public class VersionInfo {
    * Get major
    * @return major
   **/
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
-
   public String getMajor() {
     return major;
   }
-
 
   public void setMajor(String major) {
     this.major = major;
@@ -221,7 +233,6 @@ public class VersionInfo {
 
 
   public VersionInfo minor(String minor) {
-
     this.minor = minor;
     return this;
   }
@@ -230,12 +241,11 @@ public class VersionInfo {
    * Get minor
    * @return minor
   **/
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
-
   public String getMinor() {
     return minor;
   }
-
 
   public void setMinor(String minor) {
     this.minor = minor;
@@ -243,7 +253,6 @@ public class VersionInfo {
 
 
   public VersionInfo platform(String platform) {
-
     this.platform = platform;
     return this;
   }
@@ -252,20 +261,20 @@ public class VersionInfo {
    * Get platform
    * @return platform
   **/
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
-
   public String getPlatform() {
     return platform;
   }
-
 
   public void setPlatform(String platform) {
     this.platform = platform;
   }
 
 
+
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -289,7 +298,6 @@ public class VersionInfo {
     return Objects.hash(buildDate, compiler, gitCommit, gitTreeState, gitVersion, goVersion, major, minor, platform);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -311,11 +319,146 @@ public class VersionInfo {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("buildDate");
+    openapiFields.add("compiler");
+    openapiFields.add("gitCommit");
+    openapiFields.add("gitTreeState");
+    openapiFields.add("gitVersion");
+    openapiFields.add("goVersion");
+    openapiFields.add("major");
+    openapiFields.add("minor");
+    openapiFields.add("platform");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("buildDate");
+    openapiRequiredFields.add("compiler");
+    openapiRequiredFields.add("gitCommit");
+    openapiRequiredFields.add("gitTreeState");
+    openapiRequiredFields.add("gitVersion");
+    openapiRequiredFields.add("goVersion");
+    openapiRequiredFields.add("major");
+    openapiRequiredFields.add("minor");
+    openapiRequiredFields.add("platform");
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to VersionInfo
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!VersionInfo.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in VersionInfo is not found in the empty JSON string", VersionInfo.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!VersionInfo.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `VersionInfo` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : VersionInfo.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("buildDate").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `buildDate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("buildDate").toString()));
+      }
+      if (!jsonObj.get("compiler").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `compiler` to be a primitive type in the JSON string but got `%s`", jsonObj.get("compiler").toString()));
+      }
+      if (!jsonObj.get("gitCommit").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gitCommit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gitCommit").toString()));
+      }
+      if (!jsonObj.get("gitTreeState").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gitTreeState` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gitTreeState").toString()));
+      }
+      if (!jsonObj.get("gitVersion").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gitVersion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gitVersion").toString()));
+      }
+      if (!jsonObj.get("goVersion").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `goVersion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("goVersion").toString()));
+      }
+      if (!jsonObj.get("major").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `major` to be a primitive type in the JSON string but got `%s`", jsonObj.get("major").toString()));
+      }
+      if (!jsonObj.get("minor").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `minor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("minor").toString()));
+      }
+      if (!jsonObj.get("platform").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `platform` to be a primitive type in the JSON string but got `%s`", jsonObj.get("platform").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!VersionInfo.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'VersionInfo' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<VersionInfo> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(VersionInfo.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<VersionInfo>() {
+           @Override
+           public void write(JsonWriter out, VersionInfo value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public VersionInfo read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of VersionInfo given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of VersionInfo
+  * @throws IOException if the JSON string is invalid with respect to VersionInfo
+  */
+  public static VersionInfo fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, VersionInfo.class);
+  }
+
+ /**
+  * Convert an instance of VersionInfo to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }

@@ -1,5 +1,5 @@
 /*
-Copyright 2024 The Kubernetes Authors.
+Copyright 2025 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -13,7 +13,6 @@ limitations under the License.
 package io.kubernetes.client.openapi.models;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,13 +24,38 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import io.kubernetes.client.openapi.JSON;
 
 /**
  * MutatingWebhookConfiguration describes the configuration of and admission webhook that accept or reject and may change the object.
  */
 @ApiModel(description = "MutatingWebhookConfiguration describes the configuration of and admission webhook that accept or reject and may change the object.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T13:45:08.546919Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-06T02:28:22.507737Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class V1MutatingWebhookConfiguration implements io.kubernetes.client.common.KubernetesObject {
   public static final String SERIALIZED_NAME_API_VERSION = "apiVersion";
   @SerializedName(SERIALIZED_NAME_API_VERSION)
@@ -47,11 +71,12 @@ public class V1MutatingWebhookConfiguration implements io.kubernetes.client.comm
 
   public static final String SERIALIZED_NAME_WEBHOOKS = "webhooks";
   @SerializedName(SERIALIZED_NAME_WEBHOOKS)
-  private List<V1MutatingWebhook> webhooks = null;
+  private List<V1MutatingWebhook> webhooks = new ArrayList<>();
 
+  public V1MutatingWebhookConfiguration() {
+  }
 
   public V1MutatingWebhookConfiguration apiVersion(String apiVersion) {
-
     this.apiVersion = apiVersion;
     return this;
   }
@@ -60,13 +85,11 @@ public class V1MutatingWebhookConfiguration implements io.kubernetes.client.comm
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
    * @return apiVersion
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources")
-
   public String getApiVersion() {
     return apiVersion;
   }
-
 
   public void setApiVersion(String apiVersion) {
     this.apiVersion = apiVersion;
@@ -74,7 +97,6 @@ public class V1MutatingWebhookConfiguration implements io.kubernetes.client.comm
 
 
   public V1MutatingWebhookConfiguration kind(String kind) {
-
     this.kind = kind;
     return this;
   }
@@ -83,13 +105,11 @@ public class V1MutatingWebhookConfiguration implements io.kubernetes.client.comm
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
    * @return kind
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds")
-
   public String getKind() {
     return kind;
   }
-
 
   public void setKind(String kind) {
     this.kind = kind;
@@ -97,7 +117,6 @@ public class V1MutatingWebhookConfiguration implements io.kubernetes.client.comm
 
 
   public V1MutatingWebhookConfiguration metadata(V1ObjectMeta metadata) {
-
     this.metadata = metadata;
     return this;
   }
@@ -106,13 +125,11 @@ public class V1MutatingWebhookConfiguration implements io.kubernetes.client.comm
    * Get metadata
    * @return metadata
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public V1ObjectMeta getMetadata() {
     return metadata;
   }
-
 
   public void setMetadata(V1ObjectMeta metadata) {
     this.metadata = metadata;
@@ -120,7 +137,6 @@ public class V1MutatingWebhookConfiguration implements io.kubernetes.client.comm
 
 
   public V1MutatingWebhookConfiguration webhooks(List<V1MutatingWebhook> webhooks) {
-
     this.webhooks = webhooks;
     return this;
   }
@@ -137,21 +153,20 @@ public class V1MutatingWebhookConfiguration implements io.kubernetes.client.comm
    * Webhooks is a list of webhooks and the affected resources and operations.
    * @return webhooks
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Webhooks is a list of webhooks and the affected resources and operations.")
-
   public List<V1MutatingWebhook> getWebhooks() {
     return webhooks;
   }
-
 
   public void setWebhooks(List<V1MutatingWebhook> webhooks) {
     this.webhooks = webhooks;
   }
 
 
+
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -170,7 +185,6 @@ public class V1MutatingWebhookConfiguration implements io.kubernetes.client.comm
     return Objects.hash(apiVersion, kind, metadata, webhooks);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -187,11 +201,122 @@ public class V1MutatingWebhookConfiguration implements io.kubernetes.client.comm
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("apiVersion");
+    openapiFields.add("kind");
+    openapiFields.add("metadata");
+    openapiFields.add("webhooks");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to V1MutatingWebhookConfiguration
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!V1MutatingWebhookConfiguration.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in V1MutatingWebhookConfiguration is not found in the empty JSON string", V1MutatingWebhookConfiguration.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!V1MutatingWebhookConfiguration.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `V1MutatingWebhookConfiguration` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("apiVersion") != null && !jsonObj.get("apiVersion").isJsonNull()) && !jsonObj.get("apiVersion").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `apiVersion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("apiVersion").toString()));
+      }
+      if ((jsonObj.get("kind") != null && !jsonObj.get("kind").isJsonNull()) && !jsonObj.get("kind").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+      }
+      // validate the optional field `metadata`
+      if (jsonObj.get("metadata") != null && !jsonObj.get("metadata").isJsonNull()) {
+        V1ObjectMeta.validateJsonElement(jsonObj.get("metadata"));
+      }
+      if (jsonObj.get("webhooks") != null && !jsonObj.get("webhooks").isJsonNull()) {
+        JsonArray jsonArraywebhooks = jsonObj.getAsJsonArray("webhooks");
+        if (jsonArraywebhooks != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("webhooks").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `webhooks` to be an array in the JSON string but got `%s`", jsonObj.get("webhooks").toString()));
+          }
+
+          // validate the optional field `webhooks` (array)
+          for (int i = 0; i < jsonArraywebhooks.size(); i++) {
+            V1MutatingWebhook.validateJsonElement(jsonArraywebhooks.get(i));
+          };
+        }
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!V1MutatingWebhookConfiguration.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'V1MutatingWebhookConfiguration' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<V1MutatingWebhookConfiguration> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(V1MutatingWebhookConfiguration.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<V1MutatingWebhookConfiguration>() {
+           @Override
+           public void write(JsonWriter out, V1MutatingWebhookConfiguration value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public V1MutatingWebhookConfiguration read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of V1MutatingWebhookConfiguration given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of V1MutatingWebhookConfiguration
+  * @throws IOException if the JSON string is invalid with respect to V1MutatingWebhookConfiguration
+  */
+  public static V1MutatingWebhookConfiguration fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, V1MutatingWebhookConfiguration.class);
+  }
+
+ /**
+  * Convert an instance of V1MutatingWebhookConfiguration to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }

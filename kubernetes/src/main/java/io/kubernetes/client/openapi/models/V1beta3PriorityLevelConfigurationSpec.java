@@ -1,5 +1,5 @@
 /*
-Copyright 2024 The Kubernetes Authors.
+Copyright 2025 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -13,7 +13,6 @@ limitations under the License.
 package io.kubernetes.client.openapi.models;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,12 +23,37 @@ import io.kubernetes.client.openapi.models.V1beta3LimitedPriorityLevelConfigurat
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import io.kubernetes.client.openapi.JSON;
 
 /**
  * PriorityLevelConfigurationSpec specifies the configuration of a priority level.
  */
 @ApiModel(description = "PriorityLevelConfigurationSpec specifies the configuration of a priority level.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T13:45:08.546919Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-06T02:28:22.507737Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class V1beta3PriorityLevelConfigurationSpec {
   public static final String SERIALIZED_NAME_EXEMPT = "exempt";
   @SerializedName(SERIALIZED_NAME_EXEMPT)
@@ -43,9 +67,10 @@ public class V1beta3PriorityLevelConfigurationSpec {
   @SerializedName(SERIALIZED_NAME_TYPE)
   private String type;
 
+  public V1beta3PriorityLevelConfigurationSpec() {
+  }
 
   public V1beta3PriorityLevelConfigurationSpec exempt(V1beta3ExemptPriorityLevelConfiguration exempt) {
-
     this.exempt = exempt;
     return this;
   }
@@ -54,13 +79,11 @@ public class V1beta3PriorityLevelConfigurationSpec {
    * Get exempt
    * @return exempt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public V1beta3ExemptPriorityLevelConfiguration getExempt() {
     return exempt;
   }
-
 
   public void setExempt(V1beta3ExemptPriorityLevelConfiguration exempt) {
     this.exempt = exempt;
@@ -68,7 +91,6 @@ public class V1beta3PriorityLevelConfigurationSpec {
 
 
   public V1beta3PriorityLevelConfigurationSpec limited(V1beta3LimitedPriorityLevelConfiguration limited) {
-
     this.limited = limited;
     return this;
   }
@@ -77,13 +99,11 @@ public class V1beta3PriorityLevelConfigurationSpec {
    * Get limited
    * @return limited
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public V1beta3LimitedPriorityLevelConfiguration getLimited() {
     return limited;
   }
-
 
   public void setLimited(V1beta3LimitedPriorityLevelConfiguration limited) {
     this.limited = limited;
@@ -91,7 +111,6 @@ public class V1beta3PriorityLevelConfigurationSpec {
 
 
   public V1beta3PriorityLevelConfigurationSpec type(String type) {
-
     this.type = type;
     return this;
   }
@@ -100,20 +119,20 @@ public class V1beta3PriorityLevelConfigurationSpec {
    * &#x60;type&#x60; indicates whether this priority level is subject to limitation on request execution.  A value of &#x60;\&quot;Exempt\&quot;&#x60; means that requests of this priority level are not subject to a limit (and thus are never queued) and do not detract from the capacity made available to other priority levels.  A value of &#x60;\&quot;Limited\&quot;&#x60; means that (a) requests of this priority level _are_ subject to limits and (b) some of the server&#39;s limited capacity is made available exclusively to this priority level. Required.
    * @return type
   **/
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "`type` indicates whether this priority level is subject to limitation on request execution.  A value of `\"Exempt\"` means that requests of this priority level are not subject to a limit (and thus are never queued) and do not detract from the capacity made available to other priority levels.  A value of `\"Limited\"` means that (a) requests of this priority level _are_ subject to limits and (b) some of the server's limited capacity is made available exclusively to this priority level. Required.")
-
   public String getType() {
     return type;
   }
-
 
   public void setType(String type) {
     this.type = type;
   }
 
 
+
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -131,7 +150,6 @@ public class V1beta3PriorityLevelConfigurationSpec {
     return Objects.hash(exempt, limited, type);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -147,11 +165,116 @@ public class V1beta3PriorityLevelConfigurationSpec {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("exempt");
+    openapiFields.add("limited");
+    openapiFields.add("type");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("type");
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to V1beta3PriorityLevelConfigurationSpec
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!V1beta3PriorityLevelConfigurationSpec.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in V1beta3PriorityLevelConfigurationSpec is not found in the empty JSON string", V1beta3PriorityLevelConfigurationSpec.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!V1beta3PriorityLevelConfigurationSpec.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `V1beta3PriorityLevelConfigurationSpec` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : V1beta3PriorityLevelConfigurationSpec.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `exempt`
+      if (jsonObj.get("exempt") != null && !jsonObj.get("exempt").isJsonNull()) {
+        V1beta3ExemptPriorityLevelConfiguration.validateJsonElement(jsonObj.get("exempt"));
+      }
+      // validate the optional field `limited`
+      if (jsonObj.get("limited") != null && !jsonObj.get("limited").isJsonNull()) {
+        V1beta3LimitedPriorityLevelConfiguration.validateJsonElement(jsonObj.get("limited"));
+      }
+      if (!jsonObj.get("type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!V1beta3PriorityLevelConfigurationSpec.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'V1beta3PriorityLevelConfigurationSpec' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<V1beta3PriorityLevelConfigurationSpec> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(V1beta3PriorityLevelConfigurationSpec.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<V1beta3PriorityLevelConfigurationSpec>() {
+           @Override
+           public void write(JsonWriter out, V1beta3PriorityLevelConfigurationSpec value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public V1beta3PriorityLevelConfigurationSpec read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of V1beta3PriorityLevelConfigurationSpec given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of V1beta3PriorityLevelConfigurationSpec
+  * @throws IOException if the JSON string is invalid with respect to V1beta3PriorityLevelConfigurationSpec
+  */
+  public static V1beta3PriorityLevelConfigurationSpec fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, V1beta3PriorityLevelConfigurationSpec.class);
+  }
+
+ /**
+  * Convert an instance of V1beta3PriorityLevelConfigurationSpec to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }

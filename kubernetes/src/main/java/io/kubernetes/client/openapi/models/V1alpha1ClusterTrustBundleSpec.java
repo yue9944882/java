@@ -1,5 +1,5 @@
 /*
-Copyright 2024 The Kubernetes Authors.
+Copyright 2025 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -13,7 +13,6 @@ limitations under the License.
 package io.kubernetes.client.openapi.models;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,12 +21,37 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import io.kubernetes.client.openapi.JSON;
 
 /**
  * ClusterTrustBundleSpec contains the signer and trust anchors.
  */
 @ApiModel(description = "ClusterTrustBundleSpec contains the signer and trust anchors.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T13:45:08.546919Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-06T02:28:22.507737Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class V1alpha1ClusterTrustBundleSpec {
   public static final String SERIALIZED_NAME_SIGNER_NAME = "signerName";
   @SerializedName(SERIALIZED_NAME_SIGNER_NAME)
@@ -37,9 +61,10 @@ public class V1alpha1ClusterTrustBundleSpec {
   @SerializedName(SERIALIZED_NAME_TRUST_BUNDLE)
   private String trustBundle;
 
+  public V1alpha1ClusterTrustBundleSpec() {
+  }
 
   public V1alpha1ClusterTrustBundleSpec signerName(String signerName) {
-
     this.signerName = signerName;
     return this;
   }
@@ -48,13 +73,11 @@ public class V1alpha1ClusterTrustBundleSpec {
    * signerName indicates the associated signer, if any.  In order to create or update a ClusterTrustBundle that sets signerName, you must have the following cluster-scoped permission: group&#x3D;certificates.k8s.io resource&#x3D;signers resourceName&#x3D;&lt;the signer name&gt; verb&#x3D;attest.  If signerName is not empty, then the ClusterTrustBundle object must be named with the signer name as a prefix (translating slashes to colons). For example, for the signer name &#x60;example.com/foo&#x60;, valid ClusterTrustBundle object names include &#x60;example.com:foo:abc&#x60; and &#x60;example.com:foo:v1&#x60;.  If signerName is empty, then the ClusterTrustBundle object&#39;s name must not have such a prefix.  List/watch requests for ClusterTrustBundles can filter on this field using a &#x60;spec.signerName&#x3D;NAME&#x60; field selector.
    * @return signerName
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "signerName indicates the associated signer, if any.  In order to create or update a ClusterTrustBundle that sets signerName, you must have the following cluster-scoped permission: group=certificates.k8s.io resource=signers resourceName=<the signer name> verb=attest.  If signerName is not empty, then the ClusterTrustBundle object must be named with the signer name as a prefix (translating slashes to colons). For example, for the signer name `example.com/foo`, valid ClusterTrustBundle object names include `example.com:foo:abc` and `example.com:foo:v1`.  If signerName is empty, then the ClusterTrustBundle object's name must not have such a prefix.  List/watch requests for ClusterTrustBundles can filter on this field using a `spec.signerName=NAME` field selector.")
-
   public String getSignerName() {
     return signerName;
   }
-
 
   public void setSignerName(String signerName) {
     this.signerName = signerName;
@@ -62,7 +85,6 @@ public class V1alpha1ClusterTrustBundleSpec {
 
 
   public V1alpha1ClusterTrustBundleSpec trustBundle(String trustBundle) {
-
     this.trustBundle = trustBundle;
     return this;
   }
@@ -71,20 +93,20 @@ public class V1alpha1ClusterTrustBundleSpec {
    * trustBundle contains the individual X.509 trust anchors for this bundle, as PEM bundle of PEM-wrapped, DER-formatted X.509 certificates.  The data must consist only of PEM certificate blocks that parse as valid X.509 certificates.  Each certificate must include a basic constraints extension with the CA bit set.  The API server will reject objects that contain duplicate certificates, or that use PEM block headers.  Users of ClusterTrustBundles, including Kubelet, are free to reorder and deduplicate certificate blocks in this file according to their own logic, as well as to drop PEM block headers and inter-block data.
    * @return trustBundle
   **/
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "trustBundle contains the individual X.509 trust anchors for this bundle, as PEM bundle of PEM-wrapped, DER-formatted X.509 certificates.  The data must consist only of PEM certificate blocks that parse as valid X.509 certificates.  Each certificate must include a basic constraints extension with the CA bit set.  The API server will reject objects that contain duplicate certificates, or that use PEM block headers.  Users of ClusterTrustBundles, including Kubelet, are free to reorder and deduplicate certificate blocks in this file according to their own logic, as well as to drop PEM block headers and inter-block data.")
-
   public String getTrustBundle() {
     return trustBundle;
   }
-
 
   public void setTrustBundle(String trustBundle) {
     this.trustBundle = trustBundle;
   }
 
 
+
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -101,7 +123,6 @@ public class V1alpha1ClusterTrustBundleSpec {
     return Objects.hash(signerName, trustBundle);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -116,11 +137,110 @@ public class V1alpha1ClusterTrustBundleSpec {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("signerName");
+    openapiFields.add("trustBundle");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("trustBundle");
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to V1alpha1ClusterTrustBundleSpec
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!V1alpha1ClusterTrustBundleSpec.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in V1alpha1ClusterTrustBundleSpec is not found in the empty JSON string", V1alpha1ClusterTrustBundleSpec.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!V1alpha1ClusterTrustBundleSpec.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `V1alpha1ClusterTrustBundleSpec` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : V1alpha1ClusterTrustBundleSpec.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("signerName") != null && !jsonObj.get("signerName").isJsonNull()) && !jsonObj.get("signerName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `signerName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("signerName").toString()));
+      }
+      if (!jsonObj.get("trustBundle").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `trustBundle` to be a primitive type in the JSON string but got `%s`", jsonObj.get("trustBundle").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!V1alpha1ClusterTrustBundleSpec.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'V1alpha1ClusterTrustBundleSpec' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<V1alpha1ClusterTrustBundleSpec> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(V1alpha1ClusterTrustBundleSpec.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<V1alpha1ClusterTrustBundleSpec>() {
+           @Override
+           public void write(JsonWriter out, V1alpha1ClusterTrustBundleSpec value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public V1alpha1ClusterTrustBundleSpec read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of V1alpha1ClusterTrustBundleSpec given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of V1alpha1ClusterTrustBundleSpec
+  * @throws IOException if the JSON string is invalid with respect to V1alpha1ClusterTrustBundleSpec
+  */
+  public static V1alpha1ClusterTrustBundleSpec fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, V1alpha1ClusterTrustBundleSpec.class);
+  }
+
+ /**
+  * Convert an instance of V1alpha1ClusterTrustBundleSpec to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
