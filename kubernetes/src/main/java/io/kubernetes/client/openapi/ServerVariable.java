@@ -1,5 +1,5 @@
 /*
-Copyright 2024 The Kubernetes Authors.
+Copyright 2025 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -17,6 +17,7 @@ import java.util.HashSet;
 /**
  * Representing a Server Variable for server URL template substitution.
  */
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-12T21:38:08.216630Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class ServerVariable {
     public String description;
     public String defaultValue;
