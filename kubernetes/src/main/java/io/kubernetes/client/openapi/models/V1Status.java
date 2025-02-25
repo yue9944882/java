@@ -389,8 +389,7 @@ public class V1Status {
            @Override
            public V1Status read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
-             // Disable validation so delete API can tolerate non-status return object (graceful deletion)
-             // validateJsonObject(jsonObj);
+             validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
            }
 
