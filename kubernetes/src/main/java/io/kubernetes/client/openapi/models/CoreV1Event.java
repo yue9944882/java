@@ -1,5 +1,5 @@
 /*
-Copyright 2024 The Kubernetes Authors.
+Copyright 2025 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -13,7 +13,6 @@ limitations under the License.
 package io.kubernetes.client.openapi.models;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,12 +26,37 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.Arrays;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import io.kubernetes.client.openapi.JSON;
 
 /**
  * Event is a report of an event somewhere in the cluster.  Events have a limited retention time and triggers and messages may evolve with time.  Event consumers should not rely on the timing of an event with a given Reason reflecting a consistent underlying trigger, or the continued existence of events with that Reason.  Events should be treated as informative, best-effort, supplemental data.
  */
 @ApiModel(description = "Event is a report of an event somewhere in the cluster.  Events have a limited retention time and triggers and messages may evolve with time.  Event consumers should not rely on the timing of an event with a given Reason reflecting a consistent underlying trigger, or the continued existence of events with that Reason.  Events should be treated as informative, best-effort, supplemental data.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T13:45:08.546919Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-12T21:38:08.216630Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject {
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
@@ -102,9 +126,10 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
   @SerializedName(SERIALIZED_NAME_TYPE)
   private String type;
 
+  public CoreV1Event() {
+  }
 
   public CoreV1Event action(String action) {
-
     this.action = action;
     return this;
   }
@@ -113,13 +138,11 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * What action was taken/failed regarding to the Regarding object.
    * @return action
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "What action was taken/failed regarding to the Regarding object.")
-
   public String getAction() {
     return action;
   }
-
 
   public void setAction(String action) {
     this.action = action;
@@ -127,7 +150,6 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
 
 
   public CoreV1Event apiVersion(String apiVersion) {
-
     this.apiVersion = apiVersion;
     return this;
   }
@@ -136,13 +158,11 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
    * @return apiVersion
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources")
-
   public String getApiVersion() {
     return apiVersion;
   }
-
 
   public void setApiVersion(String apiVersion) {
     this.apiVersion = apiVersion;
@@ -150,7 +170,6 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
 
 
   public CoreV1Event count(Integer count) {
-
     this.count = count;
     return this;
   }
@@ -159,13 +178,11 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * The number of times this event has occurred.
    * @return count
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "The number of times this event has occurred.")
-
   public Integer getCount() {
     return count;
   }
-
 
   public void setCount(Integer count) {
     this.count = count;
@@ -173,7 +190,6 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
 
 
   public CoreV1Event eventTime(OffsetDateTime eventTime) {
-
     this.eventTime = eventTime;
     return this;
   }
@@ -182,13 +198,11 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * Time when this Event was first observed.
    * @return eventTime
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Time when this Event was first observed.")
-
   public OffsetDateTime getEventTime() {
     return eventTime;
   }
-
 
   public void setEventTime(OffsetDateTime eventTime) {
     this.eventTime = eventTime;
@@ -196,7 +210,6 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
 
 
   public CoreV1Event firstTimestamp(OffsetDateTime firstTimestamp) {
-
     this.firstTimestamp = firstTimestamp;
     return this;
   }
@@ -205,13 +218,11 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * The time at which the event was first recorded. (Time of server receipt is in TypeMeta.)
    * @return firstTimestamp
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "The time at which the event was first recorded. (Time of server receipt is in TypeMeta.)")
-
   public OffsetDateTime getFirstTimestamp() {
     return firstTimestamp;
   }
-
 
   public void setFirstTimestamp(OffsetDateTime firstTimestamp) {
     this.firstTimestamp = firstTimestamp;
@@ -219,7 +230,6 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
 
 
   public CoreV1Event involvedObject(V1ObjectReference involvedObject) {
-
     this.involvedObject = involvedObject;
     return this;
   }
@@ -228,12 +238,11 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * Get involvedObject
    * @return involvedObject
   **/
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
-
   public V1ObjectReference getInvolvedObject() {
     return involvedObject;
   }
-
 
   public void setInvolvedObject(V1ObjectReference involvedObject) {
     this.involvedObject = involvedObject;
@@ -241,7 +250,6 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
 
 
   public CoreV1Event kind(String kind) {
-
     this.kind = kind;
     return this;
   }
@@ -250,13 +258,11 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
    * @return kind
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds")
-
   public String getKind() {
     return kind;
   }
-
 
   public void setKind(String kind) {
     this.kind = kind;
@@ -264,7 +270,6 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
 
 
   public CoreV1Event lastTimestamp(OffsetDateTime lastTimestamp) {
-
     this.lastTimestamp = lastTimestamp;
     return this;
   }
@@ -273,13 +278,11 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * The time at which the most recent occurrence of this event was recorded.
    * @return lastTimestamp
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "The time at which the most recent occurrence of this event was recorded.")
-
   public OffsetDateTime getLastTimestamp() {
     return lastTimestamp;
   }
-
 
   public void setLastTimestamp(OffsetDateTime lastTimestamp) {
     this.lastTimestamp = lastTimestamp;
@@ -287,7 +290,6 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
 
 
   public CoreV1Event message(String message) {
-
     this.message = message;
     return this;
   }
@@ -296,13 +298,11 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * A human-readable description of the status of this operation.
    * @return message
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "A human-readable description of the status of this operation.")
-
   public String getMessage() {
     return message;
   }
-
 
   public void setMessage(String message) {
     this.message = message;
@@ -310,7 +310,6 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
 
 
   public CoreV1Event metadata(V1ObjectMeta metadata) {
-
     this.metadata = metadata;
     return this;
   }
@@ -319,12 +318,11 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * Get metadata
    * @return metadata
   **/
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
-
   public V1ObjectMeta getMetadata() {
     return metadata;
   }
-
 
   public void setMetadata(V1ObjectMeta metadata) {
     this.metadata = metadata;
@@ -332,7 +330,6 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
 
 
   public CoreV1Event reason(String reason) {
-
     this.reason = reason;
     return this;
   }
@@ -341,13 +338,11 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * This should be a short, machine understandable string that gives the reason for the transition into the object&#39;s current status.
    * @return reason
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "This should be a short, machine understandable string that gives the reason for the transition into the object's current status.")
-
   public String getReason() {
     return reason;
   }
-
 
   public void setReason(String reason) {
     this.reason = reason;
@@ -355,7 +350,6 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
 
 
   public CoreV1Event related(V1ObjectReference related) {
-
     this.related = related;
     return this;
   }
@@ -364,13 +358,11 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * Get related
    * @return related
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public V1ObjectReference getRelated() {
     return related;
   }
-
 
   public void setRelated(V1ObjectReference related) {
     this.related = related;
@@ -378,7 +370,6 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
 
 
   public CoreV1Event reportingComponent(String reportingComponent) {
-
     this.reportingComponent = reportingComponent;
     return this;
   }
@@ -387,13 +378,11 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * Name of the controller that emitted this Event, e.g. &#x60;kubernetes.io/kubelet&#x60;.
    * @return reportingComponent
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Name of the controller that emitted this Event, e.g. `kubernetes.io/kubelet`.")
-
   public String getReportingComponent() {
     return reportingComponent;
   }
-
 
   public void setReportingComponent(String reportingComponent) {
     this.reportingComponent = reportingComponent;
@@ -401,7 +390,6 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
 
 
   public CoreV1Event reportingInstance(String reportingInstance) {
-
     this.reportingInstance = reportingInstance;
     return this;
   }
@@ -410,13 +398,11 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * ID of the controller instance, e.g. &#x60;kubelet-xyzf&#x60;.
    * @return reportingInstance
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "ID of the controller instance, e.g. `kubelet-xyzf`.")
-
   public String getReportingInstance() {
     return reportingInstance;
   }
-
 
   public void setReportingInstance(String reportingInstance) {
     this.reportingInstance = reportingInstance;
@@ -424,7 +410,6 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
 
 
   public CoreV1Event series(CoreV1EventSeries series) {
-
     this.series = series;
     return this;
   }
@@ -433,13 +418,11 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * Get series
    * @return series
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public CoreV1EventSeries getSeries() {
     return series;
   }
-
 
   public void setSeries(CoreV1EventSeries series) {
     this.series = series;
@@ -447,7 +430,6 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
 
 
   public CoreV1Event source(V1EventSource source) {
-
     this.source = source;
     return this;
   }
@@ -456,13 +438,11 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * Get source
    * @return source
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public V1EventSource getSource() {
     return source;
   }
-
 
   public void setSource(V1EventSource source) {
     this.source = source;
@@ -470,7 +450,6 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
 
 
   public CoreV1Event type(String type) {
-
     this.type = type;
     return this;
   }
@@ -479,21 +458,20 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * Type of this event (Normal, Warning), new types could be added in the future
    * @return type
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Type of this event (Normal, Warning), new types could be added in the future")
-
   public String getType() {
     return type;
   }
-
 
   public void setType(String type) {
     this.type = type;
   }
 
 
+
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -525,7 +503,6 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
     return Objects.hash(action, apiVersion, count, eventTime, firstTimestamp, involvedObject, kind, lastTimestamp, message, metadata, reason, related, reportingComponent, reportingInstance, series, source, type);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -555,11 +532,160 @@ public class CoreV1Event implements io.kubernetes.client.common.KubernetesObject
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("action");
+    openapiFields.add("apiVersion");
+    openapiFields.add("count");
+    openapiFields.add("eventTime");
+    openapiFields.add("firstTimestamp");
+    openapiFields.add("involvedObject");
+    openapiFields.add("kind");
+    openapiFields.add("lastTimestamp");
+    openapiFields.add("message");
+    openapiFields.add("metadata");
+    openapiFields.add("reason");
+    openapiFields.add("related");
+    openapiFields.add("reportingComponent");
+    openapiFields.add("reportingInstance");
+    openapiFields.add("series");
+    openapiFields.add("source");
+    openapiFields.add("type");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("involvedObject");
+    openapiRequiredFields.add("metadata");
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to CoreV1Event
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!CoreV1Event.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in CoreV1Event is not found in the empty JSON string", CoreV1Event.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!CoreV1Event.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CoreV1Event` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : CoreV1Event.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("action") != null && !jsonObj.get("action").isJsonNull()) && !jsonObj.get("action").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `action` to be a primitive type in the JSON string but got `%s`", jsonObj.get("action").toString()));
+      }
+      if ((jsonObj.get("apiVersion") != null && !jsonObj.get("apiVersion").isJsonNull()) && !jsonObj.get("apiVersion").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `apiVersion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("apiVersion").toString()));
+      }
+      // validate the required field `involvedObject`
+      V1ObjectReference.validateJsonElement(jsonObj.get("involvedObject"));
+      if ((jsonObj.get("kind") != null && !jsonObj.get("kind").isJsonNull()) && !jsonObj.get("kind").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+      }
+      if ((jsonObj.get("message") != null && !jsonObj.get("message").isJsonNull()) && !jsonObj.get("message").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
+      }
+      // validate the required field `metadata`
+      V1ObjectMeta.validateJsonElement(jsonObj.get("metadata"));
+      if ((jsonObj.get("reason") != null && !jsonObj.get("reason").isJsonNull()) && !jsonObj.get("reason").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `reason` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reason").toString()));
+      }
+      // validate the optional field `related`
+      if (jsonObj.get("related") != null && !jsonObj.get("related").isJsonNull()) {
+        V1ObjectReference.validateJsonElement(jsonObj.get("related"));
+      }
+      if ((jsonObj.get("reportingComponent") != null && !jsonObj.get("reportingComponent").isJsonNull()) && !jsonObj.get("reportingComponent").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `reportingComponent` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reportingComponent").toString()));
+      }
+      if ((jsonObj.get("reportingInstance") != null && !jsonObj.get("reportingInstance").isJsonNull()) && !jsonObj.get("reportingInstance").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `reportingInstance` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reportingInstance").toString()));
+      }
+      // validate the optional field `series`
+      if (jsonObj.get("series") != null && !jsonObj.get("series").isJsonNull()) {
+        CoreV1EventSeries.validateJsonElement(jsonObj.get("series"));
+      }
+      // validate the optional field `source`
+      if (jsonObj.get("source") != null && !jsonObj.get("source").isJsonNull()) {
+        V1EventSource.validateJsonElement(jsonObj.get("source"));
+      }
+      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!CoreV1Event.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'CoreV1Event' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<CoreV1Event> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(CoreV1Event.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<CoreV1Event>() {
+           @Override
+           public void write(JsonWriter out, CoreV1Event value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public CoreV1Event read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of CoreV1Event given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of CoreV1Event
+  * @throws IOException if the JSON string is invalid with respect to CoreV1Event
+  */
+  public static CoreV1Event fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CoreV1Event.class);
+  }
+
+ /**
+  * Convert an instance of CoreV1Event to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
