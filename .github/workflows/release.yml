@@ -58,6 +58,7 @@ jobs:
             --non-recursive \
             exec:exec | perl -ne 'die unless m/${{ github.event.inputs.releaseVersion }}-SNAPSHOT/'
       - name: Release Prepare
+        if: ${{ github.event.inputs.dry-run != 'true' }}
         run: |
           git checkout -b 'automated-release-${{ github.event.inputs.releaseVersion }}'
           ./mvnw --batch-mode \
@@ -69,22 +70,17 @@ jobs:
             -DpushChanges=false \
             -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
       - name: Release Perform
-        if: ${{ github.event.inputs.dry-run != 'true' }}
-        env:
-          OSSRH_USERNAME: ${{ secrets.SNAPSHOT_UPLOAD_USER }}
-          OSSRH_TOKEN: ${{ secrets.SNAPSHOT_UPLOAD_PASSWORD }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSWORD }}
         run: |
           # The tests are already executed in the prepare, skipping
-          ./mvnw -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -DlocalCheckout=true -Darguments=-DskipTests release:perform
+          #./mvnw -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -DlocalCheckout=true -Darguments=-DskipTests release:perform
+          git checkout -b automated-release-${{ github.event.inputs.releaseVersion }}
           git push https://${{ github.token }}@github.com/${{ github.repository }}.git \
             automated-release-${{ github.event.inputs.releaseVersion }}:automated-release-${{ github.event.inputs.releaseVersion }}
-          git push https://${{ github.token }}@github.com/${{ github.repository }}.git v${{ github.event.inputs.releaseVersion }}
+          #git push https://${{ github.token }}@github.com/${{ github.repository }}.git v${{ github.event.inputs.releaseVersion }}
       - name: Pull Request
-        if: ${{ github.event.inputs.dry-run != 'true' }}
+        #if: ${{ github.event.inputs.dry-run != 'true' }}
         run: |
-          gh_pr_up() { gh pr create $* || gh pr edit $* }
-          gh_pr_up --title "Automated Release: ${{ github.event.inputs.releaseVersion }}" --head "automated-release-${{ github.event.inputs.releaseVersion }}" --base ${{ github.ref_name }}
+          GH_TOKEN: ${{ github.token }} gh pr create --title "Automated Release: ${{ github.event.inputs.releaseVersion }}" --head "automated-release-${{ github.event.inputs.releaseVersion }}" --base "${{ github.ref_name }}"
       - name: Publish Release
         if: ${{ github.event.inputs.dry-run != 'true' }}
         uses: ncipollo/release-action@v1
