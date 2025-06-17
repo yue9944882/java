@@ -51,7 +51,7 @@ import io.kubernetes.client.openapi.JSON;
  * Device represents one individual hardware instance that can be selected based on its attributes. Besides the name, exactly one field must be set.
  */
 @ApiModel(description = "Device represents one individual hardware instance that can be selected based on its attributes. Besides the name, exactly one field must be set.")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T20:47:13.890592Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T23:09:50.769945Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class V1alpha3Device {
   public static final String SERIALIZED_NAME_BASIC = "basic";
   @SerializedName(SERIALIZED_NAME_BASIC)

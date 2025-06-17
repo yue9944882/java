@@ -50,7 +50,7 @@ import io.kubernetes.client.openapi.JSON;
  * LocalObjectReference contains enough information to let you locate the referenced object inside the same namespace.
  */
 @ApiModel(description = "LocalObjectReference contains enough information to let you locate the referenced object inside the same namespace.")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T20:47:13.890592Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T23:09:50.769945Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class V1LocalObjectReference {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

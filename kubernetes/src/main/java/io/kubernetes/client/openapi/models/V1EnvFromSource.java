@@ -52,7 +52,7 @@ import io.kubernetes.client.openapi.JSON;
  * EnvFromSource represents the source of a set of ConfigMaps or Secrets
  */
 @ApiModel(description = "EnvFromSource represents the source of a set of ConfigMaps or Secrets")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T20:47:13.890592Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T23:09:50.769945Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class V1EnvFromSource {
   public static final String SERIALIZED_NAME_CONFIG_MAP_REF = "configMapRef";
   @SerializedName(SERIALIZED_NAME_CONFIG_MAP_REF)

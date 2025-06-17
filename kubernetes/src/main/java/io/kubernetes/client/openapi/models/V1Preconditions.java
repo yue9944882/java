@@ -50,7 +50,7 @@ import io.kubernetes.client.openapi.JSON;
  * Preconditions must be fulfilled before an operation (update, delete, etc.) is carried out.
  */
 @ApiModel(description = "Preconditions must be fulfilled before an operation (update, delete, etc.) is carried out.")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T20:47:13.890592Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T23:09:50.769945Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class V1Preconditions {
   public static final String SERIALIZED_NAME_RESOURCE_VERSION = "resourceVersion";
   @SerializedName(SERIALIZED_NAME_RESOURCE_VERSION)
